@@ -21,7 +21,7 @@ function Card({ item }) {
                 <div>
                     <span className="post-views">{item.uploadDate}</span>
                     <span className="post-views">조회수 {item.views}</span>
-                    <span className="post-views">댓글 {item.comment.length}</span>
+                    <span className="post-views">댓글 {Object.keys(totalData[item.id - 1].comment).length}</span>
                     <span className="post-views"><span style={{ color: 'red' }}>❤</span> {item.likes}</span>
                 </div>
             </div>

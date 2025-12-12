@@ -5,11 +5,11 @@ import Patch from './components/Patch';
 
 function CommunityWrite() {
     let [dataList, setDataList] = useState(JSON.parse(localStorage.getItem('통합데이터')))
-    let naviate = useNavigate();
+    let navigate = useNavigate();
     useEffect(() => Patch, [dataList])
     return (
         <div>
-            <section class="form-container">
+            <section className="form-container">
                 <h1>게시글 작성</h1>
 
                 <form onSubmit={(event) => {
@@ -32,13 +32,13 @@ function CommunityWrite() {
                             category: category.value,
                             views: 0,
                             likes: 0,
-                            commnet:[],
+                            comment:[],
                             uploadDate: now,
                         })
                         let temp = [...dataList];
                         setDataList(temp)
                         localStorage.setItem('통합데이터', JSON.stringify(dataList))
-                        naviate('/community/main/1')
+                        navigate('/community/main/1')
                     }
                 }}>
 
@@ -58,7 +58,7 @@ function CommunityWrite() {
                     <label>이미지 첨부 (선택)</label>
                     <input type="file" />
 
-                    <button class="submit-btn">등록하기</button>
+                    <button className="submit-btn">등록하기</button>
                 </form>
             </section>
         </div>

@@ -6,7 +6,6 @@ import Patch from './components/Patch';
 import { useEffect } from 'react';
 
 function CommunityView() {
-    let [count, setCount] = useState(0);
     let { id } = useParams();
     let totalData = JSON.parse(localStorage.getItem('통합데이터'))
     let data = totalData.find((item) => {
@@ -14,7 +13,8 @@ function CommunityView() {
     })
     let navigate = useNavigate();
     let [modalLike, setModalLike] = useState(false);
-    useEffect(()=>Patch, [count])
+    let [comment, setComment] = useState('');
+    useEffect(()=>Patch, [comment])
 
     return (
         <div className="post-view-container">
@@ -79,7 +79,7 @@ function CommunityView() {
                             }
                             setModalLike(!modalLike)
                         }}>{modalLike ? '❤ 좋아요' : '🤍 좋아요'}{modalLike ? data.likes : data.likes}</span>
-                        <span className="comment-btn">💬 댓글 {data.comment.length}</span>
+                        <span className="comment-btn">💬 댓글 {Object.keys(totalData[data.id - 1].comment).length}</span>
                     </div>
                     <div className="share-report">
                         <span>공유</span>
@@ -104,13 +104,15 @@ function CommunityView() {
                     if (event.target.content.value.trim() != '') {
                         let today = new Date()
                         let now = today.getFullYear() + '.' + (today.getMonth() + 1) + '.' + today.getDay() + '. ' + today.getHours() + ':' + today.getMinutes();
-                        totalData[Number(id) - 1].comment.unshift(['게임진행중', now, event.target.content.value])
+                        totalData[Number(id) - 1].comment.unshift(['게임진행중', now, comment])
+                        setComment('')
                         localStorage.setItem('통합데이터', JSON.stringify(totalData))
-                        setCount(count+1);
                     }
                 }}>
                     <div className="input-header-status">게임진행중</div>
-                    <textarea placeholder="댓글을 남겨보세요" name='content'></textarea>
+                    <textarea placeholder="댓글을 남겨보세요" name='content' value={comment} onChange={(event)=>{
+                        setComment(event.target.value);
+                    }}></textarea>
                     <div className="input-footer">
                         <div></div>
                         <button
