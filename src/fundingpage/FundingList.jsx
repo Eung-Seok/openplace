@@ -124,14 +124,72 @@ function FundingList() {
     return (
         <div className="bg-color">
             <nav className="menu">
-                <div className="left"><IoMenu className="menu-icon" /></div>
-                <a href="/all-list">전체목록</a>
-                <a href="/my-fund">나의 펀딩</a>
-                <a href="/categories">카테고리</a>
-                {/* <a href="/popular">인기순</a> */}
-                <a href="/funding">후원하기</a>
-                <a href="/register">등록하기</a>
-            </nav>
+
+                <div className="menu-left">
+                    <IoMenu className="menu-icon" />
+                </div>
+
+                <div className="menu-center">
+                    <a href="/all-list">홈</a>
+                    <a href="/my-fund">나의 펀딩</a>
+                    <a href="/categories">카테고리</a>
+                    <a href="/funding">후원하기</a>
+                    <a href="/register">등록하기</a>
+                </div>
+
+                <div className="menu-right" />
+
+                <div className="mega-menu">
+                    <div div className="mega-inner">
+                        <div className="mega-column">
+                            <h4>홈</h4>
+                            <div className="mega-items">
+                                <p>전체목록</p>
+                            </div>
+                        </div>
+
+                        <div className="mega-column mega-funding">
+                            <h4>나의 펀딩</h4>
+                            <div className="mega-items">
+                                <p>후원금</p>
+                                <p>후원 내역</p>
+                                <p>진행 중인 펀딩</p>
+                            </div>
+                        </div>
+
+                        <div className="mega-column mega-category">
+                            <h4>카테고리</h4>
+                            <div className="mega-items">
+                                <p>생활편의</p>
+                                <p>안전</p>
+                                <p>환경</p>
+                                <p>문화·체육</p>
+                                <p>교통시설</p>
+                            </div>
+                        </div>
+
+                        <div className="mega-column">
+                            <h4>후원하기</h4>
+                            <div className="mega-items">
+                                <p>금액 충전</p>
+                                <p>정기 후원</p>
+                                <p>후원 가이드</p>
+                            </div>
+                        </div>
+
+                        <div className="mega-column mega-register">
+                            <h4>등록하기</h4>
+                            <div className="mega-items">
+                                <p>펀딩 등록</p>
+                                <p>아이디어 제안</p>
+                                <p>진행 절차 안내</p>
+                            </div>
+                        </div >
+                    </div >
+                </div >
+
+            </nav >
+
 
             <section className="filter-container">
                 <div className="filter">
@@ -211,7 +269,7 @@ function FundingList() {
                 </div>
 
             </section>
-        </div>
+        </div >
     );
 }
 
