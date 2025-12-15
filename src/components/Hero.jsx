@@ -21,10 +21,10 @@ function Hero() {
                         <div className="search-bar mt-4 d-flex">
                             <input
                                 type="text"
-                                className="form-control search-input"
+                                className="form-control hero-search-input"
                                 placeholder="원하는 공공시설 개선 아이디어를 검색해보세요..."
                             />
-                            <button className="btn search-btn">Search</button>
+                            <button className="hero-btn hero-search-btn">Search</button>
                         </div>
 
                     </div>
