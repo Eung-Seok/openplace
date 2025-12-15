@@ -32,24 +32,6 @@ import FindId from './loginpage/FindId';
 import FindPw from './loginpage/FindPw';
 import AccountInit from './data/AccountInit';
 import SearchResultPage from "./pages/SearchResultPage";
-import CommunityMain from './communitypage/CommunityMain';
-import { Routes, Route, Link, useNavigate } from 'react-router';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import CommunityGeneral from './communitypage/CommunityGeneral';
-import CommunityReview from './communitypage/CommunityReview';
-import CommunityReport from './communitypage/CommunityReport';
-import { useEffect } from 'react';
-import CommunityWrite from './communitypage/CommunityWrite';
-import CommunityView from './communitypage/CommunityView';
-import DataInit from './data/DataInit';
-import Login from './loginpage/Login';
-import Register from './loginpage/Register';
-import FindId from './loginpage/FindId';
-import FindPw from './loginpage/FindPw';
-import AccountInit from './data/AccountInit';
-import SearchResultPage from "./pages/SearchResultPage";
 function App() {
 
   let naviate = useNavigate();
@@ -62,7 +44,6 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/funding" element={<FundingPage />} />
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/community/main/:page" element={<CommunityMain />}></Route>
@@ -77,6 +58,7 @@ function App() {
           <Route path="/findid" element={<FindId />} />
           <Route path="/findpw" element={<FindPw />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/funding" element={<FundingList/>} />
         </Routes>
           <Footer/>
       </>

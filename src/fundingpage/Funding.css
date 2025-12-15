@@ -9,7 +9,7 @@
 }
 
 .funding-menu {
-    background-color: #dddddd;
+    /* background-color: #dddddd; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,7 +19,7 @@
     margin: 0 auto;
     font-size: 25px;
     padding: 18px 50px;
-    border: 1px solid #a7a7a7;
+    /* border: 1px solid #a7a7a7; */
     border-bottom: none;
     position: relative;
 }
