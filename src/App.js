@@ -13,6 +13,7 @@ import MyPage from "./pages/MyPage";
 import CommunitySection from "./components/CommunitySection";
 import logo from './logo.svg';
 import './App.css';
+import FundingList from './fundingpage/FundingList';
 import CommunityMain from './communitypage/CommunityMain';
 import { Routes, Route, Link, useNavigate } from 'react-router';
 import Container from 'react-bootstrap/Container';
@@ -31,7 +32,6 @@ import FindId from './loginpage/FindId';
 import FindPw from './loginpage/FindPw';
 import AccountInit from './data/AccountInit';
 import SearchResultPage from "./pages/SearchResultPage";
-
 function App() {
 
   let naviate = useNavigate();
@@ -58,7 +58,7 @@ function App() {
           <Route path="/findid" element={<FindId />} />
           <Route path="/findpw" element={<FindPw />} />
           <Route path="/register" element={<Register />} />
-          
+          <Route path="/funding" element={<FundingList/>} />
         </Routes>
           <Footer/>
       </>
