@@ -57,7 +57,6 @@ function DataInit(){
     localStorage.setItem('자유게시판', JSON.stringify(generalList))
     localStorage.setItem('지역 제보', JSON.stringify(reportList))
     localStorage.setItem('프로젝트 후기', JSON.stringify(reviewList))
-
 }
 
 export default DataInit

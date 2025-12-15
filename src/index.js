@@ -5,12 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router';
 import DataInit from './data/DataInit';
+import AccountInit from './data/AccountInit';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <DataInit />
+      <AccountInit/>
       <App />
     </BrowserRouter>
   </React.StrictMode>
