@@ -4,7 +4,7 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: #ffffff;
+    background: #f2faf9;
     height: 80px;
     transition: all 0.25s ease;
 }
@@ -34,11 +34,10 @@
 /* Navigation */
 .header nav a {
     position: relative;
-    font-size: 15px;
-    font-weight: 500;
-    color: #333;
+    display: inline-block;
     padding: 4px 0;
     text-decoration: none;
+    color: #333;
 }
 
 .header nav a::after {
@@ -48,7 +47,7 @@
     bottom: -4px;
     width: 0;
     height: 2px;
-    background: var(--main-color);
+    background: #066b59;
     transition: width 0.25s ease;
 }
 
@@ -58,6 +57,9 @@
 
 .header nav ul {
     list-style: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    
 }
 
 .header nav li {

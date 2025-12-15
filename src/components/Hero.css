@@ -12,13 +12,15 @@
 .hero-text h1 {
     font-size: 48px;
     font-weight: 700;
-    color: var(--dark-color);
+    color: #066b59;
+    font-family: "Poppins", sans-serif;
 }
 
 .hero-text h4 {
     font-size: 18px;
     line-height: 1.7;
     color: #444;
+    font-family: "Poppins", sans-serif;
 }
 
 .hero-text h4 strong {
@@ -26,27 +28,29 @@
 }
 
 /* Search */
-.search-input {
+.hero-search-input {
     font-size: 15px;
 }
 
-.search-input::placeholder {
+.hero-search-input::placeholder {
     color: #9aa5a1;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: -0.2px;
+    font-family: "Poppins", sans-serif;
 }
 
-.search-btn.btn,
-.btn.search-btn {
-    background-color: var(--dark-color) !important;
-    border-color: var(--dark-color) !important;
+.hero-search-btn.btn,
+.hero-btn.search-btn {
+    background-color: #066b59; 
+    border-color: #066b59;
     color: #fff; 
+    
 }
 
-.search-btn.btn:hover,
-.btn.search-btn:hover {
-    background-color: var(--main-color) !important;
-    border-color: var(--main-color) !important;
+.hero-search-btn.btn:hover,
+.hero-btn.search-btn:hover {
+    background-color:#066b59;
+    border-color: #066b59;
     color: #fff; 
 }
 
