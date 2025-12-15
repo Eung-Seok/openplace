@@ -9,7 +9,7 @@
 }
 
 .funding-menu {
-    background-color:#eeeeee;
+    background-color: #eeeeee;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,7 +31,7 @@
     gap: 88px;
 }
 
-.funding-menu-left{
+.funding-menu-left {
     width: 60px;
     display: flex;
     align-items: center;
@@ -61,7 +61,7 @@
     border-bottom: 1px solid #a7a7a7;
     border-top: 1px solid #ddd;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 30px 0;
     opacity: 0;
     visibility: hidden;
@@ -72,7 +72,8 @@
 
 .funding-mega-inner {
     /* margin-left: 265px; */
-    margin-left: 870px;
+    margin-left: 55px;
+    width: 1200px;
     padding: 30px 0;
     transform: none;
     display: flex;
@@ -238,17 +239,28 @@
     font-weight: 500;
 }
 
-.funding-div h3 {
+.funding-title {
     font-weight: 500;
+    font-size: 22px;
 }
 
-.funding-div h4 {
+.funding-sub-title {
+    font-size: 17px;
+    height: 88px;
+    overflow: hidden;
+    position: relative;
     font-weight: 400;
     margin-bottom: 10px;
 }
 
-.funding-h2 {
-    margin-top: 40px;
+.funding-sub-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 33px;
+    background: linear-gradient(to bottom, transparent, white);
 }
 
 .funding-budget-table {
@@ -385,7 +397,7 @@
 }
 
 .funding-page.active {
-    text-decoration: underline; 
+    text-decoration: underline;
     color: blue;
 }
 
@@ -433,6 +445,13 @@
     margin-bottom: 35px;
 }
 
+@media (max-width: 1024px) {
+    .funding-funding-card {
+        flex: 0 0 calc((100% - 20px) / 2);
+        max-width: calc((100% - 20px) / 2);
+    }
+}
+
 .funding-funding-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
@@ -462,29 +481,18 @@
     font-weight: 777;
 }
 
-.funding-sub-title {
-    height: 88px;
-    overflow: hidden;
-    position: relative;
-}
-
-.funding-sub-title::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 33px;
-    background: linear-gradient(to bottom, transparent, white);
+.funding-gauge-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .funding-gauge {
-    height: 100px;
-    background-color: #e7e7e7 !important;
-    padding: 20px 15px;
+    background-color: #e7e7e7;
+    height: auto;
+    padding: 15px 15px 20px;
 }
 
-.funding-gauge,
 .funding-gauge * {
     background: transparent;
 }
@@ -495,7 +503,8 @@
 }
 
 .funding-max-gauge {
-    margin-left: 207px;
+    display: inline-block;
+    margin-right: 15px;
 }
 
 .funding-bar {

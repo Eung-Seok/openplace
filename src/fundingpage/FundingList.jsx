@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import FundingDataInit from "../data/FundingDataInit.js";
 import "./Funding.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
-import FundingBox from "./component/FundingBox";
+import FundingBox from "./component/FundingBox.js"
+import {Link} from "react-router-dom";
 
 function FundingList() {
+
+    useEffect(() => {
+        if (!localStorage.getItem('펀딩데이터')) {
+            FundingDataInit();
+        }
+    }, []);
+
 
     // 페이지 쪽수 기능
     const [currentPage, setCurrentPage] = useState(1);
@@ -31,11 +40,11 @@ function FundingList() {
                 </div>
 
                 <div className="funding-menu-center">
-                    <a href="/all-list">홈</a>
-                    <a href="/my-fund">나의 펀딩</a>
-                    <a href="/categories">카테고리</a>
-                    <a href="/funding">후원하기</a>
-                    <a href="/register">등록하기</a>
+                    <Link to="/all-list">홈</Link>
+                    <Link to="/my-fund">나의 펀딩</Link>
+                    <Link to="/categories">카테고리</Link>
+                    <Link to="/funding/support">후원하기</Link>
+                    <Link to="/funding/create">등록하기</Link>
                 </div>
 
                 <div className="funding-menu-right" />
@@ -115,8 +124,15 @@ function FundingList() {
             <section className="funding-funding-container">
                 <hr />
                 <div className="funding-funding-grid">
-                    {currentItems.map((item)=>{
-                        return <FundingBox item={item} getCurrentAmount={getCurrentAmount} getGoalAmount={getGoalAmount}/>
+                    {currentItems.map((item) => {
+                        return (
+                            <FundingBox
+                                key={item.id}
+                                item={item}
+                                getCurrentAmount={getCurrentAmount}
+                                getGoalAmount={getGoalAmount}
+                            />
+                        );
                     })}
                 </div>
                 <hr className="card-bottom-bar" />
@@ -156,9 +172,9 @@ function FundingList() {
                     </div>
                     <p className="funding-comment">여러분 동네, 개선이 필요한 공공시설이 있나요?</p>
                     <div className="funding-register-actions">
-                        <a href="/funding/create" className="funding-create-btn">
+                        <Link to="/funding/create" className="funding-create-btn">
                             + 펀딩 등록하기
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>

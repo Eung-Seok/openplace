@@ -10,7 +10,7 @@ function FundingBox({ item, getCurrentAmount, getGoalAmount }) {
             onClick={() => (window.location.href = `/funding/${item.id}`)}
         >
             <img src={item.imgPath} alt={item.title} className="funding-detail-img" />
-            <h3>{item.title}</h3>
+            <h3 className="funding-title">{item.title}</h3>
             <p className="funding-icon">
                 <FaMapMarkerAlt className="funding-map-icon" />
                 <span className="funding-map">&nbsp;{item.map}</span>
@@ -18,8 +18,10 @@ function FundingBox({ item, getCurrentAmount, getGoalAmount }) {
             <h4 className="funding-sub-title">{item.subTitle}</h4>
 
             <div className="funding-gauge">
-                <span className="funding-current-gauge">모금률 {item.rate}%</span>
-                <span className="funding-max-gauge">100%</span>
+                <div className="funding-gauge-top">
+                    <span className="funding-current-gauge">모금률 {item.rate}%</span>
+                    <span className="funding-max-gauge">100%</span>
+                </div>
                 <div className="funding-bar">
                     <span style={{ width: `${item.rate}%` }}></span>
                 </div>
