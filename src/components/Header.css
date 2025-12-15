@@ -59,10 +59,29 @@
     list-style: none;
     font-family: "Poppins", sans-serif;
     font-weight: bold;
+    align-items: center;
     
 }
 
 .header nav li {
     margin: 0;
     padding: 0;
+}
+.nav-link {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: #222;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
+/* 버튼 기본 스타일 제거 (중요) */
+.logout-btn {
+    appearance: none;
+    -webkit-appearance: none;
 }

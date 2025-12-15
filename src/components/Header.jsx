@@ -5,6 +5,14 @@ import "./Header.css";
 
 function Header() {
 
+    const isLogin = localStorage.getItem("로그인현황") === "true";
+    const handleLogout = () => {
+        localStorage.setItem("로그인현황", "false");
+        localStorage.removeItem("계정정보");
+
+        alert("로그아웃 되었습니다.");
+        window.location.href = "/"; // 메인으로 이동
+    };
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -35,7 +43,23 @@ function Header() {
                         <li><Link to="/funding">Funding</Link></li>
                         <li><Link to="/community/main/1">Community</Link></li>
                         <li><Link to="/about">About</Link></li>
-                        <li><Link to="/login">Log-In</Link></li>
+                        {isLogin ? (
+                            <>
+                                <li>
+                                    <Link to="/mypage" className="nav-link" >MyPage</Link>
+                                </li>
+                                <li>
+                                    <button
+                                        className="nav-link logout-btn"
+                                        onClick={handleLogout}
+                                    >
+                                        Logout
+                                    </button>
+                                </li>
+                            </>
+                        ) : (
+                            <li><Link to="/login">Log-In</Link></li>
+                        )}
                     </ul>
                 </nav>
 
