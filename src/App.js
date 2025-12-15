@@ -25,6 +25,7 @@ import { useEffect } from 'react';
 import CommunityWrite from './communitypage/CommunityWrite';
 import CommunityView from './communitypage/CommunityView';
 import DataInit from './data/DataInit';
+import SearchResultPage from "./pages/SearchResultPage";
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
           <Route path="/community/:id" element={<CommunityView />}></Route>
           <Route path="/community/write" element={<CommunityWrite />}></Route>
           <Route path="*" element={<div><h1>존재하지 않는 주소입니다.</h1></div>}></Route>
+          <Route path="/search" element={<SearchResultPage />} />
         </Routes>
           <Footer/>
       </>
