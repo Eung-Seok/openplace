@@ -1,0 +1,70 @@
+/* HERO SECTION */
+
+.hero-section {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    min-height: 70vh;
+    background: linear-gradient(180deg,
+            rgba(9, 148, 125, 0.06),
+            #ffffff);
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #066b59;
+    font-family: "Poppins", sans-serif;
+}
+
+.hero-text h4 {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #444;
+    font-family: "Poppins", sans-serif;
+}
+
+.hero-text h4 strong {
+    font-weight: 600;
+}
+
+/* Search */
+.hero-search-input {
+    font-size: 15px;
+}
+
+.hero-search-input::placeholder {
+    color: #9aa5a1;
+    font-size: 13px;
+    letter-spacing: -0.2px;
+    font-family: "Poppins", sans-serif;
+}
+
+.hero-search-btn.btn,
+.hero-btn.search-btn {
+    background-color: #066b59; 
+    border-color: #066b59;
+    color: #fff; 
+    
+}
+
+.hero-search-btn.btn:hover,
+.hero-btn.search-btn:hover {
+    background-color:#066b59;
+    border-color: #066b59;
+    color: #fff; 
+}
+
+/* Image */
+.hero-image {
+    height: 100%;
+}
+
+.hero-img {
+    height: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow:
+        0 24px 48px rgba(0, 0, 0, 0.12),
+        0 0 0 10px rgba(255, 255, 255, 0.5);
+}

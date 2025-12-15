@@ -1,0 +1,73 @@
+.comment-item {
+    display: flex;
+    /* 아바타와 내용을 가로로 배치 */
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    align-items: flex-start;
+}
+
+.comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* 둥근 아바타 */
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.comment-content {
+    flex-grow: 1;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.comment-user {
+    font-weight: bold;
+    color: #333;
+}
+
+.comment-timestamp {
+    font-size: 0.8em;
+    color: #999;
+}
+
+
+.input-footer {
+    display: flex;
+    justify-content: space-between;
+    /* 아이콘과 버튼을 양 끝으로 분리 */
+    align-items: center;
+    padding-top: 10px;
+}
+
+.comment-submit {
+    background-color: none;
+    border: none;
+    color: #333;
+    /* 기본 색상 */
+    font-weight: bold;
+    font-size: 1em;
+    padding: 0;
+    cursor: pointer;
+}
+
+.comment-submit:hover:not(:disabled) {
+    color: #007bff;
+    /* 활성화 시 호버 색상 */
+}
+
+.comment-submit.disabled {
+    background-color: none;
+    color: #ccc;
+    /* 비활성화 시 연한 색상 */
+    cursor: default;
+}
+
+.likeButton:hover{
+    cursor: pointer;
+    
+}

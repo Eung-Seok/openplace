@@ -1,0 +1,101 @@
+*{font-family: "Poppins", sans-serif;}
+.about-page {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+    
+}
+
+.about-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+/* 공통 카드 */
+.about-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.about-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.about-card p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+/* 미션 리스트 */
+.about-list {
+    padding-left: 18px;
+}
+
+.about-list li {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* 비전 */
+.about-vision-desc {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* 비전 박스 */
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.vision-box {
+    background: #f6fff9;
+    border-left: 4px solid #28a745;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.vision-box h5 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.vision-box p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .vision-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 아이콘 공통 */
+.about-icon {
+    font-size: 20px;
+    color: #28a745;
+}
+
+.vision-icon {
+    font-size: 16px;
+    color: #28a745;
+    margin-right: 6px;
+}

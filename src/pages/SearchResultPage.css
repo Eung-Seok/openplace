@@ -1,0 +1,76 @@
+/* 전체 페이지 */
+.search-page {
+    padding: 40px 0 60px;
+}
+
+/* 검색 결과 제목 */
+.search-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+/* 섹션 공통 */
+.search-section {
+    margin-bottom: 40px;
+}
+
+/* 섹션 제목 */
+.search-section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    padding-left: 10px;
+    border-left: 4px solid var(--main-color);
+}
+
+/* 결과 리스트 */
+.search-result-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 결과 카드 */
+.search-result-card {
+    background: #f6fbf8;
+    border-radius: 10px;
+    padding: 16px 18px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.search-result-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+/* 카드 상단 메타 정보 */
+.search-result-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #2f8f6b;
+    margin-bottom: 6px;
+}
+
+/* 카드 제목 */
+.search-result-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+/* 카드 내용 */
+.search-result-content {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* 결과 없음 */
+.search-empty-text {
+    font-size: 14px;
+    color: #999;
+    padding: 12px 0;
+}

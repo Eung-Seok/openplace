@@ -1,0 +1,44 @@
+.community-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+.community-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* 리스트 */
+.community-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* 아이템 */
+.community-item {
+    background: #eef9ee;
+    border-left: 4px solid #28a745;
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.community-item-title {
+    font-size: 17px;
+    color: #222;
+    font-weight: 500;
+}
+
+/* 공감 */
+.community-like {
+    font-size: 13px;
+    color: #555;
+    white-space: nowrap;
+}

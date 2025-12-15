@@ -1,0 +1,62 @@
+
+function DataInit(){
+    let dataList = []
+    let generalList = []
+    let reportList = []
+    let reviewList = []
+    let today = new Date()
+    let now = today.getFullYear() +'.'+(today.getMonth()+1) +'.'+today.getDay()+'. ' + today.getHours()+':'+today.getMinutes();
+    for(let i = 1; i <= 13; i++){
+        if(i%3 == 0){
+            dataList.push({
+            title:"횡단보도에 신호등 설치가 필요합니다",  // 제목
+            content:'등굣길에 위험한 구간이 있어요', // 내용
+            author:'박다라', //작성자
+            category:'자유게시판',
+            views:i,    //조회수
+            likes:i,  // 공감
+            id:i, 
+            comment:[['김응석',now,'집가고싶다']], // 댓글
+            uploadDate: now  // 업로드 시간
+        })}else if(i%3 == 1){
+            dataList.push({
+            title:'벤치 설치 제안 드립니다',
+            content:'산책로 중간에 벤치 부족한 구간이 있어요.',
+            author:'최가나',
+            category:'지역 제보',
+            views:i,
+            likes:i,
+            id:i,
+            comment:[],
+            uploadDate: now
+        })}else{
+            {
+            dataList.push({
+            title:'버스정류장 쉘터 보수 요청',
+            content:'비 새는 정류장이 있어 개선이 필요합니다.',
+            author:'김유오',
+            category:'프로젝트 후기',
+            views:i,
+            likes:i,
+            id:i,
+            comment:[],
+            uploadDate: now 
+        })}
+        }
+    }
+    generalList = dataList.filter((item) =>{
+        return item.category == '자유게시판'
+    })
+    reportList = dataList.filter((item) =>{
+        return item.category == '지역 제보'
+    })
+    reviewList = dataList.filter((item) =>{
+        return item.category == '프로젝트 후기'
+    })
+    localStorage.setItem('통합데이터', JSON.stringify(dataList))
+    localStorage.setItem('자유게시판', JSON.stringify(generalList))
+    localStorage.setItem('지역 제보', JSON.stringify(reportList))
+    localStorage.setItem('프로젝트 후기', JSON.stringify(reviewList))
+}
+
+export default DataInit

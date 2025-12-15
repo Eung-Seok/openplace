@@ -1,0 +1,23 @@
+.main-search {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.main-search input {
+    flex: 1;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.main-search button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    background: var(--main-color);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
