@@ -33,7 +33,7 @@ function Header() {
                 <nav>
                     <ul className="d-flex gap-4 mb-0">
                         <li><Link to="/funding">Funding</Link></li>
-                        <li><Link to="/community">Community</Link></li>
+                        <li><Link to="/community/main/1">Community</Link></li>
                         <li><Link to="/about">About</Link></li>
                         <li><Link to="/login">Log-In</Link></li>
                     </ul>
