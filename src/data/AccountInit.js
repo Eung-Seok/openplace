@@ -1,7 +1,16 @@
-
-
 function AccountInit(){
     let accountList = [];
+    let accountInfo = {
+        nickname:'',
+        name:'',
+        mailAdress:'',
+        phoneNumber:'',
+        birthday:'',
+        id:'',
+        pw:'',
+
+    };
+    let isLogin = false;
     accountList.push({
         nickname:'커뮤니티',
         name: '김응석',
@@ -29,7 +38,10 @@ function AccountInit(){
         id:'안송이',
         pw: 'dksthddl'
     })
-    localStorage.setItem('계정정보', JSON.stringify(accountList))
+    localStorage.setItem('계정목록', JSON.stringify(accountList))
+    localStorage.setItem('로그인현황', JSON.stringify(isLogin))
+    localStorage.setItem('계정정보', JSON.stringify(accountInfo))
 }
 
 export default AccountInit;
+

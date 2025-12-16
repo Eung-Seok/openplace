@@ -15,25 +15,47 @@ function Login() {
     let [modalFlag2,setModalFlag2] = useState(false);
     let [modalFlag3,setModalFlag3] = useState(false);
     let navigate = useNavigate();
-
+    let [isValid, setIsValid] = useState(true);
+    let accountList = JSON.parse(localStorage.getItem('계정목록'))
+    let [accountInfo,setAccountInfo] = useState(JSON.parse(localStorage.getItem('계정정보')))
+    let [index, setIndex] = useState(0);
 
     return (
         <div>
-            <div className='login-form-container'>
+            <div className='login-form-container' id='container'>
                 <form onSubmit={(event)=>{
                     event.preventDefault();
+                    accountList.map((item, index)=>{
+                        if(idinput == item.id && pwinput == item.pw){
+                            setIndex(index)
+                        }else{
+                            setIsValid(false)
+                        }
+                    })
                     if(idinput.trim() == ''){
                         setModalFlag1(true);
-                        setModalFlag2(false)
-                        setModalFlag3(false)
+                        setModalFlag2(false);
+                        setModalFlag3(false);
                     }else if(pwinput.trim() == ''){
                         setModalFlag1(false);
-                        setModalFlag2(true)
-                        setModalFlag3(false)
-                    } else{
+                        setModalFlag2(true);
+                        setModalFlag3(false);
+                    } else if(!isValid){
                         setModalFlag1(false);
-                        setModalFlag2(false)
-                        setModalFlag3(false)
+                        setModalFlag2(false);
+                        setModalFlag3(true);
+                    } else{
+                        localStorage.setItem('로그인현황', JSON.stringify(true))
+                        let temp  = {
+                            nickname: accountList[index].nickname,
+                            name: accountList[index].name,
+                            mailAdress: accountList[index].mailAdress,
+                            phoneNumber: accountList[index].phoneNumber,
+                            birthday: accountList[index].birthday,
+                            id: accountList[index].id,
+                            pw: accountList[index].pw
+                        }
+                        localStorage.setItem('계정정보', JSON.stringify(temp))
                         navigate('/community/main/1')
                     }
                 }}>
