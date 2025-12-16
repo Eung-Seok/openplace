@@ -27,7 +27,7 @@ function FundingSection() {
             <div className="funding-section-header">
                 <h2>Funding Projects</h2>
                 <button
-                    className="funding-more-btn"
+                    className="funding-section-more-btn"
                     onClick={() => navigate("/funding")}
                 >
                     더보기 →
