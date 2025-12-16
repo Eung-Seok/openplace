@@ -12,10 +12,16 @@ function FindId() {
     let [pwFocus2, setPwFocus2] = useState(false);
     let [idinput, setIdInput] = useState('');
     let [pwinput, setPwInput] = useState('');
+    let [isButtonOff, setIsButtonOff] = useState(true);
     let [modalFlag1, setModalFlag1] = useState(false);
     let [modalFlag2, setModalFlag2] = useState(false);
     let [modalFlag3, setModalFlag3] = useState(false);
+    
     let navigate = useNavigate();
+
+    useEffect(() => {
+        setIsButtonOff(idinput.trim() == '' || pwinput.trim() == '')
+    }, [idinput, pwinput])
 
     return (
         <div>
@@ -47,11 +53,6 @@ function FindId() {
                                 pwinputtext.focus()
                             }} onChange={(event) => {
                                 setIdInput(event.target.value);
-                                if (idinput.trim() != '' && pwinput.trim() != '') {
-                                    loginSubmitButton.classList.remove('off')
-                                } else {
-                                    loginSubmitButton.classList.add('off')
-                                }
                             }} />
                             <label for='id' className='login-text-label' aria-hidden='true'>이름</label>
                         </div>
@@ -64,11 +65,6 @@ function FindId() {
                                 loginSubmitButton.focus();
                             }} onChange={(event) => {
                                 setPwInput(event.target.value);
-                                if (idinput.trim() != '' && pwinput.trim() != '') {
-                                    loginSubmitButton.classList.remove('off')
-                                } else {
-                                    loginSubmitButton.classList.add('off')
-                                }
                             }} />
                             <label for="pw" className='login-text-label' aria-hidden='true'>메일 주소</label>
                         </div>
@@ -77,7 +73,7 @@ function FindId() {
                     {modalFlag2 && <div style={{ color: 'red', fontSize: '14px', marginTop: '20px' }}>메일 주소를 입력해주세요</div>}
                     {modalFlag3 && <div style={{ color: 'green', fontSize: '14px', marginTop: '20px' }}>입력하신 메일로 아이디를 보냈습니다. 메일을 확인해주세요</div>}
                     <div>
-                        <button type='submit' id='login-submit-button' className='login-submit-button off'>
+                        <button type='submit' id='login-submit-button' className={'login-submit-button ' + (isButtonOff ? 'off' : ' ')}>
                             <span className='login-button-text'>아이디 찾기</span>
                         </button>
                     </div>

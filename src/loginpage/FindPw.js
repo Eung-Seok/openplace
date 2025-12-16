@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 function FindPw() {
     const loginSubmitButton = document.getElementById('login-submit-button')
@@ -14,11 +14,16 @@ function FindPw() {
     let [idinput, setIdInput] = useState('');
     let [pwinput, setPwInput] = useState('');
     let [nameinput, setNameInput] = useState('');
+    let [isButtonOff, setIsButtonOff] = useState(true);
     let [modalFlag1, setModalFlag1] = useState(false);
     let [modalFlag2, setModalFlag2] = useState(false);
     let [modalFlag3, setModalFlag3] = useState(false);
     let [modalFlag4, setModalFlag4] = useState(false);
     let navigate = useNavigate();
+
+    useEffect(() => {
+            setIsButtonOff(idinput.trim() == '' || pwinput.trim() == '' || nameinput.trim() == '')
+        }, [idinput, pwinput, nameinput])
 
     return (
         <div>
@@ -57,11 +62,6 @@ function FindPw() {
                                 nameinputtext.focus()
                             }} onChange={(event) => {
                                 setIdInput(event.target.value);
-                                if (idinput.trim() != '' && pwinput.trim() != '' && nameinput.trim() == '') {
-                                    loginSubmitButton.classList.remove('off')
-                                } else {
-                                    loginSubmitButton.classList.add('off')
-                                }
                             }} />
                             <label for='id' className='login-text-label' aria-hidden='true'>이름</label>
                         </div>
@@ -75,11 +75,6 @@ function FindPw() {
                                 pwinputtext.focus()
                             }} onChange={(event) => {
                                 setNameInput(event.target.value);
-                                if (idinput.trim() != '' && pwinput.trim() != '' && nameinput.trim() == '') {
-                                    loginSubmitButton.classList.remove('off')
-                                } else {
-                                    loginSubmitButton.classList.add('off')
-                                }
                             }} />
                             <label for='id' className='login-text-label' aria-hidden='true'>아이디</label>
                         </div>
@@ -93,11 +88,6 @@ function FindPw() {
                                 loginSubmitButton.focus();
                             }} onChange={(event) => {
                                 setPwInput(event.target.value);
-                                if (idinput.trim() != '' && pwinput.trim() != '' && nameinput.trim() == '') {
-                                    loginSubmitButton.classList.remove('off')
-                                } else {
-                                    loginSubmitButton.classList.add('off')
-                                }
                             }} />
                             <label for="pw" className='login-text-label' aria-hidden='true'>메일 주소</label>
                         </div>
@@ -107,7 +97,7 @@ function FindPw() {
                     {modalFlag3 && <div style={{ color: 'red', fontSize: '14px', marginTop: '20px' }}>메일 주소를 입력해주세요</div>}
                     {modalFlag4 && <div style={{ color: 'green', fontSize: '14px', marginTop: '20px' }}>입력하신 메일로 비밀번호 변경 링크를 보냈습니다. 메일을 확인해주세요</div>}
                     <div>
-                        <button type='submit' id='login-submit-button' className='login-submit-button off'>
+                        <button type='submit' id='login-submit-button' className={'login-submit-button ' + (isButtonOff ? 'off' : ' ')}>
                             <span className='login-button-text'>로그인</span>
                         </button>
                     </div>
