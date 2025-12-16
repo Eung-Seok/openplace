@@ -1,23 +1,82 @@
+/* ===============================
+   MAIN SEARCH
+================================ */
+
 .main-search {
+    margin-top: 28px;
     display: flex;
-    gap: 10px;
-    margin-top: 24px;
+    align-items: center;
+    gap: 12px;
+
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 8px 10px;
+
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    width: 450px;
+    max-width: 100%;
+    align-self: flex-start;
 }
 
+/* input */
 .main-search input {
-    flex: 1;
-    padding: 12px 14px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
+    flex: 1;                 /* ⭐ 핵심 */
+    border: none;
+    outline: none;
+
+    padding: 14px 16px;
+    font-size: 15px;
+    color: #333;
+
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    min-width: 0;
+
+}
+
+.main-search input::placeholder {
+    color: #9aa5a1;
     font-size: 14px;
 }
 
+/* button */
 .main-search button {
-    padding: 12px 20px;
-    border-radius: 8px;
+    flex-shrink: 0;          /* ⭐ 버튼 밀리지 않게 */
     border: none;
-    background: var(--main-color);
-    color: #fff;
+    border-radius: 10px;
+
+    background-color: #066b59;
+    color: #ffffff;
+
+    padding: 12px 22px;
+    font-size: 14px;
     font-weight: 600;
+
     cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.main-search button:hover {
+    background-color: #055a4c;
+}
+
+.main-search button:active {
+    transform: scale(0.96);
+}
+
+/* focus */
+.main-search:focus-within {
+    box-shadow:
+        0 0 0 2px rgba(6, 107, 89, 0.25),
+        0 14px 36px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================
+   MOBILE
+================================ */
+@media (max-width: 768px) {
+    .main-search {
+        width: 100%;
+    }
 }
