@@ -10,7 +10,9 @@ function FundingDataInit() {
             rate: 64,
             goalAmount: 8000000,
             timeLeft: 21,
-            imgPath: "/images/fundingpage/funding1.jpg"
+            imgPath: "/images/fundingpage/funding1.jpg",
+            bankers: 20,
+            hearts: 99
         },
         {
             id: 2,

@@ -33,7 +33,7 @@ import FindPw from './loginpage/FindPw';
 import AccountInit from './data/AccountInit';
 import SearchResultPage from "./pages/SearchResultPage";
 import FundingCreate from "./fundingpage/FundingRegister";
-import FundingSupport from "./fundingpage/FundingSupport";
+import FundingSupport from "./fundingpage/FundingDetail";
 
 function App() {
 
