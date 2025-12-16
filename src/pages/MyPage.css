@@ -1,0 +1,174 @@
+/* ===== 공통 초기화 ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #f5f6f4;
+    color: #222;
+}
+
+/* ===== Header ===== */
+header {
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #09947d;
+}
+
+.menu a {
+    margin-left: 24px;
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+}
+
+.menu a.active {
+    color: #09947d;
+    font-weight: 700;
+}
+
+/* ===== 마이페이지 전체 컨테이너 ===== */
+.mypage-container {
+    max-width: 1100px;
+    margin: 30px auto 80px;
+    padding: 0 20px;
+}
+
+.mypage-container h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* ===== 프로필 박스 ===== */
+.profile-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.profile-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.profile-left h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.profile-left p {
+    font-size: 14px;
+    color: #777;
+}
+
+.edit-btn {
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* ===== 탭 버튼 ===== */
+.mypage-tabs {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.mypage-tab {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #4caf50;
+    background: #fff;
+    color: #4caf50;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.mypage-tab.active {
+    background: #4caf50;
+    color: #fff;
+}
+
+/* ===== 섹션 카드 ===== */
+.mypage-section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.mypage-section h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+/* ===== 후원 / 프로젝트 카드 ===== */
+.support-card {
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+.support-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.support-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.detail-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* ===== 알림 ===== */
+.alert-box {
+    background: #e9f7ea;
+    border-left: 4px solid #4caf50;
+    padding: 12px 14px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* ===== 로그아웃 ===== */
+.logout-btn {
+    background: #e53935;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
