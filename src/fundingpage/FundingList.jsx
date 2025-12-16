@@ -55,6 +55,8 @@ function FundingList() {
                             <h4>홈</h4>
                             <div className="funding-mega-items">
                                 <p>전체목록</p>
+                                <p>인기순</p>
+                                <p>최신순</p>
                             </div>
                         </div>
 
@@ -98,6 +100,7 @@ function FundingList() {
                     </div>
                 </div>
             </nav>
+            {/* 펀딩 공통 메뉴바 */}
 
             <section className="funding-filter-container">
                 <div className="funding-filter">
