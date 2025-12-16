@@ -1,23 +1,25 @@
 import { useNavigate } from 'react-router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 function FindId() {
+    const loginSubmitButton = document.getElementById('login-submit-button')
+    const idinputtext = document.getElementById('id')
+    const pwinputtext = document.getElementById('pw')
     let [idFocus1, setIdFocus1] = useState(false);
     let [pwFocus1, setPwFocus1] = useState(false);
     let [idFocus2, setIdFocus2] = useState(false);
     let [pwFocus2, setPwFocus2] = useState(false);
     let [idinput, setIdInput] = useState('');
     let [pwinput, setPwInput] = useState('');
-    let loginSubmitButton = document.getElementById('login-submit-button')
     let [modalFlag1, setModalFlag1] = useState(false);
     let [modalFlag2, setModalFlag2] = useState(false);
     let [modalFlag3, setModalFlag3] = useState(false);
     let navigate = useNavigate();
 
-
     return (
         <div>
+
             <div className='find-form-container'>
                 <form onSubmit={(event) => {
                     event.preventDefault();
@@ -42,7 +44,7 @@ function FindId() {
                                 if (idinput.trim() == '') {
                                     setIdFocus2(false)
                                 }
-                                loginSubmitButton.focus();
+                                pwinputtext.focus()
                             }} onChange={(event) => {
                                 setIdInput(event.target.value);
                                 if (idinput.trim() != '' && pwinput.trim() != '') {
@@ -76,7 +78,7 @@ function FindId() {
                     {modalFlag3 && <div style={{ color: 'green', fontSize: '14px', marginTop: '20px' }}>입력하신 메일로 아이디를 보냈습니다. 메일을 확인해주세요</div>}
                     <div>
                         <button type='submit' id='login-submit-button' className='login-submit-button off'>
-                            <span className='login-button-text'>로그인</span>
+                            <span className='login-button-text'>아이디 찾기</span>
                         </button>
                     </div>
                 </form>

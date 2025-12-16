@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 function FindPw() {
+    const loginSubmitButton = document.getElementById('login-submit-button')
+    const idinputtext = document.getElementById('id')
+    const nameinputtext = document.getElementById('name');
+    const pwinputtext= document.getElementById('pw')
     let [idFocus1, setIdFocus1] = useState(false);
     let [pwFocus1, setPwFocus1] = useState(false);
     let [nameFocus1, setNameFocus1] = useState(false);
@@ -10,7 +14,6 @@ function FindPw() {
     let [idinput, setIdInput] = useState('');
     let [pwinput, setPwInput] = useState('');
     let [nameinput, setNameInput] = useState('');
-    let loginSubmitButton = document.getElementById('login-submit-button')
     let [modalFlag1, setModalFlag1] = useState(false);
     let [modalFlag2, setModalFlag2] = useState(false);
     let [modalFlag3, setModalFlag3] = useState(false);
@@ -51,7 +54,7 @@ function FindPw() {
                                 if (idinput.trim() == '') {
                                     setIdFocus2(false)
                                 }
-                                loginSubmitButton.focus();
+                                nameinputtext.focus()
                             }} onChange={(event) => {
                                 setIdInput(event.target.value);
                                 if (idinput.trim() != '' && pwinput.trim() != '' && nameinput.trim() == '') {
@@ -69,7 +72,7 @@ function FindPw() {
                                 if (nameinput.trim() == '') {
                                     setNameFocus2(false)
                                 }
-                                loginSubmitButton.focus();
+                                pwinputtext.focus()
                             }} onChange={(event) => {
                                 setNameInput(event.target.value);
                                 if (idinput.trim() != '' && pwinput.trim() != '' && nameinput.trim() == '') {
