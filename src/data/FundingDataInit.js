@@ -10,7 +10,8 @@ function FundingDataInit() {
             rate: 64,
             goalAmount: 8000000,
             timeLeft: 21,
-            imgPath: "/images/fundingpage/funding1.jpg"
+            imgPath: "/images/fundingpage/funding1.jpg",
+            author: "안송이"
         },
         {
             id: 2,
@@ -21,7 +22,8 @@ function FundingDataInit() {
             rate: 74,
             goalAmount: 15000000,
             timeLeft: 18,
-            imgPath: "/images/fundingpage/funding2.jpg"
+            imgPath: "/images/fundingpage/funding2.jpg",
+            author: "안송이"
         },
         {
             id: 3,
@@ -32,7 +34,8 @@ function FundingDataInit() {
             rate: 38,
             goalAmount: 5000000,
             timeLeft: 25,
-            imgPath: "/images/fundingpage/funding3.jpg"
+            imgPath: "/images/fundingpage/funding3.jpg",
+            author: "안송이"
         },
         {
             id: 4,
@@ -43,7 +46,8 @@ function FundingDataInit() {
             rate: 52,
             goalAmount: 4500000,
             timeLeft: 20,
-            imgPath: "/images/fundingpage/funding4.jpg"
+            imgPath: "/images/fundingpage/funding4.jpg",
+            author: "김응석"
         },
         {
             id: 5,
@@ -54,7 +58,8 @@ function FundingDataInit() {
             rate: 20,
             goalAmount: 3500000,
             timeLeft: 22,
-            imgPath: "/images/fundingpage/funding5.jpg"
+            imgPath: "/images/fundingpage/funding5.jpg",
+            author: "김응석"
         },
         {
             id: 6,
@@ -65,7 +70,8 @@ function FundingDataInit() {
             rate: 100,
             goalAmount: 12000000,
             timeLeft: 11,
-            imgPath: "/images/fundingpage/funding6.jpg"
+            imgPath: "/images/fundingpage/funding6.jpg",
+            author: "김응석"
         },
         {
             id: 7,
@@ -76,7 +82,8 @@ function FundingDataInit() {
             rate: 46,
             goalAmount: 9000000,
             timeLeft: 19,
-            imgPath: "/images/fundingpage/funding7.jpg"
+            imgPath: "/images/fundingpage/funding7.jpg",
+            author: "김응석"
         },
         {
             id: 8,
@@ -87,7 +94,8 @@ function FundingDataInit() {
             rate: 100,
             goalAmount: 7000000,
             timeLeft: 4,
-            imgPath: "/images/fundingpage/funding8.jpg"
+            imgPath: "/images/fundingpage/funding8.jpg",
+            author: "김응석"
         },
         {
             id: 9,
@@ -98,7 +106,8 @@ function FundingDataInit() {
             rate: 58,
             goalAmount: 10000000,
             timeLeft: 17,
-            imgPath: "/images/fundingpage/funding9.jpg"
+            imgPath: "/images/fundingpage/funding9.jpg",
+            author: "김응석"
         },
         {
             id: 10,
@@ -109,7 +118,8 @@ function FundingDataInit() {
             rate: 100,
             goalAmount: 25000000,
             timeLeft: 3,
-            imgPath: "/images/fundingpage/funding10.jpg"
+            imgPath: "/images/fundingpage/funding10.jpg",
+            author: "김응석"
         },
 
         {
@@ -121,7 +131,8 @@ function FundingDataInit() {
             rate: 77,
             goalAmount: 18000000,
             timeLeft: 26,
-            imgPath: "/images/fundingpage/funding11.jpg"
+            imgPath: "/images/fundingpage/funding11.jpg",
+            author: "백종진"
         },
         {
             id: 12,
@@ -132,7 +143,8 @@ function FundingDataInit() {
             rate: 45,
             goalAmount: 9000000,
             timeLeft: 15,
-            imgPath: "/images/fundingpage/funding12.jpg"
+            imgPath: "/images/fundingpage/funding12.jpg",
+            author: "백종진"
         },
         {
             id: 13,
@@ -143,7 +155,8 @@ function FundingDataInit() {
             rate: 68,
             goalAmount: 8000000,
             timeLeft: 20,
-            imgPath: "/images/fundingpage/funding13.jpg"
+            imgPath: "/images/fundingpage/funding13.jpg",
+            author: "백종진"
         },
         {
             id: 14,
@@ -154,7 +167,8 @@ function FundingDataInit() {
             rate: 42,
             goalAmount: 7000000,
             timeLeft: 22,
-            imgPath: "/images/fundingpage/funding14.jpg"
+            imgPath: "/images/fundingpage/funding14.jpg",
+            author: "백종진"
         },
         {
             id: 15,
@@ -165,7 +179,8 @@ function FundingDataInit() {
             rate: 65,
             goalAmount: 12000000,
             timeLeft: 25,
-            imgPath: "/images/fundingpage/funding15.jpg"
+            imgPath: "/images/fundingpage/funding15.jpg",
+            author: "백종진"
         },
         {
             id: 16,
@@ -176,7 +191,8 @@ function FundingDataInit() {
             rate: 38,
             goalAmount: 15000000,
             timeLeft: 20,
-            imgPath: "/images/fundingpage/funding16.jpg"
+            imgPath: "/images/fundingpage/funding16.jpg",
+            author: "백종진"
         },
         {
             id: 17,
@@ -187,7 +203,8 @@ function FundingDataInit() {
             rate: 72,
             goalAmount: 8000000,
             timeLeft: 15,
-            imgPath: "/images/fundingpage/funding17.jpg"
+            imgPath: "/images/fundingpage/funding17.jpg",
+            author: "백종진"
         },
         {
             id: 18,
@@ -198,7 +215,8 @@ function FundingDataInit() {
             rate: 50,
             goalAmount: 6000000,
             timeLeft: 19,
-            imgPath: "/images/fundingpage/funding18.jpg"
+            imgPath: "/images/fundingpage/funding18.jpg",
+            author: "백종진"
         },
         {
             id: 19,
@@ -209,7 +227,8 @@ function FundingDataInit() {
             rate: 100,
             goalAmount: 5000000,
             timeLeft: 5,
-            imgPath: "/images/fundingpage/funding19.jpg"
+            imgPath: "/images/fundingpage/funding19.jpg",
+            author: "백종진"
         },
         {
             id: 20,
@@ -220,7 +239,8 @@ function FundingDataInit() {
             rate: 47,
             goalAmount: 9500000,
             timeLeft: 21,
-            imgPath: "/images/fundingpage/funding20.jpg"
+            imgPath: "/images/fundingpage/funding20.jpg",
+            author: "김응석"
         },
         {
             id: 21,
@@ -231,7 +251,8 @@ function FundingDataInit() {
             rate: 33,
             goalAmount: 3500000,
             timeLeft: 24,
-            imgPath: "/images/fundingpage/funding18.jpg"
+            imgPath: "/images/fundingpage/funding18.jpg",
+            author: "김응석"
         },
         {
             id: 22,
@@ -242,7 +263,9 @@ function FundingDataInit() {
             rate: 78,
             goalAmount: 12000000,
             timeLeft: 16,
-            imgPath: "/images/fundingpage/funding2.jpg"
+            imgPath: "/images/fundingpage/funding2.jpg",
+            author: "김응석"
+
         },
         {
             id: 23,
@@ -253,7 +276,9 @@ function FundingDataInit() {
             rate: 59,
             goalAmount: 10000000,
             timeLeft: 18,
-            imgPath: "/images/fundingpage/funding3.jpg"
+            imgPath: "/images/fundingpage/funding3.jpg",
+            author: "김응석"
+
         },
         {
             id: 24,
@@ -264,7 +289,9 @@ function FundingDataInit() {
             rate: 92,
             goalAmount: 25000000,
             timeLeft: 30,
-            imgPath: "/images/fundingpage/funding4.jpg"
+            imgPath: "/images/fundingpage/funding4.jpg",
+            author: "김응석"
+
         },
         {
             id: 25,
@@ -275,7 +302,9 @@ function FundingDataInit() {
             rate: 40,
             goalAmount: 8000000,
             timeLeft: 22,
-            imgPath: "/images/fundingpage/funding5.jpg"
+            imgPath: "/images/fundingpage/funding5.jpg",
+            author: "안송이"
+
         },
         {
             id: 26,
@@ -286,7 +315,8 @@ function FundingDataInit() {
             rate: 61,
             goalAmount: 6000000,
             timeLeft: 20,
-            imgPath: "/images/fundingpage/funding6.jpg"
+            imgPath: "/images/fundingpage/funding6.jpg",
+            author: "안송이"
         },
         {
             id: 27,
@@ -297,7 +327,8 @@ function FundingDataInit() {
             rate: 55,
             goalAmount: 7500000,
             timeLeft: 17,
-            imgPath: "/images/fundingpage/funding7.jpg"
+            imgPath: "/images/fundingpage/funding7.jpg",
+            author: "안송이"
         },
         {
             id: 28,
@@ -308,7 +339,8 @@ function FundingDataInit() {
             rate: 70,
             goalAmount: 5000000,
             timeLeft: 23,
-            imgPath: "/images/fundingpage/funding8.jpg"
+            imgPath: "/images/fundingpage/funding8.jpg",
+            author: "안송이"
         },
         {
             id: 29,
@@ -319,7 +351,8 @@ function FundingDataInit() {
             rate: 48,
             goalAmount: 8000000,
             timeLeft: 19,
-            imgPath: "/images/fundingpage/funding9.jpg"
+            imgPath: "/images/fundingpage/funding9.jpg",
+            author: "안송이"
         },
         {
             id: 30,
@@ -330,7 +363,8 @@ function FundingDataInit() {
             rate: 63,
             goalAmount: 12000000,
             timeLeft: 21,
-            imgPath: "/images/fundingpage/funding10.jpg"
+            imgPath: "/images/fundingpage/funding10.jpg",
+            author: "안송이"
         },
         {
             id: 31,
@@ -341,7 +375,8 @@ function FundingDataInit() {
             rate: 49,
             goalAmount: 7000000,
             timeLeft: 18,
-            imgPath: "/images/fundingpage/funding11.jpg"
+            imgPath: "/images/fundingpage/funding11.jpg",
+            author: "안송이"
         },
         {
             id: 32,
@@ -352,7 +387,8 @@ function FundingDataInit() {
             rate: 68,
             goalAmount: 9000000,
             timeLeft: 20,
-            imgPath: "/images/fundingpage/funding12.jpg"
+            imgPath: "/images/fundingpage/funding12.jpg",
+            author: "안송이"
         },
         {
             id: 33,
@@ -363,7 +399,8 @@ function FundingDataInit() {
             rate: 52,
             goalAmount: 7500000,
             timeLeft: 17,
-            imgPath: "/images/fundingpage/funding13.jpg"
+            imgPath: "/images/fundingpage/funding13.jpg",
+            author: "안송이"
         },
         {
             id: 34,
@@ -374,7 +411,8 @@ function FundingDataInit() {
             rate: 58,
             goalAmount: 8500000,
             timeLeft: 19,
-            imgPath: "/images/fundingpage/funding14.jpg"
+            imgPath: "/images/fundingpage/funding14.jpg",
+            author: "안송이"
         },
         {
             id: 35,
@@ -385,7 +423,8 @@ function FundingDataInit() {
             rate: 44,
             goalAmount: 5000000,
             timeLeft: 21,
-            imgPath: "/images/fundingpage/funding15.jpg"
+            imgPath: "/images/fundingpage/funding15.jpg",
+            author: "안송이"
         },
         {
             id: 36,
@@ -396,7 +435,8 @@ function FundingDataInit() {
             rate: 63,
             goalAmount: 9500000,
             timeLeft: 22,
-            imgPath: "/images/fundingpage/funding16.jpg"
+            imgPath: "/images/fundingpage/funding16.jpg",
+            author: "백종진"
         },
         {
             id: 37,
@@ -407,7 +447,8 @@ function FundingDataInit() {
             rate: 50,
             goalAmount: 7000000,
             timeLeft: 20,
-            imgPath: "/images/fundingpage/funding17.jpg"
+            imgPath: "/images/fundingpage/funding17.jpg",
+            author: "백종진"
         },
         {
             id: 38,
@@ -418,7 +459,8 @@ function FundingDataInit() {
             rate: 55,
             goalAmount: 6500000,
             timeLeft: 18,
-            imgPath: "/images/fundingpage/funding18.jpg"
+            imgPath: "/images/fundingpage/funding18.jpg",
+            author: "백종진"
         },
         {
             id: 39,
@@ -429,7 +471,8 @@ function FundingDataInit() {
             rate: 72,
             goalAmount: 8000000,
             timeLeft: 21,
-            imgPath: "/images/fundingpage/funding19.jpg"
+            imgPath: "/images/fundingpage/funding19.jpg",
+            author: "백종진"
         },
         {
             id: 40,
@@ -440,7 +483,8 @@ function FundingDataInit() {
             rate: 60,
             goalAmount: 12000000,
             timeLeft: 19,
-            imgPath: "/images/fundingpage/funding20.jpg"
+            imgPath: "/images/fundingpage/funding20.jpg",
+            author: "백종진"
         },
         {
             id: 41,
@@ -451,7 +495,8 @@ function FundingDataInit() {
             rate: 53,
             goalAmount: 7500000,
             timeLeft: 18,
-            imgPath: "/images/fundingpage/funding1.jpg"
+            imgPath: "/images/fundingpage/funding1.jpg",
+            author: "백종진"
         },
         {
             id: 42,
@@ -462,7 +507,8 @@ function FundingDataInit() {
             rate: 45,
             goalAmount: 6000000,
             timeLeft: 20,
-            imgPath: "/images/fundingpage/funding2.jpg"
+            imgPath: "/images/fundingpage/funding2.jpg",
+            author: "백종진"
         },
         {
             id: 43,
@@ -473,7 +519,8 @@ function FundingDataInit() {
             rate: 67,
             goalAmount: 9500000,
             timeLeft: 22,
-            imgPath: "/images/fundingpage/funding3.jpg"
+            imgPath: "/images/fundingpage/funding3.jpg",
+            author: "백종진"
         },
         {
             id: 44,
@@ -484,7 +531,8 @@ function FundingDataInit() {
             rate: 58,
             goalAmount: 7000000,
             timeLeft: 19,
-            imgPath: "/images/fundingpage/funding4.jpg"
+            imgPath: "/images/fundingpage/funding4.jpg",
+            author: "백종진"
         },
         {
             id: 45,
@@ -495,7 +543,8 @@ function FundingDataInit() {
             rate: 62,
             goalAmount: 8000000,
             timeLeft: 18,
-            imgPath: "/images/fundingpage/funding5.jpg"
+            imgPath: "/images/fundingpage/funding5.jpg",
+            author: "백종진"
         }
     ];
 
