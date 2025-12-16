@@ -1,7 +1,7 @@
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 
-function FundingBox({ item, getCurrentAmount, getGoalAmount }) {
+function FundingBox({ item}) {
     return (
         <div
 
@@ -29,11 +29,11 @@ function FundingBox({ item, getCurrentAmount, getGoalAmount }) {
                 <div className="funding-rate-container">
                     <div className="funding-rate-column">
                         <span className="funding-rate-text">현재금액</span>
-                        <span className="funding-rate-amount">{getCurrentAmount(item).toLocaleString()}만원</span>
+                        <span className="funding-rate-amount">{item.goalAmount * item.rate / 1000000}만원</span>
                     </div>
                     <div className="funding-rate-column">
                         <span className="funding-rate-text">목표금액</span>
-                        <span className="funding-rate-amount">{getGoalAmount(item).toLocaleString()}만원</span>
+                        <span className="funding-rate-amount">{item.goalAmount / 10000}만원</span>
                     </div>
                     <div className="funding-rate-column">
                         <span className="funding-rate-text">남은기간</span>

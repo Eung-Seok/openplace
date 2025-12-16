@@ -129,8 +129,6 @@ function FundingList() {
                             <FundingBox
                                 key={item.id}
                                 item={item}
-                                getCurrentAmount={getCurrentAmount}
-                                getGoalAmount={getGoalAmount}
                             />
                         );
                     })}
