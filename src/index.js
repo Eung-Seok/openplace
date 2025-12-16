@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router';
 import DataInit from './data/DataInit';
 import AccountInit from './data/AccountInit';
+import FundingDataInit from './data/FundingDataInit';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +14,7 @@ root.render(
     <BrowserRouter>
       <DataInit />
       <AccountInit/>
+      <FundingDataInit/>
       <App />
     </BrowserRouter>
   </React.StrictMode>
