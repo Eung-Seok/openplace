@@ -1,13 +1,18 @@
 import { FaMapMarkerAlt } from "react-icons/fa";
-
+import { useNavigate } from "react-router-dom";
 
 function FundingBox({ item, getCurrentAmount, getGoalAmount }) {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate("/funding/support", { state: { item } });
+    };
+
     return (
         <div
-
             key={item.id}
             className="funding-funding-card"
-            onClick={() => (window.location.href = `/funding/${item.id}`)}
+            onClick={handleClick}
         >
             <img src={item.imgPath} alt={item.title} className="funding-detail-img" />
             <h3 className="funding-title">{item.title}</h3>

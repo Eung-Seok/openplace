@@ -9,7 +9,12 @@
 }
 
 .funding-menu {
-    background-color: #eeeeee;
+    /* background-color: #eeeeee; */
+    /* background-color: #eff5f4; */
+    /* background-color: #f2faf9; */
+    background-color: #fff;
+    /* box-shadow: 0 2px 4px rgba(0,0,0,0.05); */
+    /* box-shadow: 0 -4px 8px rgba(0,0,0,0.1); */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,6 +26,7 @@
     padding: 18px 50px;
     /* border: 1px solid #a7a7a7; */
     border-bottom: none;
+    /* border-bottom: 1px solid beige; */
     position: relative;
     justify-content: center;
 }
@@ -346,7 +352,7 @@
 
 .funding-funding-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 50px;
     /* border: 1px solid #a7a7a7; */
@@ -554,4 +560,234 @@
     color: #09947d;
     margin-top: 5px;
     height: 20px;
+}
+
+/* 펀딩 서포트 css 부분 */
+
+.funding-container-support {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px;
+    /* border: 1px solid #a7a7a7; */
+    border-top: none;
+    background: #ffffff;
+}
+
+.funding-container-support {
+    text-align: center;
+}
+
+.funding-support-img {
+    display: block;
+    /* margin: 0 auto 30px auto; */
+    width: 666px;
+    height: 488px;
+    border-radius: 10px;
+}
+
+/* .funding-support-container {
+    text-align: center;
+} */
+
+/* .funding-support-img {
+    width: 100%;
+    max-width: 777px;
+    margin-left: 333px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    display: block;
+} */
+
+.funding-support-explain {
+    text-align: center;
+}
+
+.funding-support-explain h2 {
+    font-size: 44px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.funding-support-explain .funding-icon {
+    margin-bottom: 20px;
+}
+
+/* 펀딩 서포트 이미지 가로길이 설정 위치 */
+.funding-support-header {
+    width: 1100px;
+    margin-bottom: 77px;
+    display: flex;
+    align-items: center;
+    gap: -10px;
+    justify-content: center;
+}
+
+/* 펀딩 서포트 텍스트 가로길이 설정 위치 */
+.funding-explan-text {
+    /* font-size: 25px; */
+    width: 100px;
+    /* width: max-content; */
+    /* height: 550px; */
+    display: block;
+    margin-left: 50px;
+    margin-right: 250px;
+}
+
+.funding-p-row {
+    width: 300px;
+    display: flex;
+    /* 가로로 나열 */
+    gap: 0px;
+    /* 두 p 사이 간격 */
+    align-items: center;
+    /* 수직 가운데 정렬 */
+}
+
+.funding-p-row2 {
+    width: 300px;
+    display: flex;
+    /* 가로로 나열 */
+    gap: 18px;
+    /* 두 p 사이 간격 */
+    align-items: center;
+    /* 수직 가운데 정렬 */
+}
+
+.funding-support-su {
+    margin-top: -20px;
+    font-size: 50px;
+    width: 55px;
+    /* margin-left: 15px; */
+    /* height: 60px; */
+    /* color: #09947d; */
+}
+
+.funding-support-su2 {
+    margin-top: -18px;
+    font-size: 50px;
+    width: 200px;
+    /* height: 60px; */
+    /* color: #09947d; */
+}
+
+
+.funding-support-normal-text {
+    /* display: block; */
+    font-size: 20px;
+    margin-top: -10px;
+    margin-bottom: 5px;
+    width: 80px;
+    margin-left: -11px;
+    margin-right: 33px;
+}
+
+/* 펀딩 금액 부분 */
+
+.funding-support-amount-current {
+    font-size: 60px;
+    width: max-content;
+    color: #09947d;
+    font-weight: 777;
+}
+
+.funding-support-amount-current span {
+    color: #252525;
+    font-size: 50px;
+    font-weight: 444;
+}
+
+.funding-support-amount {
+    width: max-content;
+    font-size: 20px;
+    margin-top: -10px;
+}
+
+/* 펀딩 서포트 게이지 부분 */
+
+.funding-support-gauge-container {
+    width: 477px;
+}
+
+.funding-support-top {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.funding-support-current {
+    display: inline-block;
+    margin-left: 1px;
+    font-size: 22px;
+    font-weight: 555;
+}
+
+.funding-support-left {
+    display: inline-block;
+    margin-right: 1px;
+    font-size: 22px;
+    font-weight: 555;
+}
+
+.funding-support-bar {
+    position: relative;
+    background: #c0c0c0;
+    height: 40px;
+    border-radius: 50px;
+    margin-top: 6px;
+    overflow: hidden;
+}
+
+.funding-support-bar span {
+    display: block;
+    height: 100%;
+    background: #4e84ce;
+    width: 0;
+    border-radius: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* 펀딩 서포트 후원버튼 */
+
+.funding-support-button {
+    margin-top: 40px;
+}
+
+.funding-support-button button {
+    color: #252525;
+    background-color: #09947d;
+    border-radius: 5px;
+    width: 477px;
+    height: 60px;
+    border: 1px solid #ffffff;
+    font-size: 28px;
+}
+
+/* 펀딩 프로젝트 후원 설명 */
+
+.funding-project-explan {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 777;
+    text-align: left;
+}
+
+/* 펀딩 서포트 푸터 부분 */
+
+.funding-support-footer {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.funding-support-subtitle {
+    text-align: left;
+    font-size: 25px;
+    width: 777px;
+    position: relative;
+    left: 20px;
 }
