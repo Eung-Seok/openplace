@@ -33,6 +33,7 @@ import FindPw from './loginpage/FindPw';
 import AccountInit from './data/AccountInit';
 import SearchResultPage from "./pages/SearchResultPage";
 import FundingCreate from "./fundingpage/FundingRegister";
+import FundingSupport from "./fundingpage/FundingSupport";
 
 function App() {
 
@@ -62,6 +63,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/funding" element={<FundingList/>} />
           <Route path="/funding/create" element={<FundingCreate />} />
+          <Route path="/funding/support" element={<FundingSupport />} />
 
         </Routes>
           <Footer/>
