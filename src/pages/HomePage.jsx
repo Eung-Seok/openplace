@@ -7,7 +7,6 @@ import "./HomePage.css";
 function HomePage() {
     return (
         <>
-            <Header />
             <Hero />
             <div className="home-container">
                 <FundingSection />
