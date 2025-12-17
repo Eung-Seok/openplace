@@ -1,4 +1,7 @@
-
+/* 공통 메뉴 부분 */
+* {
+    font-family: "Poppins", sans-serif;
+}
 
 .funding-bg-color {
     background-color: #ffffff;
@@ -15,11 +18,6 @@
     margin: 0 auto;
     font-size: 45px;
     margin-left: 0;
-}
-
-/* 공통 메뉴 부분 */
-* {
-    font-family: "Poppins", sans-serif;
 }
 
 .funding-tabs {
