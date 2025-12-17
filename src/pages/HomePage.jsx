@@ -1,17 +1,18 @@
 import Hero from "../components/Hero";
 import FundingSection from "../components/FundingSection";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import CommunitySection from "../components/CommunitySection";
+import "./HomePage.css";
 
 function HomePage() {
     return (
         <>
-            <header />
+            <Header />
             <Hero />
-            <FundingSection />
-            <CommunitySection />
-
+            <div className="home-container">
+                <FundingSection />
+                <CommunitySection />
+            </div>
         </>
     );
 }
