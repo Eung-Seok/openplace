@@ -19,7 +19,7 @@ function FundingDetail() {
     })
 
     const [liked, setLiked] = useState(false);
-    const [count, setCount] = useState(data.hearts || 0);
+    const [count, setCount] = useState(data.hearts);
 
 
     const handleClick = () => {
@@ -53,7 +53,7 @@ function FundingDetail() {
                                 <p className="funding-support-normal-text">좋아요</p>
                             </div>
                             <div className="funding-p-row">
-                                <p className="funding-support-su">{data.bankers || 0}</p>
+                                <p className="funding-support-su">{data.bankers}</p>
                                 {/* <p className="funding-support-su2">
                                     <span onClick={() => {
 
