@@ -1,0 +1,116 @@
+.mypage-wrap {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.mypage-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* 프로필 */
+.mypage-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.mypage-profile-info strong {
+    font-size: 16px;
+}
+
+.mypage-profile-info p {
+    font-size: 13px;
+    color: #666;
+}
+
+.mypage-edit-btn {
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 탭 */
+.mypage-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.mypage-tab-btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #4caf50;
+    background: #fff;
+    color: #4caf50;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.mypage-tab-btn.active {
+    background: #4caf50;
+    color: #fff;
+}
+
+/* 콘텐츠 */
+.mypage-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.mypage-card {
+    border-bottom: 1px solid #eee;
+    padding: 16px 0;
+}
+
+.mypage-card:last-child {
+    border-bottom: none;
+}
+
+.mypage-card-title {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.mypage-card-desc {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.mypage-card-info {
+    font-size: 13px;
+    color: #777;
+}
+
+/* 버튼 */
+.mypage-link-btn {
+    margin-top: 6px;
+    background: none;
+    border: none;
+    color: #4caf50;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* 빈 상태 */
+.mypage-empty-text {
+    font-size: 14px;
+    color: #888;
+}
+.mypage-card-clickable {
+    cursor: pointer;
+}
+
+.mypage-card-clickable:hover {
+    background-color: #f5f7f6;
+}
