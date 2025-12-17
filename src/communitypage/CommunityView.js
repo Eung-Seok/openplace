@@ -7,6 +7,9 @@ import { useEffect } from 'react';
 
 function CommunityView() {
     let { id } = useParams();
+    let [showComment, setShowComment] = useState(true)
+    let nowLogin = JSON.parse(localStorage.getItem('로그인현황'))
+    let loginInfo = JSON.parse(localStorage.getItem('계정정보'))
     let totalData = JSON.parse(localStorage.getItem('통합데이터'))
     let data = totalData.find((item) => {
         return item.id == id;
@@ -14,7 +17,7 @@ function CommunityView() {
     let navigate = useNavigate();
     let [modalLike, setModalLike] = useState(false);
     let [comment, setComment] = useState('');
-    useEffect(()=>Patch, [comment])
+    useEffect(() => Patch, [comment])
 
     return (
         <div className="post-view-container">
@@ -52,7 +55,7 @@ function CommunityView() {
 
                     <div className="post-meta-row">
                         <div className="author-info">
-                            <span className="author-name">라인050</span>
+                            <span className="author-name">{data.author}</span>
                         </div>
                         <div className="post-stats">
                             <span className="date-time">{(data.uploadDate)}</span>
@@ -78,8 +81,10 @@ function CommunityView() {
                                 localStorage.setItem('통합데이터', JSON.stringify(totalData))
                             }
                             setModalLike(!modalLike)
-                        }}>{modalLike ? '❤ 좋아요' : '🤍 좋아요'}{modalLike ? data.likes : data.likes}</span>
-                        <span className="comment-btn">💬 댓글 {Object.keys(totalData[data.id - 1].comment).length}</span>
+                        }}>{modalLike ? '💗 좋아요' : '🤍 좋아요'}{modalLike ? data.likes : data.likes}</span>
+                        <span className="comment-btn" onClick={() => {
+                            setShowComment(!showComment)
+                        }}>💬 댓글 {Object.keys(totalData[data.id - 1].comment).length}</span>
                     </div>
                     <div className="share-report">
                         <span>공유</span>
@@ -89,40 +94,43 @@ function CommunityView() {
                 </div>
             </div> {/* .main-post-area 끝 */}
 
-            <div className='comment'>
-                {data.comment.map((item) => {
-                    return <Comment item={item} />
-                })}
-            </div>
-
-
-
-            {/* 7. 댓글 입력 필드 */}
-            <div className="comment-input-area">
-                <form onSubmit={(event) => {
-                    event.preventDefault();
-                    if (event.target.content.value.trim() != '') {
-                        let today = new Date()
-                        let now = today.getFullYear() + '.' + (today.getMonth() + 1) + '.' + today.getDay() + '. ' + today.getHours() + ':' + today.getMinutes();
-                        totalData[Number(id) - 1].comment.unshift(['게임진행중', now, comment])
-                        setComment('')
-                        localStorage.setItem('통합데이터', JSON.stringify(totalData))
+            <div className={(showComment ? '' : 'community-comment-hide')}>
+                <div className='comment'>
+                    {data.comment.map((item) => {
+                        return <Comment item={item} />
+                    })}
+                </div>
+                {/* 7. 댓글 입력 필드 */}
+                <div className="comment-input-area" onClick={() => {
+                    if (!nowLogin) {
+                        navigate('/login')
                     }
                 }}>
-                    <div className="input-header-status">게임진행중</div>
-                    <textarea placeholder="댓글을 남겨보세요" name='content' value={comment} onChange={(event)=>{
-                        setComment(event.target.value);
-                    }}></textarea>
-                    <div className="input-footer">
-                        <div></div>
-                        <button
-                            type="submit"
-                            className='comment-submit'
-                        >
-                            등록
-                        </button>
-                    </div>
-                </form>
+                    <form onSubmit={(event) => {
+                        event.preventDefault();
+                        if (event.target.content.value.trim() != '') {
+                            let today = new Date()
+                            let now = today.getFullYear() + '.' + (today.getMonth() + 1) + '.' + today.getDay() + '. ' + today.getHours() + ':' + today.getMinutes();
+                            totalData[Number(id) - 1].comment.unshift([loginInfo.name, now, comment])
+                            setComment('')
+                            localStorage.setItem('통합데이터', JSON.stringify(totalData))
+                        }
+                    }}>
+                        <div className="input-header-status">{loginInfo.name}</div>
+                        <textarea placeholder={(nowLogin ? "댓글을 남겨보세요" : "댓글을 남기시려면 로그인을 해주세요")} name='content' value={comment} onChange={(event) => {
+                            setComment(event.target.value);
+                        }}></textarea>
+                        <div className={"input-footer " + (nowLogin ? '' : 'input-hide')}>
+                            <div></div>
+                            <button
+                                type="submit"
+                                className='comment-submit'
+                            >
+                                등록
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     );

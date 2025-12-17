@@ -53,10 +53,18 @@ function DataInit(){
     reviewList = dataList.filter((item) =>{
         return item.category == '프로젝트 후기'
     })
-    localStorage.setItem('통합데이터', JSON.stringify(dataList))
-    localStorage.setItem('자유게시판', JSON.stringify(generalList))
-    localStorage.setItem('지역 제보', JSON.stringify(reportList))
-    localStorage.setItem('프로젝트 후기', JSON.stringify(reviewList))
+    if(localStorage.getItem('통합데이터') == null){
+        localStorage.setItem('통합데이터', JSON.stringify(dataList))
+    }
+    if(localStorage.getItem('자유게시판') ==null){
+        localStorage.setItem('자유게시판', JSON.stringify(generalList))
+    }
+    if(localStorage.getItem('지역 제보') ==null){
+        localStorage.setItem('지역 제보', JSON.stringify(reportList))
+    }
+    if(localStorage.getItem('프로젝트 후기') ==null){
+        localStorage.setItem('프로젝트 후기', JSON.stringify(reviewList))
+    }
 }
 
 export default DataInit

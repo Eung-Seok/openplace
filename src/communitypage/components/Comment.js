@@ -19,9 +19,9 @@ function Comment({ item }) {
                     <span className="comment-timestamp">
                         {item[1]}
                     </span>
-                    <span style={{ padding: '10px' }} className='likeButton' onClick={() => {
+                    <span style={{ padding: '10px' }} className='likeButton ' onClick={() => {
                         setModalLike(!modalLike)
-                    }}>{modalLike ? '❤' : '🤍'}</span>
+                    }}>{modalLike ? '💗': '🤍'}</span>
                 </div>
             </div>
         </div>

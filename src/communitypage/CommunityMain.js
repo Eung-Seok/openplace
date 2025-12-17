@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import Patch from "./components/Patch";
 
 function CommunityMain() {
+    let nowLogin = JSON.parse(localStorage.getItem('로그인현황'))
     let navigate = useNavigate();
     let { page } = useParams();
     let List = JSON.parse(localStorage.getItem('통합데이터'));
@@ -42,7 +43,13 @@ function CommunityMain() {
             </div>
 
             <div>
-                <Button style={{ float: 'right', clear: 'both', marginBottom: '16px' }} variant="success" onClick={() => navigate('/community/write')}>글쓰기</Button>
+                <Button style={{ float: 'right', clear: 'both', marginBottom: '16px' }} variant="success" onClick={() => {
+                    if(nowLogin){
+                        navigate('/community/write')
+                    }else{
+                        navigate('/login')
+                    }
+                    }}>글쓰기</Button>
             </div>
             <div style={{ clear: 'both' }}>
                 {data.map((item, index) => (
