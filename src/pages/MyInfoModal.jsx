@@ -4,8 +4,11 @@ function MyInfoModal({ user, onClose }) {
     if (!user) return null;
 
     return (
-        <div className="modal-overlay">
-            <div className="modal-box">
+        <div className="modal-overlay" onClick={onClose}>
+            <div
+                className="modal-box"
+                onClick={(e) => e.stopPropagation()}
+            >
                 <h3>내 정보 확인</h3>
 
                 <div className="info-row">
@@ -20,7 +23,12 @@ function MyInfoModal({ user, onClose }) {
 
                 <div className="info-row">
                     <span>이메일</span>
-                    <p>{user.mailAddress || user.mailAdress || user.mailAddres || ""}</p>
+                    <p>
+                        {user.mailAddress ||
+                            user.mailAdress ||
+                            user.mailAddres ||
+                            ""}
+                    </p>
                 </div>
 
                 <div className="info-row">
@@ -31,6 +39,11 @@ function MyInfoModal({ user, onClose }) {
                 <div className="info-row">
                     <span>생년월일</span>
                     <p>{user.birthday}</p>
+                </div>
+
+                <div className="info-row">
+                    <span>회원등급</span>
+                    <p>{user.level}</p>
                 </div>
 
                 <div className="modal-actions">

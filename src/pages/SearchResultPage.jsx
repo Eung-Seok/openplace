@@ -57,7 +57,10 @@ function SearchResultPage() {
                         <div
                             className="search-result-card"
                             key={item.id}
-                            onClick={() => navigate(`/community/${item.id}`)}
+                            onClick={() => {
+                                navigate(`/community/${item.id}`);
+                                window.scrollTo(0, 0);
+                            }}
                             style={{ cursor: "pointer" }}
                         >
                             <div className="search-result-meta">
@@ -89,7 +92,10 @@ function SearchResultPage() {
                         <div
                             className="search-result-card"
                             key={item.id}
-                            onClick={() => navigate(`/community/${item.id}`)}
+                            onClick={() => {
+                                navigate(`/community/${item.id}`)
+                                window.scrollTo(0, 0);
+                            }}
                             style={{ cursor: "pointer" }}
                         >
                             <div className="search-result-meta">
@@ -121,7 +127,10 @@ function SearchResultPage() {
                         <div
                             className="search-result-card"
                             key={item.id}
-                            onClick={() => navigate(`/community/${item.id}`)}
+                            onClick={() => {
+                                navigate(`/community/${item.id}`);
+                                window.scrollTo(0, 0);
+                            }}
                             style={{ cursor: "pointer" }}
                         >
                             <div className="search-result-meta">
@@ -153,7 +162,10 @@ function SearchResultPage() {
                         <div
                             className="search-result-card search-funding-card"
                             key={item.id}
-                            onClick={() => window.location.href = `/funding/detail/${item.id}`}
+                            onClick={() => {
+                                navigate(`/funding/detail/${item.id}`);
+                                window.scrollTo(0, 0);
+                            }}
                         >
                             <img
                                 src={item.imgPath}

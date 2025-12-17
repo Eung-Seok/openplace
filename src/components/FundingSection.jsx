@@ -30,7 +30,10 @@ function FundingSection() {
 
                     <button
                         className="funding-section-more-btn"
-                        onClick={() => navigate("/funding/main/1")}
+                        onClick={() => {
+                            navigate("/funding/main/1");
+                            window.scrollTo(0, 0);
+                        }}
                         aria-label="펀딩 더보기"
                     >
                         <FaChevronRight />
@@ -43,7 +46,10 @@ function FundingSection() {
                     <div
                         key={item.id}
                         className="funding-section-card"
-                        onClick={() => navigate(`/funding/detail/${item.id}`)}
+                        onClick={() => {
+                            navigate(`/funding/detail/${item.id}`);
+                            window.scrollTo(0, 0);
+                        }}
                     >
                         {/* 이미지 */}
                         <div className="funding-card-image">

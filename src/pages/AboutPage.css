@@ -1,9 +1,19 @@
-*{font-family: "Poppins", sans-serif;}
-.about-page {
-    padding: 80px 0;
-    background-color: #f8f9fa;
-    
+* {
+    font-family: "Poppins", sans-serif;
 }
+
+.about-page {
+    padding: 60px 0;
+}
+
+.about-page .container {
+    max-width: 1200px;
+    background: #ffffff;
+    border-radius: 14px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
 
 .about-title {
     font-size: 28px;
@@ -18,7 +28,7 @@
     border-radius: 12px;
     padding: 28px;
     margin-bottom: 24px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 .about-card-title {
@@ -65,7 +75,7 @@
 
 .vision-box {
     background: #f6fff9;
-    border-left: 4px solid #28a745;
+    border-left: 4px solid #066b59;
     border-radius: 10px;
     padding: 16px;
 }
@@ -91,11 +101,12 @@
 /* 아이콘 공통 */
 .about-icon {
     font-size: 20px;
-    color: #28a745;
+    color: #066b59;
+
 }
 
 .vision-icon {
     font-size: 16px;
-    color: #28a745;
+    color: #066b59;
     margin-right: 6px;
 }

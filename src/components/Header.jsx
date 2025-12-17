@@ -22,6 +22,7 @@ function Header() {
         localStorage.setItem("로그인현황", "false");
         alert("로그아웃 되었습니다.");
         navigate(nowpage.pathname);
+        window.scrollTo(0, 0);
     };
     const [scrolled, setScrolled] = useState(false);
 
@@ -39,7 +40,10 @@ function Header() {
             <div className="container d-flex justify-content-between align-items-center">
 
                 {/* LOGO */}
-                <Link to="/" className="header-logo">
+                <Link
+                    to="/"
+                    className="header-logo"
+                    onClick={() => window.scrollTo(0, 0)}>
                     <img
                         src="/images/common/OpenPlaceHorizontal.png"
                         alt="OpenPlace Logo"
@@ -50,14 +54,26 @@ function Header() {
                 {/* NAV */}
                 <nav>
                     <ul className="d-flex gap-4 mb-0">
-                        <li><Link to="/funding/main/1" className="nav-link">Funding</Link></li>
-                        <li><Link to="/community/main/1" className="nav-link">Community</Link></li>
-                        <li><Link to="/about" className="nav-link">About</Link></li>
+                        <li><Link to="/funding/main/1"
+                            className="nav-link"
+                            onClick={() => window.scrollTo(0, 0)}
+                        >Funding</Link></li>
+                        <li><Link to="/community/main/1"
+                            className="nav-link"
+                            onClick={() => window.scrollTo(0, 0)}
+                        >Community</Link></li>
+                        <li><Link to="/about"
+                            className="nav-link"
+                            onClick={() => window.scrollTo(0, 0)}
+                        >About</Link></li>
 
                         {isLogin ? (
                             <>
                                 <li>
-                                    <Link to="/mypage" className="nav-link">MyPage</Link>
+                                    <Link to="/mypage"
+                                        className="nav-link"
+                                        onClick={() => window.scrollTo(0, 0)}
+                                    >MyPage</Link>
                                 </li>
                                 <li>
                                     <button
@@ -71,7 +87,10 @@ function Header() {
                         ) : (
                             <li onClick={() => {
                                 localStorage.setItem('마지막 주소', JSON.stringify(nowpage.pathname))
-                            }}><Link to="/login" className="nav-link">Log-In</Link></li>
+                            }}><Link to="/login"
+                                className="nav-link"
+                                onClick={() => window.scrollTo(0, 0)}
+                            >Log-In</Link></li>
                         )}
                     </ul>
                 </nav>

@@ -25,7 +25,10 @@ function CommunitySection() {
 
                         <button
                             className="community-section-more-btn"
-                            onClick={() => navigate("/community/main/1")}
+                            onClick={() => {
+                                navigate("/community/main/1");
+                                window.scrollTo(0, 0);
+                            }}
                             aria-label="커뮤니티 더보기"
                         >
                             <FaChevronRight />

@@ -1,11 +1,15 @@
 import "./AboutPage.css";
+import { FaBuilding, FaBullseye, FaRocket, FaUsers } from "react-icons/fa";
 
 function AboutPage() {
     return (
         <section className="about-page">
             <div className="container">
 
-                <h2 className="about-title">회사소개</h2>
+                <h2 className="about-title">
+                    <FaBuilding className="main-icon" size={30} />
+                    <span> 회사소개 </span>
+                </h2>
 
                 {/* 서비스 소개 */}
                 <div className="about-card">
