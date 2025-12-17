@@ -41,9 +41,15 @@ function AccountInit(){
         id:'안송이',
         pw: 'dksthddl'
     })
-    localStorage.setItem('계정목록', JSON.stringify(accountList))
-    localStorage.setItem('로그인현황', JSON.stringify(isLogin))
-    localStorage.setItem('계정정보', JSON.stringify(accountInfo))
+    if(localStorage.getItem('계정목록') == null){
+        localStorage.setItem('계정목록', JSON.stringify(accountList))
+    }
+    if(localStorage.getItem('로그인현황') == null){
+        localStorage.setItem('로그인현황', JSON.stringify(isLogin))
+    }
+    if(localStorage.getItem('계정정보') == null){
+        localStorage.setItem('계정정보', JSON.stringify(accountInfo))
+    }
 }
 
 export default AccountInit;

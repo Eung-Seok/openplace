@@ -499,7 +499,9 @@ function FundingDataInit() {
         }
     ];
 
-    localStorage.setItem('펀딩데이터', JSON.stringify(fundingData))
+    if(localStorage.getItem('펀딩데이터') == null){
+        localStorage.setItem('펀딩데이터', JSON.stringify(fundingData))
+    }
 }
 
 export default FundingDataInit;
