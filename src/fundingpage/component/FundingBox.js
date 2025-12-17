@@ -1,11 +1,11 @@
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-function FundingBox({ item, getCurrentAmount, getGoalAmount }) {
+function FundingBox({item}) {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate("/funding/support", { state: { item } });
+        navigate("/funding/detail/" + item.id);
     };
 
     return (
@@ -34,11 +34,11 @@ function FundingBox({ item, getCurrentAmount, getGoalAmount }) {
                 <div className="funding-rate-container">
                     <div className="funding-rate-column">
                         <span className="funding-rate-text">현재금액</span>
-                        <span className="funding-rate-amount">{getCurrentAmount(item).toLocaleString()}만원</span>
+                        <span className="funding-rate-amount">{item.goalAmount * item.rate / 1000000}만원</span>
                     </div>
                     <div className="funding-rate-column">
                         <span className="funding-rate-text">목표금액</span>
-                        <span className="funding-rate-amount">{getGoalAmount(item).toLocaleString()}만원</span>
+                        <span className="funding-rate-amount">{item.goalAmount/10000}만원</span>
                     </div>
                     <div className="funding-rate-column">
                         <span className="funding-rate-text">남은기간</span>

@@ -34,6 +34,7 @@ import AccountInit from './data/AccountInit';
 import SearchResultPage from "./pages/SearchResultPage";
 import FundingCreate from "./fundingpage/FundingRegister";
 import FundingSupport from "./fundingpage/FundingDetail";
+import FundingDetail from "./fundingpage/FundingDetail";
 
 function App() {
 
@@ -63,7 +64,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/funding" element={<FundingList/>} />
           <Route path="/funding/create" element={<FundingCreate />} />
-          <Route path="/funding/support" element={<FundingSupport />} />
+          <Route path="/funding/detail/:id" element={<FundingDetail />} />
 
         </Routes>
           <Footer/>

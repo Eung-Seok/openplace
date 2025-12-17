@@ -3,7 +3,7 @@ import FundingDataInit from "../data/FundingDataInit.js";
 import "./Funding.css";
 import { IoMenu } from "react-icons/io5";
 // import FundingBox from "./component/FundingBox.js"
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import FundingAmountPlus from "./FundingAmountPlus.jsx";
@@ -11,10 +11,16 @@ import FundingAmountPlus from "./FundingAmountPlus.jsx";
 function FundingDetail() {
 
     const location = useLocation();
-    const { item } = location.state || {};
+    const {id} = useParams();
+
+    let fundingData = JSON.parse(localStorage.getItem('펀딩데이터'))
+    let data = fundingData.find((item)=>{
+        return item.id == id;
+    })
 
     const [liked, setLiked] = useState(false);
-    const [count, setCount] = useState(item.hearts || 0);
+    const [count, setCount] = useState(data.hearts || 0);
+
 
     const handleClick = () => {
         if (liked) {
@@ -28,84 +34,18 @@ function FundingDetail() {
     return (
         <div className="funding-bg-color">
 
-            {/* 펀딩 공통 메뉴 */}
-            {/* <nav className="funding-menu">
-                <div className="funding-menu-left">
-                    <IoMenu className="funding-menu-icon" />
-                </div>
-
-                <div className="funding-menu-center">
-                    <Link to="/funding">홈</Link>
-                    <Link to="/my-fund">나의 펀딩</Link>
-                    <Link to="/categories">카테고리</Link>
-                    <Link to="/funding/support">후원하기</Link>
-                    <Link to="/funding/create">등록하기</Link>
-                </div>
-
-                <div className="funding-menu-right" />
-
-                <div className="funding-mega-menu">
-                    <div className="funding-mega-inner">
-                        <div className="funding-mega-column">
-                            <h4>홈</h4>
-                            <div className="funding-mega-items">
-                                <p>전체목록</p>
-                            </div>
-                        </div>
-
-                        <div className="funding-mega-column funding-mega-funding">
-                            <h4>나의 펀딩</h4>
-                            <div className="funding-mega-items">
-                                <p>후원금</p>
-                                <p>후원 내역</p>
-                                <p>진행 중인 펀딩</p>
-                            </div>
-                        </div>
-
-                        <div className="funding-mega-column funding-mega-category">
-                            <h4>카테고리</h4>
-                            <div className="funding-mega-items">
-                                <p>생활·편의</p>
-                                <p>안전</p>
-                                <p>환경</p>
-                                <p>문화·체육</p>
-                                <p>교통시설</p>
-                            </div>
-                        </div>
-
-                        <div className="funding-mega-column">
-                            <h4>후원하기</h4>
-                            <div className="funding-mega-items">
-                                <p>금액 충전</p>
-                                <p>정기 후원</p>
-                                <p>후원 가이드</p>
-                            </div>
-                        </div>
-
-                        <div className="funding-mega-column funding-mega-register">
-                            <h4>등록하기</h4>
-                            <div className="funding-mega-items">
-                                <p>펀딩 등록</p>
-                                <p>아이디어 제안</p>
-                                <p>진행 절차 안내</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav> */}
-
             {/* 후원창 이미지카드 */}
             <div className="funding-container-support">
 
                 <div className="funding-support-explain">
-                    <h2>{item.title}</h2>
+                    <h2>{data.title}</h2>
                     <p className="funding-icon">
                         <FaMapMarkerAlt className="funding-map-icon" />
-                        <span className="funding-map">&nbsp;{item.map}</span>
+                        <span className="funding-map">&nbsp;{data.map}</span>
                     </p>
 
                     <div className="funding-support-header">
-                        <img src={item.imgPath} alt={item.title} className="funding-support-img" />
+                        <img src={data.imgPath} alt={data.title} className="funding-support-img" />
 
                         <div className="funding-explan-text">
                             <div className="funding-p-row2">
@@ -113,7 +53,7 @@ function FundingDetail() {
                                 <p className="funding-support-normal-text">좋아요</p>
                             </div>
                             <div className="funding-p-row">
-                                <p className="funding-support-su">{item.bankers || 0}</p>
+                                <p className="funding-support-su">{data.bankers || 0}</p>
                                 {/* <p className="funding-support-su2">
                                     <span onClick={() => {
 
@@ -155,24 +95,24 @@ function FundingDetail() {
                             <p className="funding-support-amount-current">
                                 <FundingAmountPlus
                                     amount={
-                                        item.currentAmount
-                                            ? item.currentAmount / 10000
-                                            : Math.floor(item.goalAmount * item.rate / 100 / 10000)
+                                        data.currentAmount
+                                            ? data.currentAmount / 10000
+                                            : Math.floor(data.goalAmount * data.rate / 100 / 10000)
                                     }
                                 /> <span>만원</span>
                             </p>
 
                             <p className="funding-support-amount">
-                                목표금액: {(item.goalAmount / 10000).toLocaleString()} 만원
+                                목표금액: {(data.goalAmount / 10000).toLocaleString()} 만원
                             </p>
 
                             <div className="funding-support-gauge-container">
                                 <div className="funding-support-top">
-                                    <span className="funding-support-current">{item.rate}%</span>
-                                    <span className="funding-support-left">남은기간: {item.timeLeft}일</span>
+                                    <span className="funding-support-current">{data.rate}%</span>
+                                    <span className="funding-support-left">남은기간: {data.timeLeft}일</span>
                                 </div>
                                 <div className="funding-support-bar">
-                                    <span style={{ width: `${item.rate}%` }}></span>
+                                    <span style={{ width: `${data.rate}%` }}></span>
                                 </div>
 
                                 <div className="funding-support-button">
@@ -195,7 +135,7 @@ function FundingDetail() {
                     </div>
 
                     <div className="funding-support-footer">
-                        <p className="funding-support-subtitle">{item.subTitle}</p>
+                        <p className="funding-support-subtitle">{data.subTitle}</p>
                     </div>
 
                 </div>
