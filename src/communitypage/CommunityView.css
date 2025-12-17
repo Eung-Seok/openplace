@@ -185,3 +185,10 @@
 }
 
 
+.input-hide{
+    visibility: hidden;
+}
+
+.community-comment-hide{
+    display:none;
+}

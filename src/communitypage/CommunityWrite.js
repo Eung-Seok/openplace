@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router';
 import Patch from './components/Patch';
 
 function CommunityWrite() {
+    let accountInfo = JSON.parse(localStorage.getItem('계정정보'))
     let [dataList, setDataList] = useState(JSON.parse(localStorage.getItem('통합데이터')))
     let navigate = useNavigate();
     useEffect(() => Patch, [dataList])
@@ -28,7 +29,7 @@ function CommunityWrite() {
                         dataList.unshift({
                             title: title.value,
                             content: content.value,
-                            author: '123',
+                            author: accountInfo.name,
                             category: category.value,
                             views: 0,
                             likes: 0,
