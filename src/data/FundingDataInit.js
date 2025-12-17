@@ -387,7 +387,7 @@ function FundingDataInit() {
             rate: 44,
             goalAmount: 5000000,
             timeLeft: 21,
-            imgPath: "/images/fundingpage/funding15.jpg"
+            imgPath: "/images/fundingpage/funding18.jpg"
         },
         {
             id: 36,
@@ -398,7 +398,7 @@ function FundingDataInit() {
             rate: 63,
             goalAmount: 9500000,
             timeLeft: 22,
-            imgPath: "/images/fundingpage/funding16.jpg"
+            imgPath: "/images/fundingpage/funding28.jpg"
         },
         {
             id: 37,
@@ -409,7 +409,7 @@ function FundingDataInit() {
             rate: 50,
             goalAmount: 7000000,
             timeLeft: 20,
-            imgPath: "/images/fundingpage/funding17.jpg"
+            imgPath: "/images/fundingpage/funding8.jpg"
         },
         {
             id: 38,
@@ -420,7 +420,7 @@ function FundingDataInit() {
             rate: 55,
             goalAmount: 6500000,
             timeLeft: 18,
-            imgPath: "/images/fundingpage/funding18.jpg"
+            imgPath: "/images/fundingpage/funding29.jpg"
         },
         {
             id: 39,
@@ -431,7 +431,7 @@ function FundingDataInit() {
             rate: 72,
             goalAmount: 8000000,
             timeLeft: 21,
-            imgPath: "/images/fundingpage/funding19.jpg"
+            imgPath: "/images/fundingpage/funding7.jpg"
         },
         {
             id: 40,
@@ -442,7 +442,7 @@ function FundingDataInit() {
             rate: 60,
             goalAmount: 12000000,
             timeLeft: 19,
-            imgPath: "/images/fundingpage/funding20.jpg"
+            imgPath: "/images/fundingpage/funding16.jpg"
         },
         {
             id: 41,
@@ -453,7 +453,7 @@ function FundingDataInit() {
             rate: 53,
             goalAmount: 7500000,
             timeLeft: 18,
-            imgPath: "/images/fundingpage/funding1.jpg"
+            imgPath: "/images/fundingpage/funding12.jpg"
         },
         {
             id: 42,
@@ -464,7 +464,7 @@ function FundingDataInit() {
             rate: 45,
             goalAmount: 6000000,
             timeLeft: 20,
-            imgPath: "/images/fundingpage/funding2.jpg"
+            imgPath: "/images/fundingpage/funding26.jpg"
         },
         {
             id: 43,
