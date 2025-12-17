@@ -1,20 +1,29 @@
-import { Link, useLocation } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { useState, useEffect } from "react";
 import "./Header.css";
 
 
 function Header() {
 
+    const nowpage = useLocation();
+    let navigate = useNavigate();
     const isLogin = localStorage.getItem("로그인현황") === "true";
     const handleLogout = () => {
+        let accountInfo = {
+            nickname: '',
+            name: '',
+            mailAdress: '',
+            phoneNumber: '',
+            birthday: '',
+            id: '',
+            pw: '',
+        };
+        localStorage.setItem("계정정보", JSON.stringify(accountInfo))
         localStorage.setItem("로그인현황", "false");
-        localStorage.removeItem("계정정보");
-
         alert("로그아웃 되었습니다.");
-        window.location.href = "/"; // 메인으로 이동
+        navigate(nowpage.pathname);
     };
     const [scrolled, setScrolled] = useState(false);
-    const nowpage = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
