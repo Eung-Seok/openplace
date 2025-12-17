@@ -1,11 +1,12 @@
 import './CommunityView.css'
-import { useNavigate, useParams } from 'react-router';
+import { useLocation, useNavigate, useParams } from 'react-router';
 import { useState } from 'react';
 import Comment from './components/Comment';
 import Patch from './components/Patch';
 import { useEffect } from 'react';
 
 function CommunityView() {
+    let nowpage = useLocation();
     let { id } = useParams();
     let [showComment, setShowComment] = useState(true)
     let nowLogin = JSON.parse(localStorage.getItem('로그인현황'))
@@ -103,6 +104,7 @@ function CommunityView() {
                 {/* 7. 댓글 입력 필드 */}
                 <div className="comment-input-area" onClick={() => {
                     if (!nowLogin) {
+                        localStorage.setItem('마지막 주소', JSON.stringify(nowpage.pathname))
                         navigate('/login')
                     }
                 }}>

@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { useState, useEffect } from "react";
 import "./Header.css";
 
@@ -6,6 +6,7 @@ import "./Header.css";
 function Header() {
 
     const [scrolled, setScrolled] = useState(false);
+    const nowpage = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -35,7 +36,9 @@ function Header() {
                         <li><Link to="/funding">Funding</Link></li>
                         <li><Link to="/community/main/1">Community</Link></li>
                         <li><Link to="/about">About</Link></li>
-                        <li><Link to="/login">Log-In</Link></li>
+                        <li onClick={()=>{
+                            localStorage.setItem('마지막 주소', JSON.stringify(nowpage.pathname))
+                        }}><Link to="/login">Log-In</Link></li>
                     </ul>
                 </nav>
 
