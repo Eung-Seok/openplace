@@ -7,8 +7,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
-import FundingPage from "./pages/FundingPage";
-import CommunityPage from "./pages/CommunityPage";
 import MyPage from "./pages/MyPage";
 import CommunitySection from "./components/CommunitySection";
 import logo from './logo.svg';

@@ -1,168 +1,174 @@
-
 /* ===============================
-   FUNDING SECTION
+   Funding Section
 ================================ */
 
 .funding-section {
-    padding: 80px 0 60px;
-    background-color: #ffffff;
-    font-family: "Poppins", sans-serif;
+    padding: 60px 0;
+    background-color: #ffffff
 }
 
-.funding-section h2 {
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--dark-color);
-    margin-bottom: 8px;
-    font-family: "Poppins", sans-serif;
+.funding-section-header {
+    max-width: 1200px;
+    margin: 0 auto 24px;
 }
 
-.funding-section p.section-desc {
-    font-size: 15px;
-    color: #6c757d;
-    margin-bottom: 40px;
-}
-
-/* ===============================
-   FUNDING CARD
-================================ */
-
-.funding-card {
+.funding-section-header-left {
     display: flex;
-    flex-direction: column;
-    min-height: 420px;
-    background: #ffffff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+    align-items: center;
+    gap: 8px;
+    /* 제목과 버튼 사이 간격 */
 }
 
-/* ⭐ Hover 시 살짝 떠오르기 */
-.funding-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+.funding-section-title {
+    font-size: 22px;
+    font-weight: 700;
 }
 
 /* ===============================
-   FUNDING IMAGE
+   Grid
 ================================ */
 
-.funding-img {
+.funding-section-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+/* ===============================
+   Card
+================================ */
+
+.funding-section-card {
+    background: #f2faf9;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* ===============================
+   Image
+================================ */
+
+.funding-card-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.funding-card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-
     display: block;
 }
 
-/* 이미지도 살짝 확대 (선택이지만 추천) */
-.funding-card:hover .funding-img {
-    transform: scale(1.04);
-}
-
-.funding-img-wrap {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    flex: 0 0 auto;
-}
-
-
 /* ===============================
-   FUNDING BODY
+   Body
 ================================ */
 
-.funding-body {
-    flex: 1;
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    color: #333;  
+.funding-card-body {
+    padding: 16px 18px 20px;
 }
 
-.funding-body h5 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #222;
-    margin-bottom: 8px;
-}
-
-.funding-body p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 12px;
-    line-height: 1.6;
-}
-
-.funding-body button {
-    margin-top: auto;
-}
-
-/* ===============================
-   FUNDING PROGRESS
-================================ */
-
-.funding-progress-info {
+/* 카테고리 / 지역 */
+.funding-card-meta {
     display: flex;
     justify-content: space-between;
-    font-size: 13px;
-    font-weight: 500;
-    color: #555;
-    margin-top: auto;
-    /* ⭐ 항상 아래쪽 */
+    font-size: 12px;
+    color: #777;
+    line-height: 1.2;
 }
 
-.funding-progress-bar {
-    width: 100%;
-    height: 8px;
-    background: #e9ecef;
-    border-radius: 6px;
+.funding-card-category {
+    font-weight: 600;
+    color: #09947d;
+}
+
+/* 제목 (2줄 고정) */
+.funding-card-title {
+
+    margin-bottom: 8px;
+
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.25;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    margin-top: 6px;
 }
 
-.funding-progress-fill {
+/* 정보 리스트 */
+.funding-card-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    color: #444;
+}
+
+.funding-card-info li {
+    margin-bottom: 6px;
+}
+
+.funding-card-icon {
+    margin-right: 6px;
+    color: black;
+    vertical-align: -2px;
+}
+
+/* ===============================
+   Progress Bar
+================================ */
+
+.funding-card-progress {
+    margin-top: 12px;
+}
+
+.funding-card-progress-track {
+    width: 100%;
+    height: 6px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.funding-card-progress-bar {
     height: 100%;
-    background: var(--main-color);
-    border-radius: 6px;
-    transition: width 0.4s ease;
+    background-color: #09947d;
+    border-radius: 4px;
 }
 
-/* ===============================
-   FUNDING BUTTON
-================================ */
-
-.funding-btn {
-    margin-top: 16px;
-    padding: 10px 0;
-    border-radius: 8px;
-    background-color: var(--dark-color);
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 500;
-    text-align: center;
-    border: none;
-    transition: background-color 0.2s ease;
+.funding-card-progress-text {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #555;
+    text-align: right;
 }
 
-.funding-btn:hover {
-    background-color: var(--main-color);
-    color: #ffffff;
+/* 더보기 원형 버튼 */
+.funding-section-more-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background-color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    color: #333;
+    transition: all 0.2s ease;
 }
 
-/* ===============================
-   RESPONSIVE
-================================ */
-
-@media (max-width: 768px) {
-    .funding-section {
-        padding: 60px 0;
-    }
-
-    .funding-img {
-        height: 180px;
-    }
+.funding-section-more-btn:hover {
+    border-color: #09947d;
+    color: #09947d;
 }

@@ -11,7 +11,7 @@ function DataInit(){
             dataList.push({
             title:"횡단보도에 신호등 설치가 필요합니다",  // 제목
             content:'등굣길에 위험한 구간이 있어요', // 내용
-            author:'박다라', //작성자
+            author:'안송이', //작성자
             category:'자유게시판',
             views:i,    //조회수
             likes:i,  // 공감
@@ -22,7 +22,7 @@ function DataInit(){
             dataList.push({
             title:'벤치 설치 제안 드립니다',
             content:'산책로 중간에 벤치 부족한 구간이 있어요.',
-            author:'최가나',
+            author:'백종진',
             category:'지역 제보',
             views:i,
             likes:i,
@@ -34,7 +34,7 @@ function DataInit(){
             dataList.push({
             title:'버스정류장 쉘터 보수 요청',
             content:'비 새는 정류장이 있어 개선이 필요합니다.',
-            author:'김유오',
+            author:'김응석',
             category:'프로젝트 후기',
             views:i,
             likes:i,
