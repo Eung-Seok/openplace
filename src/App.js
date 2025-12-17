@@ -37,8 +37,6 @@ import FundingSupport from "./fundingpage/FundingSupport";
 function App() {
 
   let naviate = useNavigate();
-  useEffect(()=> DataInit, [])
-  useEffect(()=> AccountInit, [])
 
   return (
     <div>
