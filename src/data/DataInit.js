@@ -14,7 +14,7 @@ function DataInit(){
             author:'안송이', //작성자
             category:'자유게시판',
             views:i,    //조회수
-            likes:i,  // 공감
+            likes: Math.floor(Math.random() * 99),  // 공감
             id:i, 
             comment:[['김응석',now,'집가고싶다']], // 댓글
             uploadDate: now  // 업로드 시간
@@ -25,7 +25,7 @@ function DataInit(){
             author:'백종진',
             category:'지역 제보',
             views:i,
-            likes:i,
+            likes:Math.floor(Math.random() * 99),
             id:i,
             comment:[],
             uploadDate: now
@@ -37,7 +37,7 @@ function DataInit(){
             author:'김응석',
             category:'프로젝트 후기',
             views:i,
-            likes:i,
+            likes:Math.floor(Math.random() * 99),
             id:i,
             comment:[],
             uploadDate: now 

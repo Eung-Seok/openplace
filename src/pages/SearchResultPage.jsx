@@ -153,7 +153,7 @@ function SearchResultPage() {
                         <div
                             className="search-result-card search-funding-card"
                             key={item.id}
-                            onClick={() => window.location.href = `/funding/${item.id}`}
+                            onClick={() => window.location.href = `/funding/detail/${item.id}`}
                         >
                             <img
                                 src={item.imgPath}

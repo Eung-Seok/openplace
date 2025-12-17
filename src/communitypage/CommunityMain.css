@@ -1,6 +1,6 @@
-*{
-    font-family: "Poppins", sans-serif; 
-    
+* {
+    font-family: "Poppins", sans-serif;
+
 }
 
 .tabs {
@@ -19,10 +19,86 @@
 }
 
 .tab.active {
-    background:#09947d;
+    background: #09947d;
     color: #fff;
 }
 
-.Pagination{
+.Pagination {
     margin: 0 auto;
+}
+
+/* ===============================
+   MAIN SEARCH
+================================ */
+
+.community-search {
+    margin: 0 auto;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background: #f2faf9;
+    border-radius: 14px;
+    padding: 8px 10px;
+
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    width: 450px;
+    max-width: 100%;
+}
+
+/* input */
+.community-search input {
+    flex: 1;
+    /* ⭐ 핵심 */
+    border: none;
+    outline: none;
+
+    padding: 14px 16px;
+    font-size: 15px;
+    color: #333;
+
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    min-width: 0;
+
+}
+
+.community-search input::placeholder {
+    color: #9aa5a1;
+    font-size: 14px;
+}
+
+/* button */
+.community-search button {
+    flex-shrink: 0;
+    /* ⭐ 버튼 밀리지 않게 */
+    border: none;
+    border-radius: 10px;
+
+    background-color: #066b59;
+    color: #ffffff;
+
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.community-search button:hover {
+    background-color: #055a4c;
+}
+
+.community-search button:active {
+    transform: scale(0.96);
+}
+
+/* focus */
+.community-search:focus-within {
+    box-shadow:
+        0 0 0 2px rgba(6, 107, 89, 0.25),
+        0 14px 36px rgba(0, 0, 0, 0.1);
 }

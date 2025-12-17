@@ -33,6 +33,7 @@ import SearchResultPage from "./pages/SearchResultPage";
 import FundingCreate from "./fundingpage/FundingRegister";
 import FundingDetail from "./fundingpage/FundingDetail";
 import FundingSupport from "./fundingpage/FundingSupport";
+import CommunitySearch from "./communitypage/CommunitySearch";
 
 function App() {
 
@@ -47,9 +48,13 @@ function App() {
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/community/main/:page" element={<CommunityMain />}></Route>
+          <Route path="/community/main/search/:keyword/:page" element={<CommunitySearch />}></Route>
           <Route path="/community/general/:page" element={<CommunityGeneral />}></Route>
+          <Route path="/community/general/search/:keyword/:page" element={<CommunitySearch />}></Route>
           <Route path="/community/report/:page" element={<CommunityReport />}></Route>
+          <Route path="/community/report/search/:keyword/:page" element={<CommunitySearch />}></Route>
           <Route path="/community/review/:page" element={<CommunityReview />}></Route>
+          <Route path="/community/review/search/:keyword/:page" element={<CommunitySearch />}></Route>
           <Route path="/community/:id" element={<CommunityView />}></Route>
           <Route path="/community/write" element={<CommunityWrite />}></Route>
           <Route path="*" element={<div><h1>존재하지 않는 주소입니다.</h1></div>}></Route>

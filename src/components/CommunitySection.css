@@ -24,7 +24,6 @@
     align-items: center;
     width: auto;
     flex-shrink: 0;
-
 }
 .community-section-header-left {
     display: flex;
@@ -59,9 +58,10 @@
 ================================ */
 
 .community-section-list {
+    margin-top:20px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap:5px;
 }
 
 /* ===============================

@@ -1,0 +1,40 @@
+.combo-container {
+    position: relative;
+    width: 120px;
+    font-family: sans-serif;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.combo-selectBox {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 0; /* 위아래 여백만 주고 좌우는 글자에 붙게 설정 */
+}
+
+.combo-arrow {
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.combo-list {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #333;
+    background-color: #fff;
+    z-index: 10;
+}
+
+.combo-listItem {
+    padding: 8px 10px;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}

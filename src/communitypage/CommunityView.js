@@ -29,6 +29,7 @@ function CommunityView() {
                         totalData[Number(id) - 2].views++;
                         localStorage.setItem('통합데이터', JSON.stringify(totalData))
                         navigate('/community/' + (Number(id) - 1))
+                        window.scrollTo(0,0)
                     } else {
                         alert('처음 게시물입니다.')
                     }
@@ -38,12 +39,16 @@ function CommunityView() {
                         totalData[Number(id)].views++;
                         localStorage.setItem('통합데이터', JSON.stringify(totalData))
                         navigate('/community/' + (Number(id) + 1))
+                        window.scrollTo(0,0)
                     }
                     else {
                         alert('마지막 게시물입니다.')
                     }
                 }}>다음글</span>
-                <span className="nav-link" onClick={() => { navigate('/community/main/1') }}>목록</span>
+                <span className="nav-link" onClick={() => { 
+                    navigate('/community/main/1') 
+                    window.scrollTo(0,0)
+                    }}>목록</span>
             </div>
 
             <div className="main-post-area">
@@ -106,6 +111,7 @@ function CommunityView() {
                     if (!nowLogin) {
                         localStorage.setItem('마지막 주소', JSON.stringify(nowpage.pathname))
                         navigate('/login')
+                        window.scrollTo(0,0)
                     }
                 }}>
                     <form onSubmit={(event) => {

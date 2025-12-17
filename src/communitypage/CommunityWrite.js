@@ -40,6 +40,7 @@ function CommunityWrite() {
                         setDataList(temp)
                         localStorage.setItem('통합데이터', JSON.stringify(dataList))
                         navigate('/community/main/1')
+                        window.scrollTo(0,0)
                     }
                 }}>
 

@@ -10,6 +10,7 @@ function Card({ item }) {
             totalData[item.id - 1].views++;
             localStorage.setItem('통합데이터', JSON.stringify(totalData));
             navigate('/community/' + item.id)
+            window.scrollTo(0,0)
         }}>
             <h3 className="post-title">{item.title}</h3>
             <p className="post-content">{item.content}</p>
