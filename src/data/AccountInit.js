@@ -8,6 +8,7 @@ function AccountInit(){
         birthday:'',
         id:'',
         pw:'',
+        level:'',
 
     };
     let isLogin = false;
@@ -19,7 +20,8 @@ function AccountInit(){
         birthday:'962101',
         gender:'남자',
         id:'김응석',
-        pw: 'rladmdtjr'
+        pw: 'rladmdtjr',
+        level : '일반회원'
     })
     accountList.push({
         nickname:'펀딩',
@@ -29,7 +31,8 @@ function AccountInit(){
         birthday:'020807',
         gender:'선택안함',
         id:'백종진',
-        pw: 'qorwhdwls'
+        pw: 'qorwhdwls',
+        level : '일반회원'
     })
     accountList.push({
         nickname:'메인',
@@ -39,7 +42,8 @@ function AccountInit(){
         birthday:'123456',
         gender:'여자',
         id:'안송이',
-        pw: 'dksthddl'
+        pw: 'dksthddl',
+        level : '관리자'
     })
     if(localStorage.getItem('계정목록') == null){
         localStorage.setItem('계정목록', JSON.stringify(accountList))
