@@ -255,7 +255,7 @@ function FundingDataInit() {
             rate: 59,
             goalAmount: 10000000,
             timeLeft: 18,
-            imgPath: "/images/fundingpage/funding3.jpg"
+            imgPath: "/images/fundingpage/funding21.jpg"
         },
         {
             id: 24,
@@ -266,7 +266,7 @@ function FundingDataInit() {
             rate: 92,
             goalAmount: 25000000,
             timeLeft: 30,
-            imgPath: "/images/fundingpage/funding4.jpg"
+            imgPath: "/images/fundingpage/funding22.jpg"
         },
         {
             id: 25,
@@ -277,7 +277,7 @@ function FundingDataInit() {
             rate: 40,
             goalAmount: 8000000,
             timeLeft: 22,
-            imgPath: "/images/fundingpage/funding5.jpg"
+            imgPath: "/images/fundingpage/funding4.jpg"
         },
         {
             id: 26,
@@ -288,7 +288,7 @@ function FundingDataInit() {
             rate: 61,
             goalAmount: 6000000,
             timeLeft: 20,
-            imgPath: "/images/fundingpage/funding6.jpg"
+            imgPath: "/images/fundingpage/funding24.jpg"
         },
         {
             id: 27,
@@ -299,7 +299,7 @@ function FundingDataInit() {
             rate: 55,
             goalAmount: 7500000,
             timeLeft: 17,
-            imgPath: "/images/fundingpage/funding7.jpg"
+            imgPath: "/images/fundingpage/funding23.jpg"
         },
         {
             id: 28,
@@ -310,7 +310,7 @@ function FundingDataInit() {
             rate: 70,
             goalAmount: 5000000,
             timeLeft: 23,
-            imgPath: "/images/fundingpage/funding8.jpg"
+            imgPath: "/images/fundingpage/funding26.jpg"
         },
         {
             id: 29,
@@ -321,7 +321,7 @@ function FundingDataInit() {
             rate: 48,
             goalAmount: 8000000,
             timeLeft: 19,
-            imgPath: "/images/fundingpage/funding9.jpg"
+            imgPath: "/images/fundingpage/funding27.jpg"
         },
         {
             id: 30,
@@ -332,7 +332,7 @@ function FundingDataInit() {
             rate: 63,
             goalAmount: 12000000,
             timeLeft: 21,
-            imgPath: "/images/fundingpage/funding10.jpg"
+            imgPath: "/images/fundingpage/funding16.jpg"
         },
         {
             id: 31,
@@ -343,7 +343,7 @@ function FundingDataInit() {
             rate: 49,
             goalAmount: 7000000,
             timeLeft: 18,
-            imgPath: "/images/fundingpage/funding11.jpg"
+            imgPath: "/images/fundingpage/funding17.jpg"
         },
         {
             id: 32,
@@ -354,7 +354,7 @@ function FundingDataInit() {
             rate: 68,
             goalAmount: 9000000,
             timeLeft: 20,
-            imgPath: "/images/fundingpage/funding12.jpg"
+            imgPath: "/images/fundingpage/funding8.jpg"
         },
         {
             id: 33,
@@ -365,7 +365,7 @@ function FundingDataInit() {
             rate: 52,
             goalAmount: 7500000,
             timeLeft: 17,
-            imgPath: "/images/fundingpage/funding13.jpg"
+            imgPath: "/images/fundingpage/funding25.jpg"
         },
         {
             id: 34,
@@ -376,7 +376,7 @@ function FundingDataInit() {
             rate: 58,
             goalAmount: 8500000,
             timeLeft: 19,
-            imgPath: "/images/fundingpage/funding14.jpg"
+            imgPath: "/images/fundingpage/funding23.jpg"
         },
         {
             id: 35,
