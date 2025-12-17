@@ -23,16 +23,19 @@ function FundingSection() {
     return (
         <section className="funding-section">
             <div className="funding-section-header">
-                <h2 className="funding-section-title">
-                    진행 중인 펀딩 프로젝트
-                </h2>
-                <button
-                    className="funding-section-more-btn"
-                    onClick={() => navigate("/funding")}
-                    aria-label="펀딩 더보기"
-                >
-                    <FaChevronRight />
-                </button>
+                <div className="funding-section-header-left">
+                    <h2 className="funding-section-title">
+                        진행 중인 펀딩 프로젝트
+                    </h2>
+
+                    <button
+                        className="funding-section-more-btn"
+                        onClick={() => navigate("/funding")}
+                        aria-label="펀딩 더보기"
+                    >
+                        <FaChevronRight />
+                    </button>
+                </div>
             </div>
 
             <div className="funding-section-grid">
@@ -40,7 +43,7 @@ function FundingSection() {
                     <div
                         key={item.id}
                         className="funding-section-card"
-                        onClick={() => navigate(`/funding/${item.id}`)}
+                        onClick={() => navigate(`/funding/detail/${item.id}`)}
                     >
                         {/* 이미지 */}
                         <div className="funding-card-image">
