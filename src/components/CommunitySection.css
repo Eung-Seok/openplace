@@ -1,43 +1,74 @@
+/* ===============================
+   Community Section
+================================ */
+
 .community-section {
     padding: 100px 0;
     background-color: #ffffff;
 }
 
-.community-title {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
+/* ===============================
+   Header
+================================ */
+
 .community-section-header {
     display: flex;
     align-items: center;
     gap: 12px;
-    
 }
-.community-more-btn {
-    background: none;
-    border: none;
-    color: black;
-    font-size: 14px;
+
+.community-section-title {
+    font-size: 30px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    flex-shrink: 0;
+
+}
+.community-section-header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+/* 더보기 버튼 (원형) */
+.community-section-more-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    position: static;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     cursor: pointer;
-
-}
-.community-more-btn:hover {
-    text-decoration: underline;
+    color: #333;
+    transition: all 0.2s ease;
 }
 
-/* 리스트 */
-.community-list {
+.community-section-more-btn:hover {
+    border-color: #09947d;
+    color: #09947d;
+}
+
+/* ===============================
+   List
+================================ */
+
+.community-section-list {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-/* 아이템 */
-.community-item {
+/* ===============================
+   Item
+================================ */
+
+.community-section-item {
     background: #eef9ee;
     border-left: 4px solid #28a745;
     border-radius: 8px;
@@ -47,14 +78,14 @@
     align-items: center;
 }
 
-.community-item-title {
+.community-section-item-title {
     font-size: 17px;
     color: #222;
     font-weight: 500;
 }
 
 /* 공감 */
-.community-like {
+.community-section-like {
     font-size: 13px;
     color: #555;
     white-space: nowrap;
