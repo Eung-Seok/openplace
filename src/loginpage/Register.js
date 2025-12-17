@@ -43,7 +43,7 @@ function Register() {
 
 
     useEffect(() => {
-        if(form.id.trim() == ''){
+        if (form.id.trim() == '') {
             return;
         }
         const check = /^[a-zA-z0-9]{6,12}$/
@@ -51,7 +51,7 @@ function Register() {
         setError({ ...error, id: bool })
     }, [form.id])
     useEffect(() => {
-        if(form.pw.trim() == ''){
+        if (form.pw.trim() == '') {
             return;
         }
         const check = /^[a-zA-Z0-9!@#$%^*+=-]{8,16}$/
@@ -59,7 +59,7 @@ function Register() {
         setError({ ...error, pw: bool })
     }, [form.pw])
     useEffect(() => {
-        if(form.email.trim() == ''){
+        if (form.email.trim() == '') {
             return;
         }
         const check = /^[A-Za-z0-9_]+[A-Za-z0-9]*[@]{1}[A-Za-z0-9]+[A-Za-z0-9]*[.]{1}[A-Za-z]{1,3}$/
@@ -67,7 +67,7 @@ function Register() {
         setError({ ...error, email: bool })
     }, [form.email])
     useEffect(() => {
-        if(form.name.trim() == ''){
+        if (form.name.trim() == '') {
             return;
         }
         const check = /^[가-힣]{2,8}$/
@@ -75,7 +75,7 @@ function Register() {
         setError({ ...error, name: bool })
     }, [form.name])
     useEffect(() => {
-        if(form.birthday.trim() == ''){
+        if (form.birthday.trim() == '') {
             return;
         }
         const check = /^[0-9]{6}$/
@@ -83,7 +83,7 @@ function Register() {
         setError({ ...error, birthday: bool })
     }, [form.birthday])
     useEffect(() => {
-        if(form.phonenumber.trim() == ''){
+        if (form.phonenumber.trim() == '') {
             return;
         }
         const check = /^[0-9]{11}$/
@@ -96,8 +96,8 @@ function Register() {
             <div className='register-form-container' id='container'>
                 <form onSubmit={(event) => {
                     event.preventDefault();
-                    let tempError = {...error}
-                    let tempErrorMsg = {...errorMsg}
+                    let tempError = { ...error }
+                    let tempErrorMsg = { ...errorMsg }
                     let hasError = false;
                     if (form.id.trim() == '') {
                         tempError.id = true;
@@ -156,13 +156,13 @@ function Register() {
                         hasError = true
                     }
 
-                    if(hasError){
-                        setError({...tempError});
-                        setErrorMsg({...tempErrorMsg})
+                    if (hasError) {
+                        setError({ ...tempError });
+                        setErrorMsg({ ...tempErrorMsg })
                         return;
-                    }else if(Array.from(tempError).includes(true)){
+                    } else if (Array.from(tempError).includes(true)) {
                         return;
-                    }else{
+                    } else {
                         let newAccount = {}
                         newAccount.nickname = form.name
                         newAccount.name = form.name
@@ -284,7 +284,9 @@ function Register() {
                             }} />
                         </div>
 
-                        <div className={'register-form-item gender'}>
+                        <div className={'register-form-item gender '
+                            + (error.gender ? 'error ' : ' ')
+                        }>
                             <ul className="register-list gender" onClick={() => {
                                 setNowFocus('')
                             }} onBlur={() => {
@@ -292,15 +294,21 @@ function Register() {
 
                             }}>
                                 <li className="register-item gender">
-                                    <input type="radio" id="gender1" name="gender" value='남자' className="register-li" />
+                                    <input type="radio" id="gender1" name="gender" value='남자' className="register-li" onClick={() => {
+                                        setError({ ...error, gender: false })
+                                    }} />
                                     <label for='gender1'>남자</label>
                                 </li>
                                 <li className="register-item gender">
-                                    <input type="radio" id="gender2" name="gender" value='여자' className="register-li" />
+                                    <input type="radio" id="gender2" name="gender" value='여자' className="register-li" onClick={() => {
+                                        setError({ ...error, gender: false })
+                                    }} />
                                     <label for='gender2'>여자</label>
                                 </li>
                                 <li className="register-item gender">
-                                    <input type="radio" id="gender3" name="gender" value='선택안함' className="register-li" />
+                                    <input type="radio" id="gender3" name="gender" value='선택안함' className="register-li" onClick={() => {
+                                        setError({ ...error, gender: false })
+                                    }} />
                                     <label for='gender3'>선택안함</label>
                                 </li>
                             </ul>
@@ -312,24 +320,34 @@ function Register() {
                         {errorMsg.gender && <li className="errorMsg">성별을 선택해주세요</li>}
                     </ul>
                     <div className='register-input-container'>
-                        <div className={'register-form-item carrier'}>
+                        <div className={'register-form-item carrier '
+                            + (error.carrier ? 'error ' : ' ')
+                        }>
                             <ul className="register-list carrier" onClick={() => {
                                 setNowFocus('')
                             }}>
                                 <li className="register-item carrier">
-                                    <input type="radio" id="carrier1" name="carrier" value='SKT' className="register-li" />
+                                    <input type="radio" id="carrier1" name="carrier" value='SKT' className="register-li" onClick={() => {
+                                        setError({ ...error, carrier: false })
+                                    }} />
                                     <label for='carrier1'>SKT</label>
                                 </li>
                                 <li className="register-item carrier">
-                                    <input type="radio" id="carrier2" name="carrier" value='KT' className="register-li" />
+                                    <input type="radio" id="carrier2" name="carrier" value='KT' className="register-li" onClick={() => {
+                                        setError({ ...error, carrier: false })
+                                    }} />
                                     <label for='carrier2'>KT</label>
                                 </li>
                                 <li className="register-item carrier">
-                                    <input type="radio" id="carrier3" name="carrier" value='LG' className="register-li" />
+                                    <input type="radio" id="carrier3" name="carrier" value='LG' className="register-li" onClick={() => {
+                                        setError({ ...error, carrier: false })
+                                    }} />
                                     <label for='carrier3'>LG U+</label>
                                 </li>
                                 <li className="register-item carrier">
-                                    <input type="radio" id="carrier4" name="carrier" value='ATP' className="register-li" />
+                                    <input type="radio" id="carrier4" name="carrier" value='ATP' className="register-li" onClick={() => {
+                                        setError({ ...error, carrier: false })
+                                    }} />
                                     <label for='carrier4'>알뜰폰</label>
                                 </li>
                             </ul>

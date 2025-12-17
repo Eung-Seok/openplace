@@ -98,7 +98,7 @@ function FindPw() {
                     {modalFlag4 && <div style={{ color: 'green', fontSize: '14px', marginTop: '20px' }}>입력하신 메일로 비밀번호 변경 링크를 보냈습니다. 메일을 확인해주세요</div>}
                     <div>
                         <button type='submit' id='login-submit-button' className={'login-submit-button ' + (isButtonOff ? 'off' : ' ')}>
-                            <span className='login-button-text'>로그인</span>
+                            <span className='login-button-text'>비밀번호 찾기</span>
                         </button>
                     </div>
                 </form>
