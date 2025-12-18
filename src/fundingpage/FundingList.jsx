@@ -150,14 +150,14 @@ function FundingList() {
                         Search
                     </button>
                 </div>
-                <div style={{ justifyItems: 'center', display:'flex', justifyContent:'center'}}>
+                <div style={{ justifyItems: 'center', display: 'flex', justifyContent: 'center' }}>
                     <button
                         className="funding-more-btn"
                         onClick={() => {
-                            if(page > 1){
-                                navigate('/'+pageArr+'/'+(Number(page)-1))
+                            if (page > 1) {
+                                navigate('/' + pageArr + '/' + (Number(page) - 1))
                                 window.scrollTo(0, 0)
-                            }else{
+                            } else {
                                 alert('첫 페이지입니다.')
                             }
                         }}
@@ -168,10 +168,10 @@ function FundingList() {
                     <button
                         className="funding-more-btn"
                         onClick={() => {
-                            if(page < fundingData.length / 10 ){
-                                navigate('/'+pageArr+'/'+(Number(page)+1))
+                            if (page < fundingData.length / 10) {
+                                navigate('/' + pageArr + '/' + (Number(page) + 1))
                                 window.scrollTo(0, 0)
-                            }else{
+                            } else {
                                 alert('마지막 페이지입니다.')
                             }
                         }}>
@@ -181,12 +181,12 @@ function FundingList() {
                 <div>
                     <p className="funding-comment">여러분 동네, 개선이 필요한 공공시설이 있나요?</p>
                     <div className="funding-register-actions">
-                        <button className="funding-create-btn" onClick={() => {
-                            navigate('/funding/create')
-                            window.scrollTo(0, 0)
-                        }}>
-                            + 펀딩 등록하기
-                        </button>
+                        <Button className="funding-create-btn"
+                            onClick={() => {
+                                navigate("/funding/create");
+                                window.scrollTo(0, 0);
+                            }}
+                        >펀딩 등록하기</Button>
                     </div>
                 </div>
             </section>
