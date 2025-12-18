@@ -6,9 +6,12 @@ function AccountInit(){
         mailAdress:'',
         phoneNumber:'',
         birthday:'',
+        gender:'',
         id:'',
         pw:'',
         level:'',
+        balance:0,
+        totalDonate:0
 
     };
     let isLogin = false;
@@ -21,7 +24,9 @@ function AccountInit(){
         gender:'남자',
         id:'김응석',
         pw: 'rladmdtjr',
-        level : '일반회원'
+        level : '일반회원',
+        balance:1000000,
+        totalDonate:1000000
     })
     accountList.push({
         nickname:'펀딩',
@@ -32,7 +37,9 @@ function AccountInit(){
         gender:'선택안함',
         id:'백종진',
         pw: 'qorwhdwls',
-        level : '일반회원'
+        level : '관리자',
+        balance:10000000,
+        totalDonate:0
     })
     accountList.push({
         nickname:'메인',
@@ -43,7 +50,9 @@ function AccountInit(){
         gender:'여자',
         id:'안송이',
         pw: 'dksthddl',
-        level : '관리자'
+        level : '일반회원',
+        balance:2000000,
+        totalDonate:10000000
     })
     if(localStorage.getItem('계정목록') == null){
         localStorage.setItem('계정목록', JSON.stringify(accountList))

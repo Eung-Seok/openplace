@@ -172,6 +172,9 @@ function Register() {
                         newAccount.mailAdress = form.email
                         newAccount.phoneNumber = form.phonenumber
                         newAccount.gender = checkedgender.value
+                        newAccount.level = '일반회원'
+                        newAccount.balance = 0;
+                        newAccount.totalDonate =0;
                         localStorage.setItem('계정목록', JSON.stringify([...accountList, newAccount]))
                         navigate('/login')
                     }
