@@ -184,7 +184,7 @@ function FundingRegister() {
                             <p>프로젝트의 핵심 아이디어를 간략히 요약해주세요.</p>
                             <br></br>
                             이 요약은 후원자가 프로젝트를 처음 이해하는 부분입니다.
-                            무엇을 하려는 프로젝트인지와 왜 필요한지 한눈에 알 수 있도록 작성해 주세요.
+                            무엇을 하려는 프로젝트인지 왜 필요한지 한눈에 알 수 있도록 작성해 주세요.
                             <br></br>
                             <a style={{ color: "#09947d" }}><br></br>
                                 과도한 홍보보다는 프로젝트의 본질이 잘 드러나도록 작성해 주세요.
@@ -295,7 +295,7 @@ function FundingRegister() {
                         </div>
                     </div>
                     <div className="funding-my-idea">
-                        <label style={{ marginTop: "60px" }}>이미지 첨부 (선택)</label>
+                        <label style={{ marginTop: "0px" }}>이미지 첨부 (선택)</label>
                     </div>
                     <div className="funding-img-style">
                         <input type="file" />
