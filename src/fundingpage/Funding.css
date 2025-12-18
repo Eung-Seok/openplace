@@ -482,9 +482,11 @@
     border: none;
 }
 
+/* 검색창 바텀 */
 .funding-funding-grid {
     overflow: auto;
     margin-top: 30px;
+    margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;

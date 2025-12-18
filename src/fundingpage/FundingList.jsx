@@ -150,7 +150,8 @@ function FundingList() {
                         Search
                     </button>
                 </div>
-                <div style={{ justifyItems: 'center', display: 'flex', justifyContent: 'center' }}>
+                {/* 쪽수 탑*/}
+                <div style={{ justifyItems: 'center', display: 'flex', justifyContent: 'center', marginTop:'50px'}}>
                     <button
                         className="funding-more-btn"
                         onClick={() => {
