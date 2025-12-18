@@ -322,5 +322,37 @@
     display: flex;
     justify-content: center; /* 이미지 중앙 정렬 */
     width: 100%;
-    margin-bottom: -110px;
+    margin-bottom: -110px;}
+/* 로그인 완료 모달창 */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-box {
+    background: #fff;
+    width: 320px;
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-box p {
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+.modal-confirm-btn {
+    background: none;
+    border: none;
+    color: #066b59; /* 보라색 */
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
 }

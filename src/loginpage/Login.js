@@ -23,6 +23,8 @@ function Login() {
     let accountList = JSON.parse(localStorage.getItem('계정목록'))
     let [accountInfo, setAccountInfo] = useState(JSON.parse(localStorage.getItem('계정정보')))
     let [index, setIndex] = useState(0);
+    const [loginSuccessModal, setLoginSuccessModal] = useState(false);
+    let [userInfo, setUserInfo] = useState({})
 
     useEffect(() => {
         setIsButtonOff(idinput.trim() == '' || pwinput.trim() == '')
@@ -58,10 +60,12 @@ function Login() {
                         return;
                     }
                     const isValid = accountList.find(item => item.id == idinput && item.pw == pwinput);
+                    setUserInfo(isValid);
                     if (isValid) {
                         localStorage.setItem('로그인현황', JSON.stringify(true))
                         localStorage.setItem('계정정보', JSON.stringify(isValid))
-                        navigate(lastpage)
+                        setLoginSuccessModal(true);
+
                     } else {
                         setModalFlag1(false);
                         setModalFlag2(false);
@@ -100,6 +104,24 @@ function Login() {
                             <span className='login-button-text'>로그인</span>
                         </button>
                     </div>
+                    {loginSuccessModal && (
+                        <div className="modal-backdrop">
+                            <div className="modal-box">
+                                <p>
+                                    안녕하세요 <strong>{userInfo.name}</strong> 님
+                                </p>
+                                <button
+                                    className="modal-confirm-btn"
+                                    onClick={() => {
+                                        setLoginSuccessModal(false);
+                                        navigate(lastpage);
+                                    }}
+                                >
+                                    확인
+                                </button>
+                            </div>
+                        </div>
+                    )}
                 </form>
             </div>
             <ul className='login-find-wrap'>
