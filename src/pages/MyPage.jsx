@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useDebugValue, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import "./MyPage.css";
 import MyInfoModal from "./MyInfoModal";
@@ -51,7 +51,16 @@ function MyPage() {
             balance: (user.balance || 0) + amount,
         };
 
-        localStorage.setItem("계정정보", JSON.stringify(updatedUser));
+        let list = JSON.parse(localStorage.getItem('계정목록'))
+        let indexes = 0
+        list.map((item,index)=>{
+            if(item.id == user.id){
+                indexes = index
+            }
+        })
+        list[indexes] = updatedUser
+        localStorage.setItem("계정목록", JSON.stringify([...list]));
+        setUser(updatedUser)
         setChargeOpen(false);
         setChargeAmount("");
     };
