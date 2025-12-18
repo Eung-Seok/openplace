@@ -1,6 +1,6 @@
 .funding-bg-color,
 .funding-bg-color * {
-    margin: 0
+    margin: 0;
     /* font-family: 'Pretendard', sans-serif; */
 }
 
@@ -8,6 +8,7 @@
 .funding-bg-color {
     background-color: #ffffff;
     margin: 0 auto;
+    padding:40px;
 }
 
 
@@ -220,6 +221,8 @@
     font-size: 18px !important;
     padding: 10px 22px;
     border-radius: 10px;
+    border: none;
+    color: white
 }
 
 .funding-detail-container,
@@ -237,7 +240,9 @@
     width: 100%;
     border-radius: 12px;
 }
-
+.funding-text-container{
+    padding: 10px 18px 0;
+}
 .funding-subtitle {
     margin-top: 5px;
     color: #666;
@@ -381,7 +386,6 @@
 .funding-filter-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 40px 50px 0;
     /* border: 1px solid #a7a7a7; */
     border-top: none;
     border-bottom: none;
@@ -391,7 +395,6 @@
 .funding-funding-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 20px 50px 60px;
     /* border: 1px solid #a7a7a7; */
     border-top: none;
     background: #ffffff;
@@ -475,6 +478,7 @@
     font-weight: 600;
     border-radius: 10px;
     text-decoration: none;
+    border: none;
 }
 
 .funding-funding-grid {
@@ -503,8 +507,8 @@
 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     transition: all 0.25s ease;
-
-    margin-bottom: 0;
+    min-height: 480px;
+    padding-bottom: 0px;
 }
 
 .funding-funding-card>*:last-child {
@@ -557,9 +561,8 @@
 
 .funding-gauge {
     margin-top: auto;
-    padding: 16px 18px;
-    background: #ffffff;
-    border-top: 1px solid #eee;
+    padding: 0 18px 26px;
+    background: #f2faf9;
 }
 
 .funding-gauge * {
@@ -598,8 +601,9 @@
 
 .funding-rate-container {
     display: flex;
-    justify-content: center;
-    gap: 50px;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .funding-rate-column {
@@ -854,4 +858,8 @@
     width: 642px;
     position: relative;
     left: 20px;
+}
+
+.funding-tabs-hidden{
+    display:none;
 }

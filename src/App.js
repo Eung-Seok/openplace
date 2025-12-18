@@ -63,14 +63,15 @@ function App() {
           <Route path="/findid" element={<FindId />} />
           <Route path="/findpw" element={<FindPw />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/funding/main/:page" element={<FundingList/>} />
+          <Route path="/funding/:funding/:page" element={<FundingList />} />
+          <Route path="/funding/:funding/:category/:page" element={<FundingList />} />
           <Route path="/funding/create" element={<FundingCreate />} />
           <Route path="/funding/detail/:id" element={<FundingDetail />} />
           <Route path="/funding/support/:id" element={<FundingSupport />} />
 
 
         </Routes>
-          <Footer/>
+        <Footer />
       </>
 
 

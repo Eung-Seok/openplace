@@ -13,7 +13,8 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding1.jpg",
             author: "김응석",
             bankers: 20,
-            hearts: 99
+            hearts: 99,
+            finish : false
         },
         {
             id: 2,
@@ -27,35 +28,38 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding2.jpg",
             author: "안송이",
             bankers: 67,
-            hearts: 82
+            hearts: 82,
+            finish : false
         },
         {
             id: 3,
             title: "공원 벤치 교체 프로젝트",
             map: "천안 삼거리공원",
             subTitle: "천안 삼거리공원의 노후된 벤치와 테이블을 새롭게 교체해 편안한 휴식 공간을 만듭니다. 가족·친구·연인과 함께 야외에서 여유를 즐기기 좋은 공원 환경으로 정비합니다.",
-            category: "생활·편의",
+            category: "생활",
             rate: 38,
             goalAmount: 5000000,
             timeLeft: 25,
             imgPath: "/images/fundingpage/funding3.jpg",
             author: "백종진",
             bankers: 42,
-            hearts: 19
+            hearts: 19,
+            finish : false
         },
         {
             id: 4,
             title: "주민 쉼터 조명 개선 프로젝트",
             map: "천안 두정동 쉼터",
             subTitle: "천안 동네 쉼터의 어두운 조명을 밝게 교체해 밤에도 안심하고 이용할 수 있는 휴식 환경을 마련합니다. 야간 산책과 주민 휴식을 더 안전하고 편안하게 만드는 조명 개선 사업입니다.",
-            category: "생활·편의",
+            category: "생활",
             rate: 52,
             goalAmount: 4500000,
             timeLeft: 20,
             imgPath: "/images/fundingpage/funding4.jpg",
             author: "김응석",
             bankers: 58,
-            hearts: 44
+            hearts: 44,
+            finish : false
         },
         {
             id: 5,
@@ -69,7 +73,8 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding5.jpg",
             author: "안송이",
             bankers: 24,
-            hearts: 7
+            hearts: 7,
+            finish : false
         },
         {
             id: 6,
@@ -83,77 +88,83 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding6.jpg",
             author: "백종진",
             bankers: 79,
-            hearts: 96
+            hearts: 96,
+            finish : true
         },
         {
             id: 7,
             title: "스쿨존 횡단보도 LED 안전표시 설치",
             map: "천안 성정초등학교",
             subTitle: "천안 스쿨존 횡단보도에 LED 안전표시를 설치해 운전자가 멀리서도 잘 보도록 시인성을 높입니다. 야간·우천 시에도 어린이의 보행 안전을 강화하는 교통 환경 개선 작업입니다.",
-            category: "교통시설",
+            category: "교통",
             rate: 46,
             goalAmount: 9000000,
             timeLeft: 19,
             imgPath: "/images/fundingpage/funding7.jpg",
             author: "안송이",
             bankers: 51,
-            hearts: 63
+            hearts: 63,
+            finish : false
         },
         {
             id: 8,
             title: "작은 도서관 환경 개선 프로젝트",
             map: "천안 신부동 작은도서관",
             subTitle: "천안 지역 작은 도서관의 노후 시설을 정비해 더 편안하고 쾌적한 독서 공간으로 리뉴얼합니다. 채광·환기·열람 환경을 개선해 아이들과 주민들이 머물기 좋은 지역 문화 공간을 만듭니다.",
-            category: "문화·체육",
+            category: "체육",
             rate: 100,
             goalAmount: 7000000,
             timeLeft: 4,
             imgPath: "/images/fundingpage/funding8.jpg",
             bankers: 78,
             hearts: 91,
-            author: "김응석"
+            author: "김응석",
+            finish : false
         },
         {
             id: 9,
             title: "노후 체육시설 보수 프로젝트",
             map: "천안 종합운동장 공원",
             subTitle: "천안 시민들이 자주 이용하는 공원·운동장의 노후 체육시설을 보수해 안전한 운동 환경을 마련합니다. 파손·미끄럼 구역을 개선해 사고 위험을 줄이고 이용 편의성을 높입니다.",
-            category: "문화·체육",
+            category: "문화",
             rate: 58,
             goalAmount: 10000000,
             timeLeft: 17,
             imgPath: "/images/fundingpage/funding9.jpg",
             bankers: 53,
             hearts: 66,
-            author: "안송이"
+            author: "안송이",
+            finish : false
         },
         {
             id: 10,
             title: "자전거 도로 야간 조명 설치",
             map: "천안 하천권",
             subTitle: "야간 이용이 많은 천안 자전거 도로에 밝은 조명을 설치해 안전한 라이딩 환경을 제공합니다. 천안천·원성천·삼룡천 등 주요 하천길과 성환천 억새길, 입장 포도길 등 테마 코스를 중심으로 개선을 진행합니다.",
-            category: "교통시설",
+            category: "교통",
             rate: 100,
             goalAmount: 25000000,
             timeLeft: 3,
             imgPath: "/images/fundingpage/funding10.jpg",
             bankers: 80,
             hearts: 97,
-            author: "백종진"
+            author: "백종진",
+            finish : false
         },
         {
             id: 11,
             title: "천안 공공주차장 개선 프로젝트",
             map: "천안 신부동 공영주차장",
             subTitle: "공영주차장의 노후 시설을 개선하고 조명을 보강하여 이용 편의성을 높입니다. 차량 진입 및 출차 구역을 정비하고, 안전 안내 표지판을 설치하여 시민들이 안심하고 이용할 수 있도록 합니다. 주차장 내 CCTV 설치와 비상호출 버튼을 배치하여 범죄 예방과 긴급 상황 대응 체계를 마련합니다. 또한 전기차 충전소 설치를 고려하여 친환경 이동 수단도 지원합니다. 시설물 유지보수 및 정기 점검 계획을 수립하여 장기간 안전하게 운영되도록 하며, 시민 의견 수렴을 통해 편의 시설을 지속적으로 개선합니다.",
-            category: "생활·편의",
+            category: "생활",
             rate: 77,
             goalAmount: 18000000,
             timeLeft: 26,
             imgPath: "/images/fundingpage/funding11.jpg",
             bankers: 64,
             hearts: 83,
-            author: "김응석"
+            author: "김응석",
+            finish : false
         },
         {
             id: 12,
@@ -167,63 +178,68 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding12.jpg",
             bankers: 39,
             hearts: 28,
-            author: "백종진"
+            author: "백종진",
+            finish : false
         },
         {
             id: 13,
             title: "천안 어린이 도서관 리뉴얼 프로젝트",
             map: "천안 성정동 어린이도서관",
             subTitle: "지역 어린이 도서관의 노후 시설과 책장을 개선하고 독서 공간을 확장합니다. 아이들이 편안하게 책을 읽고 학습할 수 있는 환경을 제공합니다. 공공 강좌와 워크숍 공간을 확보하여 문화·교육 활동을 다양화하며, 어린이 대상 독서 프로그램 운영을 지원합니다. 환기와 조명 개선, 미술작품 설치 등으로 도서관 환경을 개선하고, 안전 점검을 통해 이용자들이 안심하고 이용할 수 있는 공간으로 조성합니다.",
-            category: "문화·체육",
+            category: "문화",
             rate: 68,
             goalAmount: 8000000,
             timeLeft: 20,
             imgPath: "/images/fundingpage/funding13.jpg",
             bankers: 57,
             hearts: 61,
-            author: "백종진"
+            author: "백종진",
+            finish : false
         },
         {
             id: 14,
             title: "천안 초등학교 운동장 조명 설치",
             map: "천안 성정동 성정초등학교",
             subTitle: "운동장 야간 조명을 설치하여 학생들의 방과 후 체육 활동 시 안전을 확보합니다. 기존 노후 조명을 교체하고 LED 조명으로 에너지 효율을 높입니다. 운동장 주변 안전 표지판과 도로 마킹을 함께 개선하여 스쿨존 안전성을 강화합니다. 정기 점검과 유지보수 계획을 수립하여 장기간 안정적으로 운영되도록 지원하며, 학생과 교직원에게 안전 정보를 안내합니다.",
-            category: "문화·체육",
+            category: "체육",
             rate: 42,
             goalAmount: 7000000,
             timeLeft: 22,
             imgPath: "/images/fundingpage/funding14.jpg",
             bankers: 34,
             hearts: 26,
-            author: "김응석"
+            author: "김응석",
+            finish : false
         },
         {
             id: 15,
             title: "천안 공공도서관 열람실 리모델링",
             map: "천안 두정동 공공도서관",
             subTitle: "노후 열람실과 책장을 교체하여 학생과 시민들이 쾌적하게 독서할 수 있는 환경을 제공합니다. 환기와 조명을 개선하고 좌석 배치도 최적화합니다. 공공 미술작품과 안내판 설치를 통해 문화적 즐거움과 정보 제공 기능을 강화합니다. 정기 청소와 유지보수 계획으로 안전하고 깨끗한 환경을 유지하며, 다양한 워크숍과 학습 프로그램 운영이 가능하도록 공간을 조성합니다.",
-            category: "문화·체육",
+            category: "문화",
             rate: 65,
             goalAmount: 12000000,
             timeLeft: 25,
             imgPath: "/images/fundingpage/funding15.jpg",
             bankers: 60,
             hearts: 74,
-            author: "안송이"
+            author: "안송이",
+            finish : false
         },
         {
             id: 16,
             title: "천안 체육센터 헬스장 장비 교체",
             map: "천안 원성동 체육센터",
             subTitle: "노후 헬스 장비를 교체하고 안전장치를 보강하여 시민들이 안심하고 운동할 수 있는 환경을 조성합니다. 운동기구와 시설물 점검을 통해 사고 위험을 최소화하고, 조명과 안전 표지판을 개선하여 이용 편의성을 높입니다. 정기 점검과 유지보수 계획을 수립하여 장기간 안정적으로 운영되도록 하며, 주민 참여형 피트니스 프로그램 운영도 지원합니다.",
-            category: "문화·체육",
+            category: "문화",
             rate: 38,
             goalAmount: 15000000,
             timeLeft: 20,
             imgPath: "/images/fundingpage/funding16.jpg",
             bankers: 31,
             hearts: 22,
-            author: "백종진"
+            author: "백종진",
+            finish : false
         },
         {
             id: 17,
@@ -237,7 +253,8 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding17.jpg",
             bankers: 69,
             hearts: 85,
-            author: "김응석"
+            author: "김응석",
+            finish : false
         },
         {
             id: 18,
@@ -251,7 +268,8 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding18.jpg",
             bankers: 47,
             hearts: 52,
-            author: "김응석"
+            author: "김응석",
+            finish : false
         },
         {
             id: 19,
@@ -265,21 +283,23 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding19.jpg",
             bankers: 80,
             hearts: 94,
-            author: "안송이"
+            author: "안송이",
+            finish : true
         },
         {
             id: 20,
             title: "천안 노후 도로 횡단보도 LED 설치",
             map: "천안 두정동 주요도로",
             subTitle: "횡단보도에 LED 안전 표시를 설치하여 보행자의 가시성을 높이고 사고 위험을 줄입니다. 기존 표지판과 신호등을 보강하고, 야간에도 시인성을 확보할 수 있도록 조명을 개선합니다. 보행자 안전뿐 아니라 차량 운전자 안내도 강화하여 지역 교통 환경 전반의 안전성을 높입니다.",
-            category: "교통시설",
+            category: "교통",
             rate: 47,
             goalAmount: 9500000,
             timeLeft: 21,
             imgPath: "/images/fundingpage/funding20.jpg",
             bankers: 44,
             hearts: 36,
-            author: "백종진"
+            author: "백종진",
+            finish : false
         },
         {
             id: 21,
@@ -293,7 +313,8 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding18.jpg",
             bankers: 29,
             hearts: 18,
-            author: "김응석"
+            author: "김응석",
+            finish : false
         },
         {
             id: 22,
@@ -307,49 +328,53 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding2.jpg",
             bankers: 71,
             hearts: 88,
-            author: "안송이"
+            author: "안송이",
+            finish : false
         },
         {
             id: 23,
             title: "천안 공공체육시설 보수",
             map: "천안 불당동 공공체육관",
             subTitle: "노후 체육시설을 보수하고 안전 장치를 강화하여 시민들이 안전하게 운동할 수 있도록 합니다. 체육관 내부 장비, 운동기구, 바닥재 등 시설 전반을 점검하고 필요한 개선 작업을 진행합니다. 정기적인 안전 점검과 이용자 안내 시스템도 강화하여 안전하고 편리한 환경을 제공합니다.",
-            category: "문화·체육",
+            category: "체육",
             rate: 59,
             goalAmount: 10000000,
             timeLeft: 18,
             imgPath: "/images/fundingpage/funding21.jpg",
             bankers: 56,
             hearts: 62,
-            author: "백종진"
+            author: "백종진",
+            finish : false
         },
         {
             id: 24,
             title: "천안 공공주차장 CCTV 업그레이드",
             map: "천안 신부동 공영주차장",
             subTitle: "공영주차장 CCTV를 고화질 장비로 교체하여 범죄 예방과 안전 모니터링을 강화합니다. 주차장 내 사각지대까지 감시를 확대하고, 접근 경로 및 출입구까지 통합 관리합니다. 정기적인 유지보수와 시스템 점검을 통해 지속적인 안전 관리를 보장합니다.",
-            category: "교통시설",
+            category: "교통",
             rate: 92,
             goalAmount: 25000000,
             timeLeft: 30,
             imgPath: "/images/fundingpage/funding22.jpg",
             bankers: 76,
             hearts: 90,
-            author: "김응석"
+            author: "김응석",
+            finish : false
         },
         {
             id: 25,
             title: "천안 지역 문화센터 조명 개선",
             map: "천안 두정동 문화센터",
             subTitle: "문화센터 주변과 내부 조명을 개선하여 야간 이용 시 안전성을 높입니다. 공연, 전시, 강좌 등 프로그램 진행 시 조명 환경을 최적화하고 이용 편의를 강화합니다. 기존 시설 점검과 함께 유지보수 계획을 수립하여 장기적으로 쾌적하고 안전한 문화 공간을 제공합니다.",
-            category: "문화·체육",
+            category: "문화",
             rate: 40,
             goalAmount: 8000000,
             timeLeft: 22,
             imgPath: "/images/fundingpage/funding4.jpg",
             bankers: 37,
             hearts: 29,
-            author: "안송이"
+            author: "안송이",
+            finish : false
         },
         {
             id: 26,
@@ -363,7 +388,8 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding24.jpg",
             bankers: 58,
             hearts: 64,
-            author: "김응석"
+            author: "김응석",
+            finish : false
         },
         {
             id: 27,
@@ -377,7 +403,8 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding23.jpg",
             bankers: 52,
             hearts: 57,
-            author: "안송이"
+            author: "안송이",
+            finish : false
         },
         {
             id: 28,
@@ -391,7 +418,8 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding26.jpg",
             bankers: 66,
             hearts: 79,
-            author: "백종진"
+            author: "백종진",
+            finish : false
         },
         {
             id: 29,
@@ -405,21 +433,23 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding27.jpg",
             bankers: 45,
             hearts: 41,
-            author: "김응석"
+            author: "김응석",
+            finish : false
         },
         {
             id: 30,
             title: "천안 체육관 내부 시설 보수",
             map: "천안 원성동 체육관",
             subTitle: "체육관 내부 노후 시설을 교체하고 안전 장치를 강화하여 시민들이 안전하게 이용할 수 있도록 합니다. 운동기구, 바닥재, 조명 등 전반적인 시설 점검과 개선을 포함하며, 이용자 편의와 안전을 동시에 고려합니다. 정기적인 유지보수 계획과 안전 점검을 통해 장기적으로 쾌적한 체육 환경을 제공합니다.",
-            category: "문화·체육",
+            category: "체육",
             rate: 63,
             goalAmount: 12000000,
             timeLeft: 21,
             imgPath: "/images/fundingpage/funding16.jpg",
             bankers: 61,
             hearts: 68,
-            author: "안송이"
+            author: "안송이",
+            finish : false
         },
         {
             id: 31,
@@ -433,35 +463,38 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding17.jpg",
             bankers: 46,
             hearts: 39,
-            author: "김응석"
+            author: "김응석",
+            finish : false
         },
         {
             id: 32,
             title: "천안 초등학교 도서관 리모델링",
             map: "천안 불당동 초등학교",
             subTitle: "학교 도서관 내부 환경을 개선하고 독서 공간을 확충합니다. 책장, 조명, 학습 공간을 개선하여 학생들이 쾌적하게 공부할 수 있도록 지원합니다. 또한 열람실 내 안전과 청결 관리까지 포함해 지속 가능한 학습 환경을 제공합니다.",
-            category: "문화·체육",
+            category: "문화",
             rate: 68,
             goalAmount: 9000000,
             timeLeft: 20,
             imgPath: "/images/fundingpage/funding8.jpg",
             bankers: 62,
             hearts: 71,
-            author: "백종진"
+            author: "백종진",
+            finish : false
         },
         {
             id: 33,
             title: "천안 공공체육시설 조명 개선",
             map: "천안 신부동 체육센터",
             subTitle: "체육시설 조명을 보강하여 야간 운동 시 안전성을 높입니다. 운동장, 체육관 내부, 산책로 주변 조명을 설치하고 노후 조명을 교체합니다. 이용자 안전을 고려한 최적 조명 환경을 조성하고 정기 유지보수를 통해 지속적으로 관리합니다.",
-            category: "문화·체육",
+            category: "체육",
             rate: 52,
             goalAmount: 7500000,
             timeLeft: 17,
             imgPath: "/images/fundingpage/funding25.jpg",
             bankers: 50,
             hearts: 55,
-            author: "안송이"
+            author: "안송이",
+            finish : false
         },
         {
             id: 34,
@@ -475,7 +508,8 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding23.jpg",
             bankers: 54,
             hearts: 60,
-            author: "김응석"
+            author: "김응석",
+            finish : false
         },
         {
             id: 35,
@@ -489,35 +523,38 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding18.jpg",
             bankers: 41,
             hearts: 35,
-            author: "백종진"
+            author: "백종진",
+            finish : false
         },
         {
             id: 36,
             title: "천안 초등학교 교실 방음 개선",
             map: "천안 성정동 초등학교",
             subTitle: "교실 방음 시설을 보강하여 학습 환경을 개선합니다. 소음 차단 및 환기 시스템 개선을 통해 학생들이 집중할 수 있는 환경을 제공합니다. 정기적인 점검과 유지보수를 통해 쾌적한 학습 공간을 지속적으로 유지합니다.",
-            category: "생활·편의",
+            category: "생활",
             rate: 63,
             goalAmount: 9500000,
             timeLeft: 22,
             imgPath: "/images/fundingpage/funding28.jpg",
             bankers: 60,
             hearts: 69,
-            author: "안송이"
+            author: "안송이",
+            finish : false
         },
         {
             id: 37,
             title: "천안 작은도서관 환경 개선",
             map: "천안 불당동 작은도서관",
             subTitle: "독서 공간 확충과 환기 개선을 통해 시민들이 편리하게 이용할 수 있도록 합니다. 책장과 좌석 배치를 개선하고 조명을 보강하여 독서 환경을 최적화합니다. 정기 점검과 유지보수로 안전하고 쾌적한 독서 공간을 제공합니다.",
-            category: "문화·체육",
+            category: "문화",
             rate: 50,
             goalAmount: 7000000,
             timeLeft: 20,
             imgPath: "/images/fundingpage/funding8.jpg",
             bankers: 48,
             hearts: 53,
-            author: "김응석"
+            author: "김응석",
+            finish : false
         },
         {
             id: 38,
@@ -531,35 +568,38 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding29.jpg",
             bankers: 52,
             hearts: 58,
-            author: "백종진"
+            author: "백종진",
+            finish : false
         },
         {
             id: 39,
             title: "천안 초등학교 스쿨존 안전 표지판 설치",
             map: "천안 성정동 초등학교",
             subTitle: "스쿨존에 안전 표지판을 설치하여 어린이 통학로의 안전을 강화합니다. 횡단보도, 주차 구역, 놀이터 주변 등 취약 구간에 설치하고 운전자 시인성을 높입니다. 정기 점검과 유지보수를 통해 학생들이 안전하게 등하교할 수 있도록 지원합니다.",
-            category: "교통시설",
+            category: "교통",
             rate: 72,
             goalAmount: 8000000,
             timeLeft: 21,
             imgPath: "/images/fundingpage/funding7.jpg",
             bankers: 68,
             hearts: 81,
-            author: "안송이"
+            author: "안송이",
+            finish : false
         },
         {
             id: 40,
             title: "천안 체육센터 운동기구 보수",
             map: "천안 원성동 체육센터",
             subTitle: "운동기구 보수를 통해 시민들이 안전하게 운동할 수 있도록 합니다. 헬스장, 러닝머신, 웨이트 기구 등 주요 장비의 점검과 교체를 포함합니다. 정기 점검과 유지보수로 장기적으로 안전하고 쾌적한 운동 환경을 제공합니다.",
-            category: "문화·체육",
+            category: "체육",
             rate: 60,
             goalAmount: 12000000,
             timeLeft: 19,
             imgPath: "/images/fundingpage/funding16.jpg",
             bankers: 59,
             hearts: 67,
-            author: "김응석"
+            author: "김응석",
+            finish : false
         },
         {
             id: 41,
@@ -573,21 +613,23 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding12.jpg",
             bankers: 51,
             hearts: 56,
-            author: "백종진"
+            author: "백종진",
+            finish : false
         },
         {
             id: 42,
             title: "천안 공공도서관 조명 개선",
             map: "천안 불당동 도서관",
             subTitle: "공공도서관 내부 및 외부 조명을 개선하여 이용자 편의성을 높입니다. 열람실, 자료실, 로비 등 주요 공간에 LED 조명을 설치하고 노후 조명을 교체합니다. 정기 점검과 유지보수로 안전하고 쾌적한 독서 환경을 지속적으로 제공합니다.",
-            category: "문화·체육",
+            category: "체육",
             rate: 45,
             goalAmount: 6000000,
             timeLeft: 20,
             imgPath: "/images/fundingpage/funding15.jpg",
             bankers: 43,
             hearts: 37,
-            author: "안송이"
+            author: "안송이",
+            finish : false
         },
         {
             id: 43,
@@ -601,7 +643,8 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding30.jpg",
             bankers: 65,
             hearts: 76,
-            author: "김응석"
+            author: "김응석",
+            finish : false
         },
         {
             id: 44,
@@ -615,7 +658,8 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding26.jpg",
             bankers: 56,
             hearts: 63,
-            author: "백종진"
+            author: "백종진",
+            finish : false
         },
         {
             id: 45,
@@ -629,7 +673,8 @@ function FundingDataInit() {
             imgPath: "/images/fundingpage/funding12.jpg",
             bankers: 55,
             hearts: 21,
-            author: "안송이"
+            author: "안송이",
+            finish : false
         }
     ];
 

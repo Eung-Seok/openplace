@@ -1,7 +1,7 @@
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-function FundingBox({item}) {
+function FundingBox({ item }) {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -15,13 +15,14 @@ function FundingBox({item}) {
             onClick={handleClick}
         >
             <img src={item.imgPath} alt={item.title} className="funding-detail-img" />
-            <h3 className="funding-title">{item.title}</h3>
-            <p className="funding-icon">
-                <FaMapMarkerAlt className="funding-map-icon" />
-                <span className="funding-map">&nbsp;{item.map}</span>
-            </p>
-            <h4 className="funding-sub-title">{item.subTitle}</h4>
-
+            <div className="funding-text-container">
+                <h3 className="funding-title">{item.title}</h3>
+                <p className="funding-icon">
+                    <FaMapMarkerAlt className="funding-map-icon" />
+                    <span className="funding-map">&nbsp;{item.map}</span>
+                </p>
+                <h4 className="funding-sub-title">{item.subTitle}</h4>
+            </div>
             <div className="funding-gauge">
                 <div className="funding-gauge-top">
                     <span className="funding-current-gauge">모금률 {item.rate}%</span>
@@ -38,7 +39,7 @@ function FundingBox({item}) {
                     </div>
                     <div className="funding-rate-column">
                         <span className="funding-rate-text">목표금액</span>
-                        <span className="funding-rate-amount">{item.goalAmount/10000}만원</span>
+                        <span className="funding-rate-amount">{item.goalAmount / 10000}만원</span>
                     </div>
                     <div className="funding-rate-column">
                         <span className="funding-rate-text">남은기간</span>
