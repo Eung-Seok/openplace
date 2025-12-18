@@ -52,7 +52,6 @@ function MyPage() {
         };
 
         localStorage.setItem("계정정보", JSON.stringify(updatedUser));
-        setUser(updatedUser);
         setChargeOpen(false);
         setChargeAmount("");
     };
