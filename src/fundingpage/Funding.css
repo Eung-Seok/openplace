@@ -291,7 +291,9 @@
 }
 
 .funding-create-btn {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 200px;
     height: 77px;
     line-height: 77px;

@@ -129,9 +129,14 @@ function FundingList() {
                         </div>
                         <p className="funding-comment">여러분 동네, 개선이 필요한 공공시설이 있나요?</p>
                         <div className="funding-register-actions">
-                            <Link to="/funding/create" className="funding-create-btn">
-                                + 펀딩 등록하기
-                            </Link>
+
+                            <Button className="funding-create-btn"
+                                onClick={() => {
+                                        navigate("/funding/create");
+                                    window.scrollTo(0, 0);
+                                }}
+                            >펀딩 등록하기</Button>
+
                         </div>
                     </div>
                 </section>
