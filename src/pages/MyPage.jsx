@@ -60,7 +60,16 @@ function MyPage() {
     /* ================= 회원 탈퇴 ================= */
     const handleWithdraw = () => {
         if (!window.confirm("정말 회원 탈퇴하시겠습니까?")) return;
-        localStorage.removeItem("계정정보");
+        let accountInfo = {
+            nickname: '',
+            name: '',
+            mailAdress: '',
+            phoneNumber: '',
+            birthday: '',
+            id: '',
+            pw: '',
+        };
+        localStorage.setItem("계정정보", JSON.stringify(accountInfo))
         localStorage.setItem("로그인현황", "false");
         navigate("/");
         window.scrollTo(0, 0);
