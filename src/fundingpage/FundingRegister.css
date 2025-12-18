@@ -96,7 +96,7 @@ body {
 }
 
 .funding-edit-btn {
-    background: #066b59;
+    background: #09947d;
     color: #ffffff;
     border: none;
     padding: 10px 20px;
@@ -347,8 +347,24 @@ body {
 textarea::-webkit-scrollbar {
     width: 8px;
 }
+
 textarea::-webkit-scrollbar-thumb {
     background-color: #646464;
     border-radius: 4px;
     cursor: pointer;
 }
+
+/* 목표금액 증가버튼  */
+.funding-amount-button {
+    border: 1px solid #ccc;
+    color: #fff;
+    border-radius: 8px;
+    background: #017cad;
+}
+
+/* .funding-amount-button {
+    border: 1px solid #ccc;
+    color: black;
+    border-radius: 8px;
+    background: #fff;
+} */

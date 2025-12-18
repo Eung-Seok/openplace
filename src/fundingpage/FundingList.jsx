@@ -134,7 +134,7 @@ function FundingList() {
                         })
                     }
                 </div>
-                <div className="community-search" style={{ justifyItems: 'center' }}>
+                <div className="community-search" style={{margin: '0 auto'}}>
                     <input
                         type="text"
                         value={keyword}

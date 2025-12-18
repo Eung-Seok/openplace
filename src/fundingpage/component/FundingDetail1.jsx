@@ -8,12 +8,18 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import FundingAmountPlus from "../FundingAmountPlus.jsx";
 import './FundingDetail1.css'
 
-function FundingDetail1({data}) {
+function FundingDetail1({ data }) {
 
     const location = useLocation();
-    const id = data.id 
+    const id = data.id
     const [liked, setLiked] = useState(false);
     const [count, setCount] = useState(data.hearts || 0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [donateOpen, setDonateOpen] = useState(false);
+    const [donateAmount, setDonateAmount] = useState("");
+    const [user, setUser] = useState(
+        JSON.parse(localStorage.getItem("계정정보"))
+    );
 
 
     const handleClick = () => {
@@ -24,6 +30,43 @@ function FundingDetail1({data}) {
         }
         setLiked(!liked);
     };
+
+    const handleDonate = () => {
+        const amount = Number(donateAmount);
+
+        if (!amount || amount <= 0) {
+            alert("기부 금액을 선택 또는 입력하세요.");
+            return;
+        }
+
+        if ((user.balance || 0) < amount) {
+            alert("잔고가 부족합니다.");
+            return;
+        }
+
+        const updatedUser = {
+            ...user,
+            balance: (user.balance || 0) - amount,
+            totalDonate: (user.totalDonate || 0) + amount,
+        };
+
+        let list = JSON.parse(localStorage.getItem("계정목록")) || [];
+        const index = list.findIndex(item => item.id === user.id);
+
+        if (index !== -1) {
+            list[index] = updatedUser;
+            localStorage.setItem("계정목록", JSON.stringify(list));
+        }
+
+        localStorage.setItem("계정정보", JSON.stringify(updatedUser));
+        setUser(updatedUser);
+
+        alert(`${amount.toLocaleString()}원 후원 완료!`);
+
+        setDonateOpen(false);
+        setDonateAmount("");
+    };
+
 
     return (
         <div className="funding-bg-color">
@@ -111,9 +154,13 @@ function FundingDetail1({data}) {
                                 </div>
 
                                 <div className="funding-support-button">
-                                    <Link to={"/funding/support/" + id}>
-                                        <button className="">후원하기</button>
-                                    </Link>
+                                    <button
+                                        className="donate-btn"
+                                        onClick={() => setDonateOpen(true)}
+                                    >
+                                        후원하기
+                                    </button>
+
                                 </div>
 
                                 <div>
@@ -131,6 +178,7 @@ function FundingDetail1({data}) {
 
                     <div className="funding-support-footer">
                         <p className="funding-support-subtitle">{data.subTitle}</p>
+                        <img src="/images/fundingpage/fundingSupport.png" alt="펀딩 이미지" />
                     </div>
 
                 </div>
@@ -138,9 +186,70 @@ function FundingDetail1({data}) {
 
 
             </div>
+            {donateOpen && (
+                <div
+                    className="donate-overlay"
+                    onClick={() => setDonateOpen(false)}
+                >
+                    <div
+                        className="donate-modal"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <h3>후원 금액 선택</h3>
+
+                        <div className="donate-quick">
+                            {[10000, 50000, 100000].map(price => (
+                                <button
+                                    key={price}
+                                    onClick={() => setDonateAmount(price)}
+                                >
+                                    {price.toLocaleString()}원
+                                </button>
+                            ))}
+                        </div>
+
+                        <input
+                            type="text"
+                            placeholder="직접 입력"
+                            value={
+                                donateAmount
+                                // 쉼표 추가
+                                    ? Number(donateAmount).toLocaleString()
+                                    : ""
+                            }
+                            onChange={(e) => {
+                                // 숫자만 남기기
+                                const onlyNumber = e.target.value.replace(/[^0-9]/g, "");
+                                setDonateAmount(onlyNumber);
+                            }}
+                        />
 
 
-        </div>
+                        <button
+                            className="donate-confirm-btn"
+                            onClick={handleDonate}
+                        >
+                            후원하기
+                        </button>
+
+                        <button
+                            className="donate-cancel-btn"
+                            onClick={() => {
+                                setDonateOpen(false);
+                                setDonateAmount("");
+                            }}
+
+                        >
+                            취소
+                        </button>
+                    </div>
+                </div>
+            )
+            }
+
+
+
+        </div >
     )
 }
 

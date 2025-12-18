@@ -86,7 +86,7 @@ function FundingRegister() {
                 <hr style={{ marginTop: "50px", marginBottom: "40px" }}></hr>
 
                 <p className={`funding-my-idea ${errors.title ? "error" : ""}`}
-                    style={{ marginTop: "50px", marginBottom:"20px"}}>
+                    style={{ marginTop: "50px", marginBottom: "20px" }}>
                     프로젝트 제목 {!title && <span>*</span>}
                 </p>
 
@@ -105,7 +105,7 @@ function FundingRegister() {
                     ></textarea>
 
                     <span className="funding-tooltip">?
-                        <div className="funding-tooltip-text" style={{width:'260px', height:'180px', padding:'10px'}}>
+                        <div className="funding-tooltip-text" style={{ width: '260px', height: '180px', padding: '10px' }}>
                             <p>프로젝트 제목을 입력해주세요.</p>
                             <br></br>
                             프로젝트 제목은 후원자에게 가장 먼저 전달되는 정보입니다.
@@ -135,7 +135,7 @@ function FundingRegister() {
                     ></textarea>
 
                     <span className="funding-tooltip">?
-                        <div className="funding-tooltip-text" style={{width:'260px', height:'210px', padding:'10px'}}>
+                        <div className="funding-tooltip-text" style={{ width: '260px', height: '210px', padding: '10px' }}>
                             <p>해당 프로젝트가 진행될 장소를 입력해주세요.</p>
                             <br></br>
                             프로젝트 제목은 후원자에게 가장 먼저 전달되는 정보입니다.
@@ -215,8 +215,8 @@ function FundingRegister() {
                             ?
                             <div className="funding-tooltip-text" style={{ width: "180px", height: "77px", textAlign: "center" }}>
                                 <p>프로젝트 목표 금액<br></br>
-                                시작 날짜 ⋅ 종료 날짜를 <br></br>
-                                선택해주세요.</p>
+                                    시작 날짜 ⋅ 종료 날짜를 <br></br>
+                                    선택해주세요.</p>
                             </div>
                         </span>
 
@@ -253,7 +253,25 @@ function FundingRegister() {
                                 }
                             }}
                         />
-                        {/* <span className="funding-amount-unit">원</span> */}
+
+                        <div style={{ display: "inline-flex", gap: "5px", marginLeft: "10px" }}>
+                            {[100_000, 1_000_000, 10_000_000].map((amount) => (
+                                <button
+                                    className="funding-amount-button"
+                                    key={amount}
+                                    type="button"
+                                    style={{ padding: "5px 10px", cursor: "pointer" }}
+                                    onClick={() => {
+                                        const current = parseInt(goalAmount.replace(/[^0-9]/g, "")) || 0;
+                                        const newAmount = current + amount;
+                                        setGoalAmount(newAmount.toLocaleString() + " 원");
+                                        if (errors.goalAmount) setErrors(prev => ({ ...prev, goalAmount: false }));
+                                    }}
+                                >
+                                    + {amount.toLocaleString()}원
+                                </button>
+                            ))}
+                        </div>
                     </div>
 
                     <div className="funding-date-row">
