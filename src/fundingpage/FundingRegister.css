@@ -2,6 +2,7 @@
     font-family: "Poppins", sans-serif;
 }
 
+
 body {
     background: #fff;
 }
@@ -24,16 +25,34 @@ body {
 }
 
 .funding-input-container {
+    position: relative;
     width: 80%;
     padding: 50px;
     box-shadow: 0 6px 28px rgba(0, 0, 0, 0.12);
     border-radius: 12px;
-    margin: 0 auto;
-    margin-bottom: 150px;
+    margin: 0 auto 150px;
+    background: #fff;
+    overflow: hidden;
 }
 
+.funding-input-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: #09947d;
+    z-index: 0;
+}
+
+.funding-register-explan span {
+    font-weight: 777;
+}
+
+
 .funding-your-idea {
-    font-size: 25px;
+    font-size: 33px;
     font-weight: 777;
     margin-bottom: 20px;
 }
@@ -44,6 +63,7 @@ body {
 
 .funding-my-idea {
     font-weight: 600;
+    margin-top: 50px;
 }
 
 .funding-amount-label {
@@ -92,14 +112,23 @@ body {
     gap: 20px;
 }
 
+.textarea-wrapper-width2 {
+    width: 905px;
+}
+
+.textarea-wrapper-width {
+    width: 905px;
+}
+
 .textarea-wrapper textarea {
     width: 60%;
-    height: 100px;
+    height: 150px;
     font-size: 15px;
     margin-bottom: 50px;
 }
 
 .textarea-wrapper span {
+    right: 10px;
     width: 18px;
     height: 18px;
     display: flex;
@@ -121,14 +150,23 @@ body {
     cursor: pointer;
 }
 
+.funding-tooltip-text p {
+    color: #363636;
+    margin: 0;
+    padding: 0;
+}
+
 .funding-tooltip .funding-tooltip-text {
     visibility: hidden;
-    width: 320px;
-    height: 120px;
+    width: 310px;
+    height: 222px;
     background-color: #cceffc;
     color: #4F4E50;
-    text-align: left;
-    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 35px;
     border-radius: 5px;
     position: absolute;
     z-index: 1;
@@ -137,6 +175,7 @@ body {
     transform: translateY(-50%);
     font-size: 16px;
     line-height: 1.2;
+    margin-left: 10px;
 }
 
 .funding-tooltip:hover .funding-tooltip-text {
@@ -191,6 +230,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 6px;
+
 }
 
 .funding-date-box span {
@@ -205,12 +245,13 @@ body {
 
 .funding-date-box span {
     font-size: 13px;
-    color: #777;
+    /* color: #777; */
+    color: #252525;
 }
 
 .funding-date-tilde {
     font-size: 18px;
-    margin-top: -10px;
+    margin-top: -28px;
 }
 
 /* textarea 디자인 변경 */
@@ -256,4 +297,57 @@ body {
 .textarea-wrapper textarea:focus {
     outline: none;
     border-color: #017cad;
+}
+
+.funding-register-container textarea {
+    resize: none;
+    overflow: hidden;
+}
+
+.funding-img-style {
+    width: 60%;
+    min-height: 40px;
+    padding: 8px 14px;
+    font-size: 15px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: none;
+    background: #fff;
+}
+
+/* 필수입력 에러 css */
+
+.funding-my-idea.error {
+    color: red;
+    font-weight: bold;
+}
+
+.textarea-wrapper textarea.error {
+    border: 1px solid red;
+}
+
+.funding-amount-input.error,
+.funding-date-box input.error {
+    border: 1px solid red;
+}
+
+/* textarea 스크롤바 기능 */
+#summary {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#description {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+textarea::-webkit-scrollbar {
+    width: 8px;
+}
+textarea::-webkit-scrollbar-thumb {
+    background-color: #646464;
+    border-radius: 4px;
+    cursor: pointer;
 }
