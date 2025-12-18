@@ -1,4 +1,4 @@
-import { useDebugValue, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import "./MyPage.css";
 import MyInfoModal from "./MyInfoModal";
@@ -19,6 +19,9 @@ function MyPage() {
     // 충전
     const [chargeOpen, setChargeOpen] = useState(false);
     const [chargeAmount, setChargeAmount] = useState("");
+
+    // 🔥 회원 탈퇴 모달
+    const [withdrawModalOpen, setWithdrawModalOpen] = useState(false);
 
     useEffect(() => {
         if (!user) return;
@@ -51,34 +54,36 @@ function MyPage() {
             balance: (user.balance || 0) + amount,
         };
 
-        let list = JSON.parse(localStorage.getItem('계정목록'))
-        let indexes = 0
-        list.map((item,index)=>{
-            if(item.id == user.id){
-                indexes = index
-            }
-        })
-        list[indexes] = updatedUser
-        localStorage.setItem("계정목록", JSON.stringify([...list]));
-        setUser(updatedUser)
+        let list = JSON.parse(localStorage.getItem("계정목록"));
+        let index = list.findIndex(item => item.id === user.id);
+
+        list[index] = updatedUser;
+        localStorage.setItem("계정목록", JSON.stringify(list));
+        setUser(updatedUser);
         setChargeOpen(false);
         setChargeAmount("");
     };
 
     /* ================= 회원 탈퇴 ================= */
     const handleWithdraw = () => {
-        if (!window.confirm("정말 회원 탈퇴하시겠습니까?")) return;
-        let accountInfo = {
-            nickname: '',
-            name: '',
-            mailAdress: '',
-            phoneNumber: '',
-            birthday: '',
-            id: '',
-            pw: '',
+        setWithdrawModalOpen(true); // ✅ 모달만 열기
+    };
+
+    const confirmWithdraw = () => {
+        const accountInfo = {
+            nickname: "",
+            name: "",
+            mailAdress: "",
+            phoneNumber: "",
+            birthday: "",
+            id: "",
+            pw: "",
         };
-        localStorage.setItem("계정정보", JSON.stringify(accountInfo))
+
+        localStorage.setItem("계정정보", JSON.stringify(accountInfo));
         localStorage.setItem("로그인현황", "false");
+
+        setWithdrawModalOpen(false);
         navigate("/");
         window.scrollTo(0, 0);
     };
@@ -89,7 +94,9 @@ function MyPage() {
         <section className="mypage">
             <div className="mypage-container">
 
-                <h2 className="mypage-title"> <FiUser size={30}/> 마이페이지</h2>
+                <h2 className="mypage-title">
+                    <FiUser size={30} /> 마이페이지
+                </h2>
 
                 {/* 프로필 */}
                 <div className="mypage-profile">
@@ -103,15 +110,14 @@ function MyPage() {
                     >
                         내 정보 확인
                     </button>
+
                     {infoOpen && (
                         <MyInfoModal
                             user={user}
                             onClose={() => setInfoOpen(false)}
                         />
                     )}
-
                 </div>
-
 
                 {/* 잔고 */}
                 <div className="mypage-balance-box">
@@ -188,23 +194,22 @@ function MyPage() {
 
                 {/* 콘텐츠 */}
                 <div className="mypage-content">
-                    {/* ================= 내가 제안한 프로젝트 ================= */}
                     {activeTab === "project" &&
-                        myProjects.map(project => {
-                            return (
-                                <div key={project.id}
-                                    className="mypage-card"
-                                    onClick={() => {
-                                        navigate(`/funding/detail/${project.id}`);
-                                        window.scrollTo(0, 0);
-                                    }}>
-                                    <strong>{project.title}</strong>
-                                    <p>{project.subTitle}</p>
-                                </div>
-                            );
-                        })}
+                        myProjects.map(project => (
+                            <div
+                                key={project.id}
+                                className="mypage-card"
+                                onClick={() => {
+                                    navigate(`/funding/detail/${project.id}`);
+                                    window.scrollTo(0, 0);
+                                }}
+                            >
+                                <strong>{project.title}</strong>
+                                <p>{project.subTitle}</p>
+                            </div>
+                        ))}
                 </div>
-                {/* ================= 내가 쓴 게시물 ================= */}
+
                 {activeTab === "post" && (
                     myPosts.length === 0 ? (
                         <p className="mypage-empty-text">
@@ -230,6 +235,7 @@ function MyPage() {
                     )
                 )}
 
+                {/* ================= 회원 탈퇴 ================= */}
                 <div className="mypage-danger-zone">
                     <button
                         className="mypage-withdraw-btn"
@@ -240,9 +246,38 @@ function MyPage() {
                 </div>
 
             </div>
+
+            {/* ================= 회원 탈퇴 모달 ================= */}
+            {withdrawModalOpen && (
+                <div className="withdraw-modal-backdrop">
+                    <div className="withdraw-modal-box">
+                        <p className="withdraw-modal-text">
+                            정말 회원 탈퇴 하시겠습니까?
+                        </p>
+                        <p className="withdraw-modal-subtext">
+                            탈퇴 시 모든 정보는 복구할 수 없습니다.
+                        </p>
+
+                        <div className="withdraw-modal-btn-group">
+                            <button
+                                className="withdraw-modal-confirm-btn"
+                                onClick={confirmWithdraw}
+                            >
+                                탈퇴
+                            </button>
+                            <button
+                                className="withdraw-modal-cancel-btn"
+                                onClick={() => setWithdrawModalOpen(false)}
+                            >
+                                취소
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
         </section>
     );
 }
 
 export default MyPage;
-
