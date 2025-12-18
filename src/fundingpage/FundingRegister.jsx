@@ -41,23 +41,6 @@ function FundingRegister() {
 
         setErrors(newErrors);
 
-        // 스크롤이동
-        
-        const firstErrorField = Object.keys(newErrors).find((key) => newErrors[key]);
-        if (firstErrorField) {
-            alert("필수 내용을 작성해주세요.");
-            setTimeout(() => {
-                const element = document.getElementById(firstErrorField);
-                if (element) {
-                    const yOffset = -80; 
-                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                    window.scrollTo({ top: y, behavior: "smooth" });
-                    element.focus();
-                }
-            }, 50); 
-            return;
-        }
-
         if (window.confirm("작성하신 프로젝트 내용을 저장하시겠습니까?")) {
             navigate("/funding/main/1");
         }
@@ -100,10 +83,10 @@ function FundingRegister() {
                     여러분의 진솔한 설명은 후원자들의 <span>공감과 참여</span>로 이어집니다.
                 </p>
                 </p>
-                <hr style={{ marginTop: "77px", marginBottom: "40px" }}></hr>
+                <hr style={{ marginTop: "50px", marginBottom: "40px" }}></hr>
 
                 <p className={`funding-my-idea ${errors.title ? "error" : ""}`}
-                    style={{ marginTop: "77px" }}>
+                    style={{ marginTop: "50px", marginBottom:"20px"}}>
                     프로젝트 제목 {!title && <span>*</span>}
                 </p>
 
@@ -122,7 +105,7 @@ function FundingRegister() {
                     ></textarea>
 
                     <span className="funding-tooltip">?
-                        <div className="funding-tooltip-text">
+                        <div className="funding-tooltip-text" style={{width:'260px', height:'180px', padding:'10px'}}>
                             <p>프로젝트 제목을 입력해주세요.</p>
                             <br></br>
                             프로젝트 제목은 후원자에게 가장 먼저 전달되는 정보입니다.
@@ -152,7 +135,7 @@ function FundingRegister() {
                     ></textarea>
 
                     <span className="funding-tooltip">?
-                        <div className="funding-tooltip-text">
+                        <div className="funding-tooltip-text" style={{width:'260px', height:'210px', padding:'10px'}}>
                             <p>해당 프로젝트가 진행될 장소를 입력해주세요.</p>
                             <br></br>
                             프로젝트 제목은 후원자에게 가장 먼저 전달되는 정보입니다.
@@ -230,8 +213,10 @@ function FundingRegister() {
                     <div className="textarea-wrapper funding-help-amount">
                         <span className="funding-tooltip" style={{ display: "inline-flex", justifyContent: "center", alignItems: "center" }}>
                             ?
-                            <div className="funding-tooltip-text" style={{ width: "250px", height: "77px", textAlign: "center" }}>
-                                <p>프로젝트 목표 금액과 종료 날짜를 선택해주세요.</p>
+                            <div className="funding-tooltip-text" style={{ width: "180px", height: "77px", textAlign: "center" }}>
+                                <p>프로젝트 목표 금액<br></br>
+                                시작 날짜 ⋅ 종료 날짜를 <br></br>
+                                선택해주세요.</p>
                             </div>
                         </span>
 
@@ -307,7 +292,6 @@ function FundingRegister() {
                     <button
                         className="funding-edit-btn"
                         onClick={() => {
-                            // 버튼 클릭 초반에 errors 상태 업데이트 및 첫 번째 오류로 스크롤
                             const newErrors = {
                                 title: !title,
                                 location: !location,
@@ -322,7 +306,6 @@ function FundingRegister() {
                             if (firstErrorField) {
                                 alert("필수 내용을 작성해주세요.");
                                 scrollToWithOffset(firstErrorField);
-                                document.getElementById(firstErrorField)?.focus();
                                 return;
                             }
 

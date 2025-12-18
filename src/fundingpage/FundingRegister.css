@@ -61,9 +61,10 @@ body {
     margin-bottom: 40px;
 }
 
+/* 여백  */
 .funding-my-idea {
     font-weight: 600;
-    margin-top: 33px;
+    margin-top: 20px;
 }
 
 .funding-amount-label {
@@ -124,7 +125,7 @@ body {
     width: 60%;
     height: 150px;
     font-size: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .textarea-wrapper span {
@@ -158,15 +159,15 @@ body {
 
 .funding-tooltip .funding-tooltip-text {
     visibility: hidden;
-    width: 310px;
-    height: 222px;
+    width: 260px;
+    height: 210px;
     background-color: #cceffc;
     color: #4F4E50;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 35px;
+    padding: 10px;
     border-radius: 5px;
     position: absolute;
     z-index: 1;
