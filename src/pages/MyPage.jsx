@@ -60,6 +60,7 @@ function MyPage() {
         })
         list[indexes] = updatedUser
         localStorage.setItem("계정목록", JSON.stringify([...list]));
+        localStorage.setItem('계정정보', JSON.stringify(updatedUser))
         setUser(updatedUser)
         setChargeOpen(false);
         setChargeAmount("");
