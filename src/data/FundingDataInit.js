@@ -14,7 +14,7 @@ function FundingDataInit() {
             author: "김응석",
             bankers: 20,
             hearts: 99,
-            finish : false
+            finish: false
         },
         {
             id: 2,
@@ -29,7 +29,7 @@ function FundingDataInit() {
             author: "안송이",
             bankers: 67,
             hearts: 82,
-            finish : false
+            finish: false
         },
         {
             id: 3,
@@ -44,7 +44,7 @@ function FundingDataInit() {
             author: "백종진",
             bankers: 42,
             hearts: 19,
-            finish : false
+            finish: false
         },
         {
             id: 4,
@@ -59,7 +59,7 @@ function FundingDataInit() {
             author: "김응석",
             bankers: 58,
             hearts: 44,
-            finish : false
+            finish: false
         },
         {
             id: 5,
@@ -74,7 +74,7 @@ function FundingDataInit() {
             author: "안송이",
             bankers: 24,
             hearts: 7,
-            finish : false
+            finish: false
         },
         {
             id: 6,
@@ -89,7 +89,57 @@ function FundingDataInit() {
             author: "백종진",
             bankers: 79,
             hearts: 96,
-            finish : true
+            finish: true,
+            projectStatus: "COMPLETED",
+            progressStep: 5, // 완료
+
+            progressLogs: [
+                {
+                    step: 1,
+                    title: "모금 완료",
+                    desc: "시민 참여로 목표 금액을 달성하였습니다.",
+                    department: "Open Place 운영팀",
+                    manager: "김민정 매니저",
+                    contractor: null,
+                    date: "2024-11-20"
+                },
+                {
+                    step: 2,
+                    title: "지자체 승인 완료",
+                    desc: "관할 지자체 승인 절차가 완료되었습니다.",
+                    department: "천안시 도시환경과",
+                    manager: "이성훈 주무관",
+                    contractor: null,
+                    date: "2024-11-28"
+                },
+                {
+                    step: 3,
+                    title: "시공사 선정",
+                    desc: "공개 입찰을 통해 시공사를 선정하였습니다.",
+                    department: "시설관리팀",
+                    manager: "박재훈 팀장",
+                    contractor: "한빛건설",
+                    date: "2024-12-03"
+                },
+                {
+                    step: 4,
+                    title: "공사 진행",
+                    desc: "현장 시공 및 안전 점검이 진행되었습니다.",
+                    department: "시설관리팀",
+                    manager: "현장 관리자 배정",
+                    contractor: "한빛건설",
+                    date: "2024-12-10"
+                },
+                {
+                    step: 5,
+                    title: "완료 및 공개",
+                    desc: "공사가 완료되어 결과를 공개합니다.",
+                    department: "Open Place 운영팀",
+                    manager: "김민정 매니저",
+                    contractor: "한빛건설",
+                    date: "2024-12-18"
+                }
+            ]
         },
         {
             id: 7,
@@ -104,7 +154,7 @@ function FundingDataInit() {
             author: "안송이",
             bankers: 51,
             hearts: 63,
-            finish : false
+            finish: false
         },
         {
             id: 8,
@@ -119,7 +169,30 @@ function FundingDataInit() {
             bankers: 78,
             hearts: 91,
             author: "김응석",
-            finish : false
+            finish: false,
+            projectStatus: "IN_PROGRESS",
+            progressStep: 2, // 지자체 승인 완료
+
+            progressLogs: [
+                {
+                    step: 1,
+                    title: "모금 완료",
+                    desc: "시민 참여로 목표 금액 100%를 달성하였습니다.",
+                    department: "Open Place 운영팀",
+                    manager: "김민정 매니저",
+                    contractor: null,
+                    date: "2025-01-05"
+                },
+                {
+                    step: 2,
+                    title: "지자체 승인 완료",
+                    desc: "관할 지자체의 행정 검토 및 사업 승인이 완료되었습니다.",
+                    department: "천안시 문화체육과",
+                    manager: "이성훈 주무관",
+                    contractor: null,
+                    date: "2025-01-12"
+                }
+            ]
         },
         {
             id: 9,
@@ -134,7 +207,7 @@ function FundingDataInit() {
             bankers: 53,
             hearts: 66,
             author: "안송이",
-            finish : false
+            finish: false
         },
         {
             id: 10,
@@ -149,7 +222,30 @@ function FundingDataInit() {
             bankers: 80,
             hearts: 97,
             author: "백종진",
-            finish : false
+            finish: false,
+            projectStatus: "IN_PROGRESS",
+            progressStep: 2, // 지자체 승인 완료
+
+            progressLogs: [
+                {
+                    step: 1,
+                    title: "모금 완료",
+                    desc: "시민 참여로 목표 금액 100%를 달성했습니다.",
+                    department: "Open Place 운영팀",
+                    manager: "김민정 매니저",
+                    contractor: null,
+                    date: "2025-01-03"
+                },
+                {
+                    step: 2,
+                    title: "지자체 승인 완료",
+                    desc: "관할 지자체의 행정 검토 및 사업 승인이 완료되었습니다.",
+                    department: "천안시 교통정책과",
+                    manager: "정우성 주무관",
+                    contractor: null,
+                    date: "2025-01-10"
+                }
+            ]
         },
         {
             id: 11,
@@ -164,7 +260,7 @@ function FundingDataInit() {
             bankers: 64,
             hearts: 83,
             author: "김응석",
-            finish : false
+            finish: false
         },
         {
             id: 12,
@@ -179,7 +275,7 @@ function FundingDataInit() {
             bankers: 39,
             hearts: 28,
             author: "백종진",
-            finish : false
+            finish: false
         },
         {
             id: 13,
@@ -194,7 +290,7 @@ function FundingDataInit() {
             bankers: 57,
             hearts: 61,
             author: "백종진",
-            finish : false
+            finish: false
         },
         {
             id: 14,
@@ -209,7 +305,7 @@ function FundingDataInit() {
             bankers: 34,
             hearts: 26,
             author: "김응석",
-            finish : false
+            finish: false
         },
         {
             id: 15,
@@ -224,7 +320,7 @@ function FundingDataInit() {
             bankers: 60,
             hearts: 74,
             author: "안송이",
-            finish : false
+            finish: false
         },
         {
             id: 16,
@@ -239,7 +335,7 @@ function FundingDataInit() {
             bankers: 31,
             hearts: 22,
             author: "백종진",
-            finish : false
+            finish: false
         },
         {
             id: 17,
@@ -254,7 +350,7 @@ function FundingDataInit() {
             bankers: 69,
             hearts: 85,
             author: "김응석",
-            finish : false
+            finish: false
         },
         {
             id: 18,
@@ -269,7 +365,7 @@ function FundingDataInit() {
             bankers: 47,
             hearts: 52,
             author: "김응석",
-            finish : false
+            finish: false
         },
         {
             id: 19,
@@ -284,7 +380,57 @@ function FundingDataInit() {
             bankers: 80,
             hearts: 94,
             author: "안송이",
-            finish : true
+            finish: true,
+            projectStatus: "COMPLETED",
+            progressStep: 5,
+
+            progressLogs: [
+                {
+                    step: 1,
+                    title: "모금 완료",
+                    desc: "시민 참여로 목표 금액을 달성했습니다.",
+                    department: "Open Place 운영팀",
+                    manager: "김민정 매니저",
+                    contractor: null,
+                    date: "2024-11-20"
+                },
+                {
+                    step: 2,
+                    title: "지자체 승인 완료",
+                    desc: "관할 지자체 승인 절차가 완료되었습니다.",
+                    department: "천안시 도시환경과",
+                    manager: "이성훈 주무관",
+                    contractor: null,
+                    date: "2024-11-28"
+                },
+                {
+                    step: 3,
+                    title: "시공사 선정",
+                    desc: "공개 입찰을 통해 시공사를 선정했습니다.",
+                    department: "시설관리팀",
+                    manager: "박재훈 팀장",
+                    contractor: "한빛건설",
+                    date: "2024-12-03"
+                },
+                {
+                    step: 4,
+                    title: "공사 진행",
+                    desc: "현장 시공 및 안전 점검이 진행되었습니다.",
+                    department: "시설관리팀",
+                    manager: "현장 관리자",
+                    contractor: "한빛건설",
+                    date: "2024-12-10"
+                },
+                {
+                    step: 5,
+                    title: "완료 및 공개",
+                    desc: "공사가 완료되어 결과를 공개합니다.",
+                    department: "Open Place 운영팀",
+                    manager: "김민정 매니저",
+                    contractor: "한빛건설",
+                    date: "2024-12-18"
+                }
+            ]
         },
         {
             id: 20,
@@ -299,7 +445,7 @@ function FundingDataInit() {
             bankers: 44,
             hearts: 36,
             author: "백종진",
-            finish : false
+            finish: false
         },
         {
             id: 21,
@@ -314,7 +460,7 @@ function FundingDataInit() {
             bankers: 29,
             hearts: 18,
             author: "김응석",
-            finish : false
+            finish: false
         },
         {
             id: 22,
@@ -329,7 +475,7 @@ function FundingDataInit() {
             bankers: 71,
             hearts: 88,
             author: "안송이",
-            finish : false
+            finish: false
         },
         {
             id: 23,
@@ -344,7 +490,7 @@ function FundingDataInit() {
             bankers: 56,
             hearts: 62,
             author: "백종진",
-            finish : false
+            finish: false
         },
         {
             id: 24,
@@ -359,7 +505,7 @@ function FundingDataInit() {
             bankers: 76,
             hearts: 90,
             author: "김응석",
-            finish : false
+            finish: false
         },
         {
             id: 25,
@@ -374,7 +520,7 @@ function FundingDataInit() {
             bankers: 37,
             hearts: 29,
             author: "안송이",
-            finish : false
+            finish: false
         },
         {
             id: 26,
@@ -389,7 +535,7 @@ function FundingDataInit() {
             bankers: 58,
             hearts: 64,
             author: "김응석",
-            finish : false
+            finish: false
         },
         {
             id: 27,
@@ -404,7 +550,7 @@ function FundingDataInit() {
             bankers: 52,
             hearts: 57,
             author: "안송이",
-            finish : false
+            finish: false
         },
         {
             id: 28,
@@ -419,7 +565,7 @@ function FundingDataInit() {
             bankers: 66,
             hearts: 79,
             author: "백종진",
-            finish : false
+            finish: false
         },
         {
             id: 29,
@@ -434,7 +580,7 @@ function FundingDataInit() {
             bankers: 45,
             hearts: 41,
             author: "김응석",
-            finish : false
+            finish: false
         },
         {
             id: 30,
@@ -449,7 +595,7 @@ function FundingDataInit() {
             bankers: 61,
             hearts: 68,
             author: "안송이",
-            finish : false
+            finish: false
         },
         {
             id: 31,
@@ -464,7 +610,7 @@ function FundingDataInit() {
             bankers: 46,
             hearts: 39,
             author: "김응석",
-            finish : false
+            finish: false
         },
         {
             id: 32,
@@ -479,7 +625,7 @@ function FundingDataInit() {
             bankers: 62,
             hearts: 71,
             author: "백종진",
-            finish : false
+            finish: false
         },
         {
             id: 33,
@@ -494,7 +640,7 @@ function FundingDataInit() {
             bankers: 50,
             hearts: 55,
             author: "안송이",
-            finish : false
+            finish: false
         },
         {
             id: 34,
@@ -509,7 +655,7 @@ function FundingDataInit() {
             bankers: 54,
             hearts: 60,
             author: "김응석",
-            finish : false
+            finish: false
         },
         {
             id: 35,
@@ -524,7 +670,7 @@ function FundingDataInit() {
             bankers: 41,
             hearts: 35,
             author: "백종진",
-            finish : false
+            finish: false
         },
         {
             id: 36,
@@ -539,7 +685,7 @@ function FundingDataInit() {
             bankers: 60,
             hearts: 69,
             author: "안송이",
-            finish : false
+            finish: false
         },
         {
             id: 37,
@@ -554,7 +700,7 @@ function FundingDataInit() {
             bankers: 48,
             hearts: 53,
             author: "김응석",
-            finish : false
+            finish: false
         },
         {
             id: 38,
@@ -569,7 +715,7 @@ function FundingDataInit() {
             bankers: 52,
             hearts: 58,
             author: "백종진",
-            finish : false
+            finish: false
         },
         {
             id: 39,
@@ -584,7 +730,7 @@ function FundingDataInit() {
             bankers: 68,
             hearts: 81,
             author: "안송이",
-            finish : false
+            finish: false
         },
         {
             id: 40,
@@ -599,7 +745,7 @@ function FundingDataInit() {
             bankers: 59,
             hearts: 67,
             author: "김응석",
-            finish : false
+            finish: false
         },
         {
             id: 41,
@@ -614,7 +760,7 @@ function FundingDataInit() {
             bankers: 51,
             hearts: 56,
             author: "백종진",
-            finish : false
+            finish: false
         },
         {
             id: 42,
@@ -629,7 +775,7 @@ function FundingDataInit() {
             bankers: 43,
             hearts: 37,
             author: "안송이",
-            finish : false
+            finish: false
         },
         {
             id: 43,
@@ -644,7 +790,7 @@ function FundingDataInit() {
             bankers: 65,
             hearts: 76,
             author: "김응석",
-            finish : false
+            finish: false
         },
         {
             id: 44,
@@ -659,7 +805,7 @@ function FundingDataInit() {
             bankers: 56,
             hearts: 63,
             author: "백종진",
-            finish : false
+            finish: false
         },
         {
             id: 45,
@@ -674,7 +820,7 @@ function FundingDataInit() {
             bankers: 55,
             hearts: 21,
             author: "안송이",
-            finish : false
+            finish: false
         }
     ];
 
