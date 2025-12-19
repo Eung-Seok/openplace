@@ -4,36 +4,27 @@ import "./PaymentModal.css";
 function PaymentModal({ onClose, onSuccess }) {
     const [amount, setAmount] = useState("");
     const [agree, setAgree] = useState(false);
-    const [alertOpen, setAlertOpen] = useState(false);
-    const [alertMessage, setAlertMessage] = useState("");
-    const openAlert = (message) => {
-        setAlertMessage(message);
-        setAlertOpen(true);
-    };
-
-    // 선택된 결제 수단
     const [selectedMethod, setSelectedMethod] = useState("");
 
     const quickAmounts = [10000, 50000, 100000];
 
     const handlePay = () => {
         const price = Number(amount);
-        
-        if (!selectedMethod) {
-            openAlert("결제 수단을 선택해주세요.");
-            return;
-        }
 
         if (!price || price <= 0) {
-            openAlert("결제 금액을 선택 또는 입력하세요.");
+            alert("결제 금액을 선택 또는 입력하세요.");
             return;
         }
 
         if (!agree) {
-            openAlert("약관에 동의해주세요.");
+            alert("약관에 동의해주세요.");
             return;
         }
 
+        if (!selectedMethod) {
+            alert("결제 수단을 선택해주세요.");
+            return;
+        }
 
         onSuccess(price);
         onClose();
@@ -56,56 +47,58 @@ function PaymentModal({ onClose, onSuccess }) {
                         신용·체크카드
                     </button>
 
+                    {/* 페이 버튼 */}
                     <div className="payment-method-grid">
                         <button
-                            className={`pay-icon ${selectedMethod === "naver" ? "active" : ""
+                            className={`pay-icon-btn ${selectedMethod === "naver" ? "active" : ""
                                 }`}
                             onClick={() => setSelectedMethod("naver")}
                         >
-                            N Pay
+                            <span className="pay-icon-img">
+                                <img src="/images/pay/naverpay.png" alt="N Pay" />
+                            </span>
+                            <span className="pay-text">Naver</span>
                         </button>
 
                         <button
-                            className={`pay-icon ${selectedMethod === "kakao" ? "active" : ""
+                            className={`pay-icon-btn ${selectedMethod === "kakao" ? "active" : ""
                                 }`}
                             onClick={() => setSelectedMethod("kakao")}
                         >
-                            Kakao Pay
+                            <span className="pay-icon-img">
+                                <img src="/images/pay/kakaopay.png" alt="Kakao Pay" />
+                            </span>
+                            <span className="pay-text">Kakao</span>
                         </button>
 
                         <button
-                            className={`pay-icon ${selectedMethod === "toss" ? "active" : ""
+                            className={`pay-icon-btn ${selectedMethod === "toss" ? "active" : ""
                                 }`}
                             onClick={() => setSelectedMethod("toss")}
                         >
-                            Toss Pay
+                            <span className="pay-icon-img">
+                                <img src="/images/pay/tosspay.png" alt="Toss Pay" />
+                            </span>
+                            <span className="pay-text">Toss</span>
                         </button>
                     </div>
 
+                    {/* 기타 결제 */}
                     <div className="payment-method-grid small">
-                        <button
-                            className={`pay-simple ${selectedMethod === "account" ? "active" : ""
-                                }`}
-                            onClick={() => setSelectedMethod("account")}
-                        >
-                            계좌이체
-                        </button>
-
-                        <button
-                            className={`pay-simple ${selectedMethod === "virtual" ? "active" : ""
-                                }`}
-                            onClick={() => setSelectedMethod("virtual")}
-                        >
-                            가상계좌
-                        </button>
-
-                        <button
-                            className={`pay-simple ${selectedMethod === "phone" ? "active" : ""
-                                }`}
-                            onClick={() => setSelectedMethod("phone")}
-                        >
-                            휴대폰
-                        </button>
+                        {[
+                            { key: "account", label: "계좌이체" },
+                            { key: "virtual", label: "가상계좌" },
+                            { key: "phone", label: "휴대폰" },
+                        ].map(item => (
+                            <button
+                                key={item.key}
+                                className={`pay-simple ${selectedMethod === item.key ? "active" : ""
+                                    }`}
+                                onClick={() => setSelectedMethod(item.key)}
+                            >
+                                {item.label}
+                            </button>
+                        ))}
                     </div>
                 </div>
 
@@ -155,25 +148,10 @@ function PaymentModal({ onClose, onSuccess }) {
                 <button className="payment-cancel" onClick={onClose}>
                     취소
                 </button>
+
             </div>
-            {alertOpen && (
-                <div className="payment-alert-backdrop">
-                    <div className="payment-alert-box">
-                        <p className="payment-alert-text">
-                            {alertMessage}
-                        </p>
-                        <button
-                            className="payment-alert-confirm-btn"
-                            onClick={() => setAlertOpen(false)}
-                        >
-                            확인
-                        </button>
-                    </div>
-                </div>
-            )}
         </div>
     );
 }
 
 export default PaymentModal;
-

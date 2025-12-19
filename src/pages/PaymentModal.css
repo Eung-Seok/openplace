@@ -257,3 +257,67 @@
 .payment-alert-confirm-btn:hover {
     text-decoration: underline;
 }
+
+/* =========================
+   Pay Icon Button
+========================= */
+
+.pay-icon-btn {
+    width: 87px;
+    /* ⭐ 버튼 가로 고정 */
+    height: 44px;
+    /* ⭐ 버튼 세로 고정 */
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+
+    /* 내용 때문에 커지지 않게 */
+    box-sizing: border-box;
+}
+
+/* 선택 상태 */
+.pay-icon-btn.active {
+    border: 2px solid #09947d;
+    background: #e6f4ef;
+}
+
+/* 아이콘 컨테이너 (⭐ 핵심) */
+.pay-icon-img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    /* ⭐ 아이콘 줄어들지 않게 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 실제 이미지 */
+.pay-icon-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* 텍스트 */
+.pay-text {
+    font-size: 12px;
+    /* ⭐ 폰트 축소 */
+    font-weight: 600;
+    white-space: nowrap;
+    /* 줄바꿈 방지 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 길면 … 처리 */
+}
+
+/* 기존 simple active 유지 */
+.pay-simple.active {
+    border: 2px solid #09947d;
+    background: #e6f4ef;
+}
