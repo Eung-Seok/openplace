@@ -103,28 +103,30 @@ function FundingDetail1({ data }) {
     //         });
     //     }
     // }, [activeTab, data.lat, data.lng]);
-    useEffect(() => {
-        if (activeTab !== "idea") return;
-        if (!window.kakao || !window.kakao.maps) {
-            console.log("카카오맵 SDK 준비 안됨");
-            return;
-        }
+    
+    // useEffect(() => {
+    //     if (activeTab !== "idea") return;
+    //     if (!window.kakao || !window.kakao.maps) {
+    //         console.log(window.kakao);
+    //         console.log("카카오맵 SDK 준비 안됨");
+    //         return;
+    //     }
 
-        const container = document.getElementById("kakao-map");
-        if (!container) return;
+    //     const container = document.getElementById("kakao-map");
+    //     if (!container) return;
 
-        const options = {
-            center: new window.kakao.maps.LatLng(data.lat || 37.5665, data.lng || 126.9780),
-            level: 3
-        };
-        const map = new window.kakao.maps.Map(container, options);
+    //     const options = {
+    //         center: new window.kakao.maps.LatLng(data.lat || 37.5665, data.lng || 126.9780),
+    //         level: 3
+    //     };
+    //     const map = new window.kakao.maps.Map(container, options);
 
-        const marker = new window.kakao.maps.Marker({
-            position: map.getCenter()
-        });
-        marker.setMap(map);
+    //     const marker = new window.kakao.maps.Marker({
+    //         position: map.getCenter()
+    //     });
+    //     marker.setMap(map);
 
-    }, [activeTab, data.lat, data.lng]);
+    // }, [activeTab, data.lat, data.lng]);
 
 
     return (

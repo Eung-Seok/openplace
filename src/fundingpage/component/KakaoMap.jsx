@@ -21,7 +21,7 @@ function KakaoMap({ lat, lng, style }) {
         } else {
             const script = document.createElement("script");
             script.src =
-                "https://dapi.kakao.com/v2/maps/sdk.js?appkey=YOUR_APP_KEY&autoload=true";
+                "https://dapi.kakao.com/v2/maps/sdk.js?appkey=7369ac62df585b94bbe56f8dedf282b4&autoload=true";
             script.onload = initMap;
             document.head.appendChild(script);
         }
