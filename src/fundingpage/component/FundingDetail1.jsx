@@ -7,6 +7,8 @@ import { useLocation } from "react-router-dom";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import FundingAmountPlus from "../FundingAmountPlus.jsx";
 import './FundingDetail1.css'
+import KakaoMap from "./KakaoMap.jsx";
+
 
 function FundingDetail1({ data }) {
 
@@ -17,10 +19,15 @@ function FundingDetail1({ data }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [donateOpen, setDonateOpen] = useState(false);
     const [donateAmount, setDonateAmount] = useState("");
-    const [user, setUser] = useState(
-        JSON.parse(localStorage.getItem("계정정보"))
-    );
 
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem("계정정보")));
+    const isLogin = localStorage.getItem("로그인현황") === "true";
+
+
+    // 아이디어 후원자 댓글 메뉴바
+    const [activeTab, setActiveTab] = useState("idea");
+
+    const [alertMsg, setAlertMsg] = useState("");
 
     const handleClick = () => {
         if (liked) {
@@ -29,6 +36,14 @@ function FundingDetail1({ data }) {
             setCount(count + 1);
         }
         setLiked(!liked);
+    };
+
+    const handleSupportClick = () => {
+        if (!isLogin || !user) {
+            setAlertMsg("로그인 후 후원하실 수 있습니다.");
+            return;
+        }
+        setDonateOpen(true);
     };
 
     const handleDonate = () => {
@@ -55,9 +70,8 @@ function FundingDetail1({ data }) {
 
         if (index !== -1) {
             list[index] = updatedUser;
-            localStorage.setItem("계정목록", JSON.stringify(list));
         }
-
+        localStorage.setItem("계정목록", JSON.stringify(list));
         localStorage.setItem("계정정보", JSON.stringify(updatedUser));
         setUser(updatedUser);
 
@@ -66,6 +80,51 @@ function FundingDetail1({ data }) {
         setDonateOpen(false);
         setDonateAmount("");
     };
+
+
+    // 지도 생성
+    // useEffect(() => {
+    //     if (activeTab === "idea") {
+    //         window.kakao.maps.load(() => {
+    //             const container = document.getElementById("kakao-map");
+    //             if (!container) return;
+
+    //             const options = {
+    //                 center: new window.kakao.maps.LatLng(data.lat || 37.5665, data.lng || 126.9780),
+    //                 level: 3
+    //             };
+    //             const map = new window.kakao.maps.Map(container, options);
+
+    //             // 마커 표시
+    //             const marker = new window.kakao.maps.Marker({
+    //                 position: map.getCenter()
+    //             });
+    //             marker.setMap(map);
+    //         });
+    //     }
+    // }, [activeTab, data.lat, data.lng]);
+    useEffect(() => {
+        if (activeTab !== "idea") return;
+        if (!window.kakao || !window.kakao.maps) {
+            console.log("카카오맵 SDK 준비 안됨");
+            return;
+        }
+
+        const container = document.getElementById("kakao-map");
+        if (!container) return;
+
+        const options = {
+            center: new window.kakao.maps.LatLng(data.lat || 37.5665, data.lng || 126.9780),
+            level: 3
+        };
+        const map = new window.kakao.maps.Map(container, options);
+
+        const marker = new window.kakao.maps.Marker({
+            position: map.getCenter()
+        });
+        marker.setMap(map);
+
+    }, [activeTab, data.lat, data.lng]);
 
 
     return (
@@ -156,7 +215,15 @@ function FundingDetail1({ data }) {
                                 <div className="funding-support-button">
                                     <button
                                         className="donate-btn"
-                                        onClick={() => setDonateOpen(true)}
+                                        onClick={() => {
+                                            if (isLogin && user) {
+                                                // 로그인 되어 있으면 모달 열기
+                                                setDonateOpen(true);
+                                            } else {
+                                                // 로그인 안 되어 있으면 알림
+                                                handleSupportClick();
+                                            }
+                                        }}
                                     >
                                         후원하기
                                     </button>
@@ -177,9 +244,108 @@ function FundingDetail1({ data }) {
                     </div>
 
                     <div className="funding-support-footer">
-                        <p className="funding-support-subtitle">{data.subTitle}</p>
+                        <div className="funding-support-footer-sub">
+                            <p className="funding-support-subtitle" style={{ marginBottom: '44px', fontSize: '33px' }}>
+                                프로젝트 설명</p>
+                            <p className="funding-support-subtitle">{data.subTitle}</p>
+                        </div>
                         <img src="/images/fundingpage/fundingSupport.png" alt="펀딩 이미지" />
                     </div>
+                    <div className="funding-line-wrapper">
+                        <div className="funding-list-line">
+                            {/* <div className="funding-list-inner">
+                        <span>아이디어</span>
+                        <span>관련 이미지</span>
+                        <span>모금 상세</span>
+                        <span>후원자</span>
+                            <span>댓글</span>
+                        </div> */}
+                            <div className="funding-list-line2" style={{ marginBottom: '-10px' }}></div>
+                            <div className="funding-list-inner">
+                                <span
+                                    className={activeTab === "idea" ? "active-tab" : ""}
+                                    onClick={() => setActiveTab("idea")}
+                                >
+                                    아이디어
+                                </span>
+                                <span
+                                    className={activeTab === "supporter" ? "active-tab" : ""}
+                                    onClick={() => setActiveTab("supporter")}
+                                >
+                                    후원자
+                                </span>
+                                <span
+                                    className={activeTab === "comment" ? "active-tab" : ""}
+                                    onClick={() => setActiveTab("comment")}
+                                >
+                                    댓글
+                                </span>
+                                <span className="active-tab" style={{ marginLeft: 'auto', marginRight: '420px' }}>지도</span>
+                            </div>
+                        </div>
+                        <div className="funding-tab-content">
+                            {activeTab === "idea" && (
+                                <div>
+                                    <div className="funding-list-line2"></div>
+
+                                    <div
+                                        className="funding-tab-box"
+                                        style={{
+                                            display: "flex",
+                                            gap: "20px",
+                                            alignItems: "flex-start"
+                                        }}
+                                    >
+                                        {/* 왼쪽 텍스트 영역 */}
+                                        <div style={{ flex: 1 }}>
+                                            <p className="funding-support-subtitle" style={{ fontSize: '40px' }}>
+                                                프로젝트에 반영된 지역 제보 아이디어
+                                            </p>
+                                            <br></br>
+                                            <p className="funding-support-subtitle">
+                                                {data.idea}
+                                            </p>
+                                        </div>
+
+                                        {/* 오른쪽 지도 */}
+                                        <KakaoMap
+                                            lat={data.lat || 37.5665}
+                                            lng={data.lng || 126.9780}
+                                            style={{ width: "500px", height: "400px", borderRadius: "12px", flexShrink: 0 }}
+                                        />
+                                    </div>
+                                </div>
+                            )}
+
+
+                            {activeTab === "supporter" && (
+                                <div>
+                                    <div className="funding-list-line2"></div>
+                                    <div className="funding-tab-box">
+
+                                        <p className="funding-support-subtitle">{ }</p>
+                                    </div>
+                                </div>
+                            )}
+
+                            {activeTab === "comment" && (
+                                <div>
+                                    <div className="funding-list-line2"></div>
+                                    <div className="funding-tab-box">
+
+                                        <p className="funding-support-subtitle">{ }</p>
+                                    </div>
+                                </div>
+                            )}
+
+                        </div>
+
+                    </div>
+
+                    {/* <div className="funding-map-line">
+                        <div className="funding-map-inner">
+                        </div>
+                    </div> */}
 
                 </div>
 
@@ -195,6 +361,16 @@ function FundingDetail1({ data }) {
                         className="donate-modal"
                         onClick={(e) => e.stopPropagation()}
                     >
+                        <p>선택한 프로젝트</p>
+                        <div className="donate-modal-header">
+                            <img src={data.imgPath} alt={data.title} style={{ width: '300px', marginBottom: '20px' }} />
+                            <div style={{ marginBottom: '55px' }}>
+                                <span className="donate-modal-header-title">{data.title}</span><br></br>
+                                <FaMapMarkerAlt className="funding-map-icon" style={{ color: '#09947d' }} />
+                                <span className="donate-modal-header-map">{data.map}</span><br></br>
+                                <span className="donate-modal-header-subtitle">{data.subTitle}</span>
+                            </div>
+                        </div>
                         <h3>후원 금액 선택</h3>
 
                         <div className="donate-quick">
@@ -213,7 +389,7 @@ function FundingDetail1({ data }) {
                             placeholder="직접 입력"
                             value={
                                 donateAmount
-                                // 쉼표 추가
+                                    // 쉼표 추가
                                     ? Number(donateAmount).toLocaleString()
                                     : ""
                             }
@@ -247,10 +423,23 @@ function FundingDetail1({ data }) {
             )
             }
 
+            {alertMsg && (
+                <div className="alert-modal-bg">
+                    <div className="alert-modal-box">
+                        <p className="alert-modal-message">
+                            {alertMsg}
+                        </p>
+                        <button
+                            className="alert-modal-btn"
+                            onClick={() => setAlertMsg("")}
+                        >
+                            확인
+                        </button>
+                    </div>
+                </div >
+            )}
+        </div>
 
-
-        </div >
-    )
+    );
 }
-
 export default FundingDetail1;
