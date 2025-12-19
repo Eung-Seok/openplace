@@ -1,0 +1,93 @@
+/* =========================
+   Backdrop
+========================= */
+
+.edit-modal-bg {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* =========================
+   Modal Box
+========================= */
+
+.edit-modal {
+    width: 420px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================
+   Title
+========================= */
+
+.edit-modal h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+/* =========================
+   Form
+========================= */
+
+.edit-modal label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.edit-modal input {
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.edit-modal input:focus {
+    outline: none;
+    border-color: #09947d;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.edit-modal-btns {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.edit-modal-btns button {
+    flex: 1;
+    padding: 14px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+/* 저장 */
+.edit-modal-btns .confirm {
+    background: #09947d;
+    color: #fff;
+}
+
+/* 취소 */
+.edit-modal-btns .cancel {
+    background: #f1f1f1;
+    color: #333;
+}
