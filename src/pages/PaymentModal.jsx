@@ -7,22 +7,28 @@ function PaymentModal({ onClose, onSuccess }) {
     const [selectedMethod, setSelectedMethod] = useState("");
 
     const quickAmounts = [10000, 50000, 100000];
+    const [alertOpen, setAlertOpen] = useState(false);
+    const [alertMessage, setAlertMessage] = useState("");
+    const openAlert = (message) => {
+        setAlertMessage(message);
+        setAlertOpen(true);
+    };
 
     const handlePay = () => {
         const price = Number(amount);
 
+        if (!selectedMethod) {
+            openAlert("결제 수단을 선택해주세요.");
+            return;
+        }
+
         if (!price || price <= 0) {
-            alert("결제 금액을 선택 또는 입력하세요.");
+            openAlert("결제 금액을 선택 또는 입력하세요.");
             return;
         }
 
         if (!agree) {
-            alert("약관에 동의해주세요.");
-            return;
-        }
-
-        if (!selectedMethod) {
-            alert("결제 수단을 선택해주세요.");
+            openAlert("약관에 동의해주세요.");
             return;
         }
 
@@ -150,6 +156,21 @@ function PaymentModal({ onClose, onSuccess }) {
                 </button>
 
             </div>
+            {alertOpen && (
+                <div className="payment-alert-backdrop">
+                    <div className="payment-alert-box">
+                        <p className="payment-alert-text">
+                            {alertMessage}
+                        </p>
+                        <button
+                            className="payment-alert-confirm-btn"
+                            onClick={() => setAlertOpen(false)}
+                        >
+                            확인
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
