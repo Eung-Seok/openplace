@@ -1,0 +1,259 @@
+/* =========================
+   Background
+========================= */
+
+.payment-modal-bg {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* =========================
+   Modal Box
+========================= */
+
+.payment-modal {
+    width: 360px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================
+   Title
+========================= */
+
+.payment-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+/* =========================
+   Payment Method
+========================= */
+
+.payment-method-box {
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 14px;
+}
+
+.pay-method.main {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #09947d;
+    background: #ffffff;
+    color: #09947d;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* 아이콘 결제 */
+.payment-method-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.pay-icon {
+    padding: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* 간편 결제 */
+.payment-method-grid.small {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.pay-simple {
+    padding: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: #f7f7f7;
+    font-size: 13px;
+}
+
+/* 더보기 */
+.pay-more {
+    width: 100%;
+    margin-top: 6px;
+    background: none;
+    border: none;
+    font-size: 13px;
+    color: #666;
+    cursor: pointer;
+}
+
+/* =========================
+   Amount Input
+========================= */
+
+.payment-amount-input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+/* =========================
+   Agreement
+========================= */
+
+.payment-agree {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 16px;
+}
+
+.payment-agree input {
+    margin-right: 6px;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.payment-submit {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    background: #09947d;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.payment-cancel {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 14px;
+    background: #f1f1f1;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* =========================
+   Amount Select
+========================= */
+
+.payment-sub-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 16px 0 10px;
+}
+
+.payment-quick-amount {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.quick-amount-btn {
+    flex: 1;
+    padding: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #09947d;
+    background: #ffffff;
+    color: #09947d;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.quick-amount-btn.active {
+    background: #09947d;
+    color: #ffffff;
+}
+
+/* =========================
+   Active State
+========================= */
+
+.pay-method.active,
+.pay-icon.active,
+.pay-simple.active {
+    border: 2px solid #09947d;
+    background: #e6f4ef;
+}
+
+/* 아이콘 버튼 정렬 */
+.pay-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 아이콘 크기 */
+.pay-icon img {
+    width: 60px;
+    height: auto;
+}
+
+/* 빠른 금액 active */
+.quick-amount-btn.active {
+    background: #09947d;
+    color: #fff;
+}
+
+/* =========================
+   Payment Alert Modal
+========================= */
+
+.payment-alert-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.payment-alert-box {
+    background: #fff;
+    width: 320px;
+    padding: 28px 24px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.payment-alert-text {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    color: #333;
+}
+
+.payment-alert-confirm-btn {
+    background: none;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2f8f6b;
+    /* OpenPlace 메인 컬러 */
+    cursor: pointer;
+}
+
+.payment-alert-confirm-btn:hover {
+    text-decoration: underline;
+}
