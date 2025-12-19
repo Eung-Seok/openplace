@@ -125,11 +125,12 @@
 .progress-h-step {
     width: 18%;
     text-align: center;
-    opacity: 0.35;
+    color: #aaa;
+
 }
 
 .progress-h-step.active {
-    opacity: 1;
+   color: #252525;
 }
 
 .progress-h-circle {
@@ -157,10 +158,12 @@
 
 .progress-h-date {
     display: block;
-    margin-top: 4px;
+    margin-top: 6px;
     font-size: 11px;
     color: #999;
+    font-weight: 400;
 }
+
 
 /* =========================
    Project Log Section
