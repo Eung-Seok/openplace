@@ -7,7 +7,7 @@ function KakaoMap({ lat, lng, style }) {
         const initMap = () => {
             const options = {
                 center: new window.kakao.maps.LatLng(lat, lng),
-                level: 3,
+                level: 2,
             };
             const map = new window.kakao.maps.Map(mapRef.current, options);
             const marker = new window.kakao.maps.Marker({

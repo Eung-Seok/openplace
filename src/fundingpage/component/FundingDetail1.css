@@ -14,14 +14,24 @@
     /* border-top: 1px solid #b4b4b4; */
 }
 
-.funding-list-line2 {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    margin-left: -50vw;
+/* .funding-list-line2 {
+    width: 100%;
+    border-bottom: 1px solid #b4b4b4;
+    margin: 0 auto 50px;
     border-bottom: 1px solid #b4b4b4;
     margin-top: -5px;
     margin-bottom: 50px;
+} */
+.funding-list-line2 {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10000px;
+    max-width: none;
+    border-bottom: 1px solid #b4b4b4;
+    margin-top: -5px;
+    margin-bottom: 50px;
+    pointer-events: none;
 }
 
 
@@ -64,15 +74,16 @@
 .donate-overlay {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    left: -50%;
+    width: 200%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.45);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
 }
+
 
 /* 후원하기 모달창  */
 
@@ -84,6 +95,9 @@
     border-radius: 18px;
     box-shadow: 0 20px 48px rgba(0, 0, 0, 0.25);
     animation: modalFadeUp 0.25s ease-out;
+
+    transform: translateY(-100px);
+    animation: modalFadeIn 0.2s ease-out;
 }
 
 .donate-modal p {
@@ -229,7 +243,9 @@
 }
 
 /* 탭 밑에 영역 */
-.funding-tab-content {}
+.funding-tab-content {
+    height: auto;
+}
 
 /* 메뉴 박스 높이 */
 .funding-tab-box {
@@ -237,9 +253,12 @@
     min-height: 222px;
 }
 
-/* =========================
-        Alert Modal
-========================= */
+.funding-tab-box2 {
+    width: 100%;
+    min-height: 222px;
+}
+
+/* Alert Modal */
 
 .alert-modal-bg {
     position: fixed;
@@ -277,4 +296,105 @@
     border: none;
     font-weight: 600;
     cursor: pointer;
+}
+
+/* 이미지 다시 고정 */
+.funding-support-img-box {
+    width: 666px;
+    height: 488px;
+    flex-shrink: 0;
+}
+
+.funding-support-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 전체 배경 */
+.funding-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* 실제 컨텐츠 영역 */
+.funding-container {
+    width: 80%;
+    max-width: 1200px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+.funding-bg-color {
+    padding-top: 0px;
+}
+
+/* 후원자 순위 */
+
+.banker-bar-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 30px;
+}
+
+.banker-bar {
+    display: flex;
+    height: 36px;
+    border-radius: 20px;
+    background: #ccc;
+    overflow: hidden;
+}
+
+.banker-segment {
+    position: relative;
+    height: 100%;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.banker-segment:hover {
+    opacity: 0.85;
+}
+
+/* Top 3 강조 */
+.banker-segment:nth-child(1) {
+    background: #09947d;
+}
+
+.banker-segment:nth-child(2) {
+    background: #1db59b;
+}
+
+.banker-segment:nth-child(3) {
+    background: #6adbc9;
+}
+
+.banker-segment:not(:nth-child(-n+3)) {
+    background: #b4b4b4;
+}
+
+
+
+/* Hover 툴팁 */
+.banker-tooltip {
+    position: fixed;
+    transform: translateX(-50%) translateY(77%);
+    background: #000;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 13px;
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s;
+    z-index: 9999;
+}
+
+
+
+.banker-segment:hover .banker-tooltip {
+    opacity: 1;
 }
