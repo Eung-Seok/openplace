@@ -30,6 +30,7 @@ function CommunityWrite() {
                             title: title.value,
                             content: content.value,
                             author: accountInfo.name,
+                            authorId: accountInfo.id,
                             category: category.value,
                             views: 0,
                             likes: 0,
