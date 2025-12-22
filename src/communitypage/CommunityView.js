@@ -100,11 +100,16 @@ function CommunityView() {
                         }}>💬 댓글 {Object.keys(totalData[data.id - 1].comment).length}</span>
                     </div>
                     <div className="share-report">
-                        <span>공유</span>
-                        <span>|</span>
-                        <span>신고</span>
-                        <span className={((loginInfo.id == data.authorId)|| (loginInfo.level == '관리자') ? ' ': 'community-view-hide')}>
+                        <span className={((loginInfo.id == data.authorId) ? ' ' : 'community-view-hide')}>
+                            <span onClick={()=>{
+                                navigate(nowpage.pathname + '/edit')
+                                window.scrollTo(0, 0)
+                            }}>
+                                수정
+                            </span>
                             <span>|</span>
+                        </span>
+                        <span className={((loginInfo.id == data.authorId) || (loginInfo.level == '관리자') ? ' ' : 'community-view-hide')}>
                             <span onClick={() => {
                                 let dataList = JSON.parse(localStorage.getItem('통합데이터'))
                                 dataList = dataList.filter((item) => {
@@ -113,6 +118,7 @@ function CommunityView() {
                                 setCount(count + 1);
                                 localStorage.setItem('통합데이터', JSON.stringify(dataList))
                                 navigate('/community/main/1')
+                                window.scrollTo(0, 0)
                             }}>삭제</span>
                         </span>
                     </div>
