@@ -100,7 +100,7 @@ function CommunityGeneral() {
                     Search
                 </button>
             </div>
-            <div style={{ justifyItems: 'center', display:'flex', justifyContent:'center'}}>
+            <div style={{ marginTop:'40px', justifyItems: 'center', display:'flex', justifyContent:'center'}}>
                 <button
                     className="funding-more-btn"
                     onClick={() => {

@@ -192,3 +192,7 @@
 .community-comment-hide{
     display:none;
 }
+
+.community-view-hide{
+    display: none;
+}

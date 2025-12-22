@@ -150,7 +150,7 @@ function FundingList() {
                         Search
                     </button>
                 </div>
-                <div style={{ justifyItems: 'center', display: 'flex', justifyContent: 'center' }}>
+                <div style={{ marginTop:'40px',justifyItems: 'center', display: 'flex', justifyContent: 'center' }}>
                     <button
                         className="funding-more-btn"
                         onClick={() => {
@@ -164,7 +164,9 @@ function FundingList() {
                     >
                         <FaChevronLeft />
                     </button>
+
                     <Pagination className="funding-pagination">{items}</Pagination>
+
                     <button
                         className="funding-more-btn"
                         onClick={() => {
@@ -180,10 +182,10 @@ function FundingList() {
                 </div>
                 <div>
                     <p className="funding-comment">여러분 동네, 개선이 필요한 공공시설이 있나요?</p>
-                    <div className= {"funding-register-actions " + (loginInfo.level == '관리자' ? ' ' : 'funding-button-hidden')} >
+                    <div className={"funding-register-actions "} >
                         <Button className="funding-create-btn"
                             onClick={() => {
-                                navigate("/funding/create");
+                                navigate("/community/write");
                                 window.scrollTo(0, 0);
                             }}
                         >펀딩 등록하기</Button>

@@ -57,6 +57,8 @@ function CommunityMain() {
         setData(slicedData)
     }, [boxSelected, List, currentPage])
 
+    useEffect(()=> Patch, [])
+
     return (
         <div className="body">
             <div class="tabs">
@@ -100,7 +102,7 @@ function CommunityMain() {
                     Search
                 </button>
             </div>
-            <div style={{ justifyItems: 'center', display:'flex', justifyContent:'center'}}>
+            <div style={{ marginTop:'40px',justifyItems: 'center', display:'flex', justifyContent:'center'}}>
                 <button
                     className="funding-more-btn"
                     onClick={() => {

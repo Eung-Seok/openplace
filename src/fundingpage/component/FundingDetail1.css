@@ -345,7 +345,6 @@
     height: 36px;
     border-radius: 20px;
     background: #ccc;
-    overflow: hidden;
 }
 
 .banker-segment {
@@ -359,9 +358,18 @@
     opacity: 0.85;
 }
 
+.banker-segment:first-of-type {
+    border-radius: 20px 0 0 20px;
+}
+
+.banker-segment:last-of-type {
+    border-radius: 0 20px 20px 0;
+}
+
 /* Top 3 강조 */
 .banker-segment:nth-child(1) {
     background: #09947d;
+
 }
 
 .banker-segment:nth-child(2) {
@@ -380,8 +388,8 @@
 
 /* Hover 툴팁 */
 .banker-tooltip {
-    position: fixed;
-    transform: translateX(-50%) translateY(100%);
+    position: absolute;
+    transform: translateX(-50%) translateY(77%);
     background: #000;
     color: #fff;
     padding: 8px 12px;

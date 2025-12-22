@@ -18,6 +18,7 @@ function Register() {
         phonenumber: false
     })
     let [errorMsg, setErrorMsg] = useState({
+        idEqual: false,
         id: false,
         pw: false,
         email: false,
@@ -52,7 +53,14 @@ function Register() {
             return;
         }
         const check = /^[a-zA-z0-9]{6,12}$/
-        const bool = !check.test(form.id)
+        let bool = !check.test(form.id)
+        setErrorMsg({...errorMsg, idEqual: false})
+        accountList.map((item)=>{
+            if(form.id == item.id){
+                bool = true
+                setErrorMsg({...errorMsg, idEqual:true})
+            } 
+        })
         setError({ ...error, id: bool })
     }, [form.id])
     useEffect(() => {
@@ -262,7 +270,8 @@ function Register() {
                         </div>
                     </div>
                     <ul>
-                        {errorMsg.id && <li className="errorMsg">아이디를 입력해주세요</li>}
+                        {errorMsg.id && errorMsg.idEqual && <li className="errorMsg">아이디가 중복됩니다</li>}
+                        {errorMsg.id && !errorMsg.idEqual && <li className="errorMsg">아이디를 입력해주세요</li>}
                         {errorMsg.pw && <li className="errorMsg">비밀번호를 입력해주세요</li>}
                         {errorMsg.email && <li className="errorMsg">이메일주소를 입력해주세요</li>}
                     </ul>
