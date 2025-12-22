@@ -133,6 +133,7 @@ function CommunityView() {
                             <button
                                 type="submit"
                                 className='comment-submit'
+                                style={{backgroundColor:'white'}}
                             >
                                 등록
                             </button>
