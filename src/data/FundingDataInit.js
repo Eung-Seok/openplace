@@ -95,7 +95,57 @@ function FundingDataInit() {
             bankers: 79,
             hearts: 96,
             finish: true,
-            idea: "초등학교 주변에는 울타리가 부족하거나 끊어진 구간이 있어 아이들의 등하굣길 안전이 걱정됩니다. 차량과 보행 동선을 분리할 수 있도록 안전 울타리를 설치해 학부모와 아이들 모두가 안심할 수 있는 통학 환경을 마련해 주세요."
+            idea: "초등학교 주변에는 울타리가 부족하거나 끊어진 구간이 있어 아이들의 등하굣길 안전이 걱정됩니다. 차량과 보행 동선을 분리할 수 있도록 안전 울타리를 설치해 학부모와 아이들 모두가 안심할 수 있는 통학 환경을 마련해 주세요.",
+            projectStatus: "COMPLETED",
+            progressStep: 5,
+
+            progressLogs: [
+                {
+                    step: 1,
+                    title: "모금 완료",
+                    desc: "시민 참여로 목표 금액을 달성했습니다.",
+                    department: "Open Place 운영팀",
+                    manager: "백종진 매니저",
+                    contractor: null,
+                    date: "2024-11-20"
+                },
+                {
+                    step: 2,
+                    title: "지자체 승인 완료",
+                    desc: "관할 지자체 승인 절차가 완료되었습니다.",
+                    department: "천안시 도시환경과",
+                    manager: "이성훈 주무관",
+                    contractor: null,
+                    date: "2024-11-28"
+                },
+                {
+                    step: 3,
+                    title: "시공사 선정",
+                    desc: "공개 입찰을 통해 시공사를 선정했습니다.",
+                    department: "시설관리팀",
+                    manager: "박재훈 팀장",
+                    contractor: "한빛건설",
+                    date: "2024-12-03"
+                },
+                {
+                    step: 4,
+                    title: "공사 진행",
+                    desc: "현장 시공 및 안전 점검이 진행되었습니다.",
+                    department: "시설관리팀",
+                    manager: "현장 관리자",
+                    contractor: "한빛건설",
+                    date: "2024-12-9"
+                },
+                {
+                    step: 5,
+                    title: "완료 및 공개",
+                    desc: "공사가 완료되어 결과를 공개합니다.",
+                    department: "Open Place 운영팀",
+                    manager: "백종진 매니저",
+                    contractor: "한빛건설",
+                    date: "2024-12-18"
+                }
+            ]
         },
         {
             id: 7,
@@ -127,7 +177,30 @@ function FundingDataInit() {
             hearts: 91,
             author: "김응석",
             finish: false,
-            idea: "작은 도서관은 지역 주민과 아이들에게 중요한 문화 공간이지만, 내부 시설이 노후되어 이용이 불편합니다. 좌석과 조명을 정비하고 쾌적한 환경을 조성해 시민들이 머물고 싶은 독서 공간으로 개선되길 바랍니다."
+            idea: "작은 도서관은 지역 주민과 아이들에게 중요한 문화 공간이지만, 내부 시설이 노후되어 이용이 불편합니다. 좌석과 조명을 정비하고 쾌적한 환경을 조성해 시민들이 머물고 싶은 독서 공간으로 개선되길 바랍니다.",
+            projectStatus: "IN_PROGRESS",
+            progressStep: 2, // 지자체 승인 완료
+
+            progressLogs: [
+                {
+                    step: 1,
+                    title: "모금 완료",
+                    desc: "시민 참여로 목표 금액 100%를 달성했습니다.",
+                    department: "Open Place 운영팀",
+                    manager: "김민정 매니저",
+                    contractor: null,
+                    date: "2025-11-05"
+                },
+                {
+                    step: 2,
+                    title: "지자체 승인 완료",
+                    desc: "관할 지자체의 행정 검토 및 사업 승인이 완료되었습니다.",
+                    department: "천안시 교통정책과",
+                    manager: "정우성 주무관",
+                    contractor: null,
+                    date: "2025-11-20"
+                }
+            ]
         },
         {
             id: 9,
