@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import FundingDataInit from "../data/FundingDataInit.js";
 import "./Funding.css";
 import { IoMenu } from "react-icons/io5";
 // import FundingBox from "./component/FundingBox.js"
@@ -16,7 +15,6 @@ function FundingDetail() {
     const location = useLocation();
     const { id } = useParams();
 
-    useEffect(()=> FundingPatch, [])
     let fundingData = JSON.parse(localStorage.getItem('펀딩데이터'))
     let data = fundingData.find((item) => {
         return item.id == id;

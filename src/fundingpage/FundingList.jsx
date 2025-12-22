@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import FundingDataInit from "../data/FundingDataInit.js";
 import "./Funding.css";
 import { FaChevronLeft, FaMapMarkerAlt } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";

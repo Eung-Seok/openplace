@@ -130,12 +130,11 @@ function FundingRegister() {
                     newFundingData.map = location;
                     newFundingData.rate = 0;
                     newFundingData.subTitle = description;
-                    newFundingData.timeStart = timeStart;
                     newFundingData.timeLeft = Math.abs(diffInMs / (1000 * 60 * 60 * 24));
                     newFundingData.title = title;
                     let temp = [newFundingData, ...fundingData];
                     setFundingData(temp);
-                    localStorage.setItem('펀딩데이터', JSON.stringify(fundingData))
+                    localStorage.setItem('펀딩데이터', JSON.stringify(temp))
                     navigate("/funding/main/1");
                 }
                 window.scrollTo(0, 0);
