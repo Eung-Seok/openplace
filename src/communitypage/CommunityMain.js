@@ -10,6 +10,7 @@ import ComboBox from "./components/Combobox";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function CommunityMain() {
+    let [alertMsg, setAlertMsg] = useState('')
     let { page } = useParams();
     let [boxSelected, setBoxSelected] = useState('최신순')
     let [List, setList] = useState(JSON.parse(localStorage.getItem('통합데이터')));
@@ -57,7 +58,7 @@ function CommunityMain() {
         setData(slicedData)
     }, [boxSelected, List, currentPage])
 
-    useEffect(()=> Patch, [])
+    useEffect(() => Patch, [])
 
     return (
         <div className="body">
@@ -75,9 +76,7 @@ function CommunityMain() {
                         navigate('/community/write')
                         window.scrollTo(0, 0)
                     } else {
-                        localStorage.setItem('마지막 주소', JSON.stringify(nowpage.pathname))
-                        navigate('/login')
-                        window.scrollTo(0, 0)
+                        setAlertMsg('로그인 후 이용가능합니다.')
                     }
                 }}>글쓰기</Button>
             </div>
@@ -102,7 +101,7 @@ function CommunityMain() {
                     Search
                 </button>
             </div>
-            <div style={{ marginTop:'40px',justifyItems: 'center', display:'flex', justifyContent:'center'}}>
+            <div style={{ marginTop: '40px', justifyItems: 'center', display: 'flex', justifyContent: 'center' }}>
                 <button
                     className="funding-more-btn"
                     onClick={() => {
@@ -130,6 +129,26 @@ function CommunityMain() {
                     <FaChevronRight />
                 </button>
             </div>
+            {alertMsg && (
+                <div className="alert-modal-bg">
+                    <div className="alert-modal-box">
+                        <p className="alert-modal-message">
+                            {alertMsg}
+                        </p>
+                        <button
+                            className="alert-modal-btn"
+                            onClick={() => {
+                                localStorage.setItem('마지막 주소', JSON.stringify('/community/write'))
+                                navigate('/login')
+                                window.scrollTo(0, 0);
+                            }
+                            }
+                        >
+                            확인
+                        </button>
+                    </div>
+                </div >
+            )}
         </div >
     );
 }

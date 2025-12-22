@@ -10,6 +10,7 @@ import ComboBox from "./components/Combobox";
 import { FaChevronRight,FaChevronLeft } from "react-icons/fa";
 
 function CommunitySearch() {
+    let [alertMsg, setAlertMsg] = useState('')
     let params = useParams();
     let searchword = params.keyword
     let page = params.page;
@@ -95,9 +96,7 @@ function CommunitySearch() {
                         navigate('/community/write')
                         window.scrollTo(0, 0)
                     } else {
-                        localStorage.setItem('마지막 주소', JSON.stringify(nowpage.pathname))
-                        navigate('/login')
-                        window.scrollTo(0, 0)
+                        setAlertMsg('로그인 후 이용가능합니다.')
                     }
                 }}>글쓰기</Button>
             </div>
@@ -149,6 +148,26 @@ function CommunitySearch() {
                     <FaChevronRight />
                 </button>
             </div>
+            {alertMsg && (
+                <div className="alert-modal-bg">
+                    <div className="alert-modal-box">
+                        <p className="alert-modal-message">
+                            {alertMsg}
+                        </p>
+                        <button
+                            className="alert-modal-btn"
+                            onClick={() => {
+                                localStorage.setItem('마지막 주소', JSON.stringify('/community/write'))
+                                navigate('/login')
+                                window.scrollTo(0, 0);
+                            }
+                            }
+                        >
+                            확인
+                        </button>
+                    </div>
+                </div >
+            )}
         </div >
     );
 }

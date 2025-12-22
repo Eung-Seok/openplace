@@ -6,6 +6,7 @@ import Patch from './components/Patch';
 import { useEffect } from 'react';
 
 function CommunityView() {
+    let [alertMsg, setAlertMsg] = useState('')
     let [count, setCount] = useState(0)
     let nowpage = useLocation();
     let navigate = useNavigate();
@@ -101,7 +102,7 @@ function CommunityView() {
                     </div>
                     <div className="share-report">
                         <span className={((loginInfo.id == data.authorId) ? ' ' : 'community-view-hide')}>
-                            <span onClick={()=>{
+                            <span onClick={() => {
                                 navigate(nowpage.pathname + '/edit')
                                 window.scrollTo(0, 0)
                             }}>
@@ -134,9 +135,7 @@ function CommunityView() {
                 {/* 7. 댓글 입력 필드 */}
                 <div className="comment-input-area" onClick={() => {
                     if (!nowLogin) {
-                        localStorage.setItem('마지막 주소', JSON.stringify(nowpage.pathname))
-                        navigate('/login')
-                        window.scrollTo(0, 0)
+                        setAlertMsg('로그인 후 이용가능합니다.')
                     }
                 }}>
                     <form onSubmit={(event) => {
@@ -166,6 +165,26 @@ function CommunityView() {
                     </form>
                 </div>
             </div>
+            {alertMsg && (
+                <div className="alert-modal-bg">
+                    <div className="alert-modal-box">
+                        <p className="alert-modal-message">
+                            {alertMsg}
+                        </p>
+                        <button
+                            className="alert-modal-btn"
+                            onClick={() => {
+                                localStorage.setItem('마지막 주소', JSON.stringify(nowpage.pathname))
+                                navigate('/login')
+                                window.scrollTo(0, 0);
+                            }
+                            }
+                        >
+                            확인
+                        </button>
+                    </div>
+                </div >
+            )}
         </div>
     );
 }

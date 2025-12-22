@@ -16,12 +16,17 @@ function FundingDetail() {
     const { id } = useParams();
 
     let fundingData = JSON.parse(localStorage.getItem('펀딩데이터'))
-    let data = fundingData.find((item) => {
+    let [data,setData] = useState(fundingData.find((item) => {
         return item.id == id;
-    })
+    }))
+    const refreshData = () => {
+        const updatedList = JSON.parse(localStorage.getItem('펀딩데이터'));
+        const currentItem = updatedList.find(item => item.id == data.id);
+        setData(currentItem);
+    };
 
     if (data.rate < 100) {
-        return <FundingDetail1 data={data}/>
+        return <FundingDetail1 data={data} onUpdate={refreshData}/>
     } else {
         return <FundingDetail2 data={data}/>
     }

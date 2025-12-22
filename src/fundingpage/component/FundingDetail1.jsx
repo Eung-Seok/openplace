@@ -2,16 +2,17 @@ import React, { useState, useEffect } from "react";
 import "../Funding.css";
 import { IoMenu } from "react-icons/io5";
 // import FundingBox from "./component/FundingBox.js"
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import FundingAmountPlus from "../FundingAmountPlus.jsx";
 import './FundingDetail1.css'
 import KakaoMap from "./KakaoMap.jsx";
+import FundingPatch from "./FundingPatch.js";
 
 
-function FundingDetail1({ data }) {
-
+function FundingDetail1({ data, onUpdate }) {
+    const navigate = useNavigate();
     const location = useLocation();
     const id = data.id
     const [liked, setLiked] = useState(false);
@@ -51,7 +52,7 @@ function FundingDetail1({ data }) {
 
     const handleSupportClick = () => {
         if (!isLogin || !currentUser) {
-            setAlertMsg("로그인 후 후원하실 수 있습니다.");
+            setAlertMsg("로그인 후 후원하실 수 있습니다.")
             return;
         }
         setDonateOpen(true);
@@ -59,6 +60,10 @@ function FundingDetail1({ data }) {
 
     const handleDonate = () => {
         const amount = Number(donateAmount);
+        let fundingList = JSON.parse(localStorage.getItem('펀딩데이터'))
+        let tempdata = fundingList.find((item) => {
+            return item.id == id
+        })
 
         if (!amount || amount <= 0) {
             setAlertMsg("기부 금액을 선택 또는 입력하세요.");
@@ -82,11 +87,18 @@ function FundingDetail1({ data }) {
         if (index !== -1) {
             list[index] = updatedUser;
         }
+
+        tempdata.rate += 100 * amount / tempdata.goalAmount
+        fundingList[id - 1] = tempdata
+        localStorage.setItem('펀딩데이터', JSON.stringify(fundingList))
         localStorage.setItem("계정목록", JSON.stringify(list));
         localStorage.setItem("계정정보", JSON.stringify(updatedUser));
         setCurrentUser(updatedUser);
 
         setAlertMsg(`${amount.toLocaleString()}원 후원 완료!`);
+        if (typeof onUpdate === "function") {
+            onUpdate();
+        }
 
         setDonateOpen(false);
         setDonateAmount("");
@@ -102,6 +114,7 @@ function FundingDetail1({ data }) {
         const othersCount = Math.max(bankersCount - 3, 0);
         const othersAmount = othersCount * 50000;
 
+
         return [
             ...topBankers,
             {
@@ -111,6 +124,7 @@ function FundingDetail1({ data }) {
         ];
     }
 
+    useEffect(() => FundingPatch, [currentUser])
     const bankers = createBankers(data.bankers);
 
     const totalGoal = data.goalAmount;
@@ -134,19 +148,19 @@ function FundingDetail1({ data }) {
     ]);
     const [newComment, setNewComment] = useState("");
 
-    const isLogin = !!currentUser;
+    const isLogin = JSON.parse(localStorage.getItem('로그인현황'))
 
 
     const locationMap = {
-    1: { lat: 36.7960, lng: 127.1470 },
-    2: { lat: 36.87839, lng: 127.15527 },
-    3: { lat: 36.7833, lng: 127.1684 },
-    4: { lat: 36.8283, lng: 127.1520 }, 
-    5: { lat: 36.7890, lng: 127.1470 }, 
-    6: { lat: 36.7909, lng: 127.1322 }, 
-    7: { lat: 36.8120, lng: 127.1400 }, 
-    9: { lat: 36.8170, lng: 127.1090 }  
-};
+        1: { lat: 36.7960, lng: 127.1470 },
+        2: { lat: 36.87839, lng: 127.15527 },
+        3: { lat: 36.7833, lng: 127.1684 },
+        4: { lat: 36.8283, lng: 127.1520 },
+        5: { lat: 36.7890, lng: 127.1470 },
+        6: { lat: 36.7909, lng: 127.1322 },
+        7: { lat: 36.8120, lng: 127.1400 },
+        9: { lat: 36.8170, lng: 127.1090 }
+    };
 
 
 
@@ -231,7 +245,7 @@ function FundingDetail1({ data }) {
 
                                     <div className="funding-support-gauge-container">
                                         <div className="funding-support-top">
-                                            <span className="funding-support-current">{data.rate}%</span>
+                                            <span className="funding-support-current">{(data.rate).toFixed(2)}%</span>
                                             <span className="funding-support-left">남은기간: {data.timeLeft}일</span>
                                         </div>
                                         <div className="funding-support-bar">
@@ -242,7 +256,7 @@ function FundingDetail1({ data }) {
                                             <button
                                                 className="donate-btn"
                                                 onClick={() => {
-                                                    if (isLogin && currentUser) {
+                                                    if (isLogin) {
                                                         // 로그인 되어 있으면 모달 열기
                                                         setDonateOpen(true);
                                                     } else {
@@ -340,7 +354,7 @@ function FundingDetail1({ data }) {
                                                 <KakaoMap
                                                     lat={locationMap[id]?.lat || 36.7960}
                                                     lng={locationMap[id]?.lng || 127.1470}
-                                                    style={{ width: "60%", height: "400px", borderRadius: "12px", flexShrink: 0}}
+                                                    style={{ width: "60%", height: "400px", borderRadius: "12px", flexShrink: 0 }}
                                                 />
 
                                             </div>
@@ -557,7 +571,15 @@ function FundingDetail1({ data }) {
                                 </p>
                                 <button
                                     className="alert-modal-btn"
-                                    onClick={() => setAlertMsg("")}
+                                    onClick={() => {
+                                        if (alertMsg == '로그인 후 후원하실 수 있습니다.') {
+                                            localStorage.setItem('마지막 주소', JSON.stringify(location.pathname))
+                                            navigate('/login')
+                                        } else {
+                                            setAlertMsg("")
+                                        }
+                                    }
+                                    }
                                 >
                                     확인
                                 </button>

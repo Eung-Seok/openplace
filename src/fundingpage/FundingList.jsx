@@ -15,6 +15,7 @@ import { FaChevronRight } from "react-icons/fa";
 function FundingList() {
     let params = useParams();
     let funding = params.funding;
+    let [alertMsg,setAlertMsg] = useState('')
     let category = params.category;
     let page = params.page
     let [fundingData, setFundingData] = useState(JSON.parse(localStorage.getItem('펀딩데이터')))
@@ -107,7 +108,7 @@ function FundingList() {
                 </div>
                 <div className={"funding-tabs " + (funding != 'fundraise' ? 'funding-tabs-hidden' : ' ')}>
                     <button class={'tab ' + (category == 'main' ? 'active' : '')} onClick={() => navigate('/funding/fundraise/main/1')}>전체 카테고리</button>
-                    <button class={'tab ' + (category == 'dailylife' ? 'active' : '')} onClick={() => navigate('/funding/fundraise/dailylife//1')}>생활·편의</button>
+                    <button class={'tab ' + (category == 'dailylife' ? 'active' : '')} onClick={() => navigate('/funding/fundraise/dailylife/1')}>생활·편의</button>
                     <button class={'tab ' + (category == 'culture' ? 'active' : '')} onClick={() => navigate('/funding/fundraise/culture/1')}>문화·교육</button>
                     <button class={'tab ' + (category == 'safety' ? 'active' : '')} onClick={() => navigate('/funding/fundraise/safety/1')}>안전</button>
                     <button class={'tab ' + (category == 'environment' ? 'active' : '')} onClick={() => navigate('/funding/fundraise/environment/1')}>환경</button>
@@ -187,9 +188,7 @@ function FundingList() {
                         <Button className="funding-create-btn"
                             onClick={() => {
                                 if (!nowLogin) {
-                                    localStorage.setItem('마지막 주소', JSON.stringify(nowpage.pathname))
-                                    navigate('/login')
-                                    window.scrollTo(0, 0);
+                                    setAlertMsg('로그인 후 이용가능합니다')
                                 } else {
                                     navigate("/community/write");
                                     window.scrollTo(0, 0);
@@ -197,6 +196,26 @@ function FundingList() {
                             }}
                         >지역 제보하기</Button>
                     </div>
+                    {alertMsg && (
+                        <div className="alert-modal-bg">
+                            <div className="alert-modal-box">
+                                <p className="alert-modal-message">
+                                    {alertMsg}
+                                </p>
+                                <button
+                                    className="alert-modal-btn"
+                                    onClick={() => {
+                                        localStorage.setItem('마지막 주소', JSON.stringify('/community/write'))
+                                        navigate('/login')
+                                        window.scrollTo(0, 0);
+                                    }
+                                    }
+                                >
+                                    확인
+                                </button>
+                            </div>
+                        </div >
+                    )}
                 </div>
             </section>
         </div >
