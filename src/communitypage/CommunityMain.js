@@ -57,6 +57,8 @@ function CommunityMain() {
         setData(slicedData)
     }, [boxSelected, List, currentPage])
 
+    useEffect(()=> Patch, [])
+
     return (
         <div className="body">
             <div class="tabs">

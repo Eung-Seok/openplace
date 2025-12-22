@@ -6,7 +6,10 @@ import Patch from './components/Patch';
 import { useEffect } from 'react';
 
 function CommunityView() {
+    let [count, setCount] = useState(0)
     let nowpage = useLocation();
+    let navigate = useNavigate();
+
     let { id } = useParams();
     let [showComment, setShowComment] = useState(true)
     let nowLogin = JSON.parse(localStorage.getItem('로그인현황'))
@@ -15,10 +18,14 @@ function CommunityView() {
     let data = totalData.find((item) => {
         return item.id == id;
     })
-    let navigate = useNavigate();
     let [modalLike, setModalLike] = useState(false);
     let [comment, setComment] = useState('');
     useEffect(() => Patch, [comment])
+    useEffect(() => Patch, [count])
+
+    if (!data) {
+        return <div></div>
+    }
 
     return (
         <div className="post-view-container">
@@ -29,7 +36,7 @@ function CommunityView() {
                         totalData[Number(id) - 2].views++;
                         localStorage.setItem('통합데이터', JSON.stringify(totalData))
                         navigate('/community/' + (Number(id) - 1))
-                        window.scrollTo(0,0)
+                        window.scrollTo(0, 0)
                     } else {
                         alert('처음 게시물입니다.')
                     }
@@ -39,16 +46,16 @@ function CommunityView() {
                         totalData[Number(id)].views++;
                         localStorage.setItem('통합데이터', JSON.stringify(totalData))
                         navigate('/community/' + (Number(id) + 1))
-                        window.scrollTo(0,0)
+                        window.scrollTo(0, 0)
                     }
                     else {
                         alert('마지막 게시물입니다.')
                     }
                 }}>다음글</span>
-                <span className="nav-link" onClick={() => { 
-                    navigate('/community/main/1') 
-                    window.scrollTo(0,0)
-                    }}>목록</span>
+                <span className="nav-link" onClick={() => {
+                    navigate('/community/main/1')
+                    window.scrollTo(0, 0)
+                }}>목록</span>
             </div>
 
             <div className="main-post-area">
@@ -96,6 +103,18 @@ function CommunityView() {
                         <span>공유</span>
                         <span>|</span>
                         <span>신고</span>
+                        <span className={((loginInfo.id == data.authorId)|| (loginInfo.level == '관리자') ? ' ': 'community-view-hide')}>
+                            <span>|</span>
+                            <span onClick={() => {
+                                let dataList = JSON.parse(localStorage.getItem('통합데이터'))
+                                dataList = dataList.filter((item) => {
+                                    return item.id != id
+                                })
+                                setCount(count + 1);
+                                localStorage.setItem('통합데이터', JSON.stringify(dataList))
+                                navigate('/community/main/1')
+                            }}>삭제</span>
+                        </span>
                     </div>
                 </div>
             </div> {/* .main-post-area 끝 */}
@@ -111,7 +130,7 @@ function CommunityView() {
                     if (!nowLogin) {
                         localStorage.setItem('마지막 주소', JSON.stringify(nowpage.pathname))
                         navigate('/login')
-                        window.scrollTo(0,0)
+                        window.scrollTo(0, 0)
                     }
                 }}>
                     <form onSubmit={(event) => {
@@ -133,7 +152,7 @@ function CommunityView() {
                             <button
                                 type="submit"
                                 className='comment-submit'
-                                style={{backgroundColor:'white'}}
+                                style={{ backgroundColor: 'white' }}
                             >
                                 등록
                             </button>
