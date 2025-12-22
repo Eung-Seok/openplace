@@ -99,6 +99,7 @@ function MyInfoEditModal({ user, onClose, onUpdate }) {
                         type="date"
                         name="birthday"
                         value={form.birthday}
+                        max={(new Date()).toISOString().split('T')[0]}
                         onChange={handleChange}
                     />
                 </label>

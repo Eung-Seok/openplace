@@ -246,7 +246,7 @@ function FundingDetail1({ data, onUpdate }) {
                                     <div className="funding-support-gauge-container">
                                         <div className="funding-support-top">
                                             <span className="funding-support-current">{(data.rate).toFixed(2)}%</span>
-                                            <span className="funding-support-left">남은기간: {data.timeLeft}일</span>
+                                            <span className="funding-support-left">{data.goalDate + '까지(' + data.timeLeft + '일 남음)'}</span>
                                         </div>
                                         <div className="funding-support-bar">
                                             <span style={{ width: `${data.rate}%` }}></span>

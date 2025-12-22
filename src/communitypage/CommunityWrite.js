@@ -18,7 +18,7 @@ function CommunityWrite() {
                     let content = document.getElementById('content')
                     let category = document.getElementById('category')
                     let today = new Date()
-                    let now = today.getFullYear() + '.' + (today.getMonth() + 1) + '.' + today.getDay() + '. ' + today.getHours() + ':' + today.getMinutes();
+                    let now = today.getFullYear() + '.' + (today.getMonth() + 1) + '.' + today.getDate() + '. ' + today.getHours() + ':' + today.getMinutes();
                     event.preventDefault();
 
                     if (title.value.trim() == '') {

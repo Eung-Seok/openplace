@@ -127,6 +127,7 @@ function FundingRegister() {
                             map: location,
                             rate: 0,
                             subTitle: description,
+                            goalDate:timeLeft,
                             timeLeft: Math.abs(diffInMs / (1000 * 60 * 60 * 24)),
                             title: title
                         };
@@ -375,7 +376,12 @@ function FundingRegister() {
                                 <input
                                     type="date"
                                     value={timeStart}
-                                    onChange={(e) => setTimeStart(e.target.value)}
+                                    min={(new Date()).toISOString().split('T')[0]}
+                                    onChange={(e) => {
+                                        setTimeStart(e.target.value)
+                                        if(timeLeft < e.target.value)
+                                            setTimeLeft(e.target.value)
+                                    }}
                                 />
                                 <span>프로젝트 시작</span>
                             </div>
@@ -387,6 +393,7 @@ function FundingRegister() {
                                     id="timeLeft"
                                     type="date"
                                     value={timeLeft}
+                                    min={timeStart}
                                     className={errors.timeLeft ? "error" : ""}
                                     onChange={(e) => {
                                         setTimeLeft(e.target.value);

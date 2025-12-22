@@ -26,7 +26,7 @@ function FundingBox({ item }) {
             </div>
             <div className="funding-gauge">
                 <div className="funding-gauge-top">
-                    <span className="funding-current-gauge">모금률 {item.rate}%</span>
+                    <span className="funding-current-gauge">모금률 {(item.rate).toFixed(2)}%</span>
                     <span className="funding-max-gauge">100%</span>
                 </div>
                 <div className="funding-bar">
@@ -36,7 +36,7 @@ function FundingBox({ item }) {
                 <div className="funding-rate-container">
                     <div className="funding-rate-column">
                         <span className="funding-rate-text">현재금액</span>
-                        <span className="funding-rate-amount">{item.goalAmount * item.rate / 1000000}만원</span>
+                        <span className="funding-rate-amount">{(item.goalAmount * item.rate / 1000000).toFixed(0)}만원</span>
                     </div>
                     <div className="funding-rate-column">
                         <span className="funding-rate-text">목표금액</span>
