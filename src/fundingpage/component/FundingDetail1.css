@@ -1,3 +1,5 @@
+
+
 .funding-support-footer img {
     width: 500px;
     /* margin-left: auto; */
@@ -26,7 +28,7 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    width: 2000px;
+    width: 100%;
     max-width: none;
     border-bottom: 1px solid #b4b4b4;
     margin-top: -5px;
@@ -321,9 +323,9 @@
 
 /* 실제 컨텐츠 영역 */
 .funding-container {
-    width: 80%;
-    max-width: 1200px;
-    min-width: 320px;
+    width: 100%;
+    /* max-width: 1200px; */
+    /* min-width: 320px; */
     margin: 0 auto;
 }
 
@@ -398,3 +400,8 @@
 .banker-segment:hover .banker-tooltip {
     opacity: 1;
 }
+
+.funding-tab-content{
+    width:100%;
+}
+

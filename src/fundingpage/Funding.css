@@ -9,7 +9,7 @@
     background-color: #ffffff;
     margin: 0 auto;
     padding: 40px;
-    width: 1275px;
+    width:100%;
 }
 
 
@@ -32,7 +32,7 @@
 .funding-tabs {
     display: flex;
     gap: 10px;
-    margin-bottom: 30px;
+    margin: 20px 0;
 }
 
 .funding-tab {
@@ -235,6 +235,7 @@
 
 .funding-funding-container {
     max-width: 1400px;
+    width:100%;
     margin: 0 auto;
     border-top: none;
     background: #ffffff;
@@ -479,9 +480,6 @@
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    /* padding: 50px; */
-    /* padding-right: 50px; */
-    /* border: 1px solid #a7a7a7; */
     border-top: none;
     background: #ffffff;
 }
@@ -491,10 +489,6 @@
 }
 
 .funding-support-img {
-    display: block;
-    /* margin: 0 auto 30px auto; */
-    width: 666px;
-    height: 488px;
     border-radius: 10px;
 }
 
@@ -504,7 +498,7 @@
 }
 
 .funding-support-explain h2 {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     font-size: 44px;
     margin-top: 20px;
@@ -512,6 +506,10 @@
 }
 
 .funding-support-explain .funding-icon {
+    width:100%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 40px;
 }
 
@@ -526,12 +524,11 @@
 /* 펀딩 서포트 텍스트 가로길이 설정 위치 */
 .funding-explan-text {
     /* font-size: 25px; */
-    width: 500px;
+    width: 100%;
     /* width: max-content; */
     /* height: 550px; */
     display: block;
-    margin-left: 50px;
-    margin-right: 250px;
+    margin-left: 2%;
 }
 
 .funding-p-row {
@@ -606,7 +603,7 @@
 /* 펀딩 서포트 게이지 부분 */
 
 .funding-support-gauge-container {
-    width: 477px;
+    width:100%
 }
 
 .funding-support-top {

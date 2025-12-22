@@ -96,7 +96,7 @@ function FundingList() {
 
 
     return (
-        <div className="funding-bg-color body">
+        <div className="body">
             <section className="funding-filter-container">
                 <div className="funding-tabs">
                     <button class={"tab " + (funding == 'main' ? 'active' : '')} onClick={() => navigate('/funding/main/1')}>전체 펀딩</button>

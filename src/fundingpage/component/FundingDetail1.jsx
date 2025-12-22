@@ -285,7 +285,7 @@ function FundingDetail1({ data }) {
                                                 }}
                                             >
                                                 {/* 왼쪽 텍스트 영역 */}
-                                                <div style={{ flex: 1 }}>
+                                                <div style={{ flex: 1, width: '60%;' }}>
                                                     <p className="funding-support-subtitle" style={{ fontSize: '40px' }}>
                                                         프로젝트에 반영된 지역 제보 아이디어
                                                     </p>
@@ -299,7 +299,7 @@ function FundingDetail1({ data }) {
                                                 <KakaoMap
                                                     lat={36.7960}
                                                     lng={127.1470}
-                                                    style={{ width: "500px", height: "400px", borderRadius: "12px", flexShrink: 0, marginLeft: '50px' }}
+                                                    style={{ width: "60%", height: "400px", borderRadius: "12px", flexShrink: 0, marginLeft: '120px' }}
                                                 />
 
                                             </div>
