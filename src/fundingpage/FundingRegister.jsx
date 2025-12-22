@@ -165,11 +165,11 @@ function FundingRegister() {
                         카테고리 선택
                     </p>
 
-                    <div>
+                    <div className="textarea-wrapper textarea-wrapper-width2">
                         <select
                             value={category}
                             onChange={(e) => setCategory(e.target.value)}
-                            className={errors.category ? "error" : ""}
+                            className={(errors.category ? "error" : "")}
                         >
                             <option value="">카테고리를 선택하세요</option>
                             {categories.map((cat) => (

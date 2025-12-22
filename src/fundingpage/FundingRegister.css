@@ -114,11 +114,11 @@ body {
 }
 
 .textarea-wrapper-width2 {
-    width: 905px;
+    width: 100%;
 }
 
 .textarea-wrapper-width {
-    width: 905px;
+    width: 100%;
 }
 
 .textarea-wrapper textarea {
@@ -126,6 +126,15 @@ body {
     height: 150px;
     font-size: 15px;
     margin-bottom: 30px;
+}
+.textarea-wrapper select{
+    width: 60%;
+    height: 40px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: none;
+    background: #fff;
 }
 
 .textarea-wrapper span {
