@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/openplace/static/css/main.ae48211e.css",
-    "main.js": "/openplace/static/js/main.c1d70e55.js",
+    "main.js": "/openplace/static/js/main.a664bf55.js",
     "static/js/453.8ea3f3fc.chunk.js": "/openplace/static/js/453.8ea3f3fc.chunk.js",
     "static/media/registericons.png": "/openplace/static/media/registericons.6f7dcab724b45d845c9f.png",
     "static/media/bootstrap-icons.woff?": "/openplace/static/media/bootstrap-icons.1295669cd4e305c97f2c.woff",
@@ -10,11 +10,11 @@
     "static/media/logo.svg": "/openplace/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/openplace/index.html",
     "main.ae48211e.css.map": "/openplace/static/css/main.ae48211e.css.map",
-    "main.c1d70e55.js.map": "/openplace/static/js/main.c1d70e55.js.map",
+    "main.a664bf55.js.map": "/openplace/static/js/main.a664bf55.js.map",
     "453.8ea3f3fc.chunk.js.map": "/openplace/static/js/453.8ea3f3fc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ae48211e.css",
-    "static/js/main.c1d70e55.js"
+    "static/js/main.a664bf55.js"
   ]
 }
