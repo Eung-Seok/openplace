@@ -13,6 +13,7 @@
     margin-top: 5%;
     margin-bottom:5%;
     align-content: center;
+    min-width: 350px;
 }
 
 .register-form-item+.register-form-item {
@@ -388,6 +389,6 @@
     display: flex;
     justify-content: center; /* 이미지 중앙 정렬 */
     width: 100%;
-    margin-bottom: -110px;
     caret-color: transparent;
+    margin-bottom: -10%;
 }
