@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# OpenPlace
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> 시민이 지역의 공공시설 개선안을 제안하고, 공감과 펀딩으로 변화를 만드는 참여형 플랫폼
 
-## Available Scripts
+![OpenPlace 메인 화면](public/images/mainpage/main1.png)
 
-In the project directory, you can run:
+## 프로젝트 소개
 
-### `npm start`
+OpenPlace는 주민이 생활 속 불편을 제안하고, 다른 시민이 커뮤니티와 펀딩에 참여해 공공시설 개선을 함께 만들어 가는 프론트엔드 프로젝트입니다. 제안 탐색부터 펀딩 참여, 진행 상황 확인, 후기 공유까지 하나의 사용자 흐름으로 구성했습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 핵심 기능
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **펀딩 탐색:** 진행 중인 프로젝트 목록, 카테고리·지역·검색어 필터, 상세 페이지
+- **펀딩 참여:** 목표 금액과 달성률 확인, 참여 금액 입력 및 결제 UI
+- **커뮤니티:** 일반·제보·후기 게시판, 검색, 글 작성·수정·상세 조회
+- **회원 기능:** 로그인·회원가입·아이디/비밀번호 찾기, 마이페이지와 정보 수정
+- **프로젝트 제안:** 신규 펀딩 프로젝트 등록 화면
+- **프로토타입 데이터:** localStorage 기반 데이터 초기화와 화면 상태 유지
 
-### `npm test`
+## 사용자 흐름
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+~~~mermaid
+flowchart LR
+    A[지역 문제 탐색] --> B[펀딩 상세 확인]
+    B --> C[펀딩 참여]
+    C --> D[진행 상황 확인]
+    D --> E[커뮤니티 후기 공유]
+~~~
 
-### `npm run build`
+## 기술 스택
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| 영역 | 기술 |
+|---|---|
+| Frontend | React 19, JavaScript |
+| Routing | React Router 7 |
+| UI | React Bootstrap, Bootstrap 5, Styled Components, React Icons |
+| State/Data | React Hooks, localStorage |
+| Test | React Testing Library, Jest DOM |
+| Deploy | GitHub Pages, gh-pages |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 화면 구성
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| 영역 | 주요 화면 |
+|---|---|
+| Home | 서비스 소개, 진행 중인 펀딩, 커뮤니티 미리보기 |
+| Funding | 목록, 검색, 카테고리 필터, 등록, 상세, 참여 |
+| Community | 게시판별 목록, 검색, 작성, 수정, 상세 |
+| Account | 로그인, 회원가입, 계정 찾기, 마이페이지 |
+| About | 서비스 미션·비전과 시민 참여 프로세스 |
 
-### `npm run eject`
+## 폴더 구조
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+~~~text
+openplace/
+├── public/
+│   └── images/              # 서비스 이미지
+├── src/
+│   ├── components/          # 공통·메인 컴포넌트
+│   ├── fundingpage/         # 펀딩 목록·상세·참여
+│   ├── communitypage/       # 커뮤니티 게시판
+│   ├── loginpage/           # 인증 화면
+│   ├── pages/               # 홈·소개·마이페이지
+│   └── data/                # 프로토타입 초기 데이터
+├── package.json
+└── README.md
+~~~
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 실행 방법
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+~~~bash
+git clone https://github.com/Eung-Seok/openplace.git
+cd openplace
+npm install
+npm start
+~~~
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+브라우저에서 `http://localhost:3000`으로 접속합니다.
 
-## Learn More
+### 프로덕션 빌드
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+~~~bash
+npm run build
+~~~
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### GitHub Pages 배포
 
-### Code Splitting
+~~~bash
+npm run deploy
+~~~
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 프로젝트 포인트
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 컴포넌트 단위로 화면을 분리하고 React Router로 전체 사용자 흐름을 연결했습니다.
+- 펀딩과 커뮤니티를 하나의 서비스 안에서 탐색할 수 있도록 정보 구조를 설계했습니다.
+- 백엔드 없이도 주요 시나리오를 확인할 수 있도록 localStorage 기반 프로토타입을 구현했습니다.
