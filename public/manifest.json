@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "OpenPlace",
+  "name": "OpenPlace 시민 참여형 펀딩 플랫폼",
   "icons": [
     {
       "src": "favicon.ico",
