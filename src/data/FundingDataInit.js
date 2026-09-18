@@ -175,7 +175,7 @@ function FundingDataInit() {
             title: "작은 도서관 환경 개선 프로젝트",
             map: "천안 신부동 작은도서관",
             subTitle: "천안 지역 작은 도서관의 노후 시설을 정비해 더 편안하고 쾌적한 독서 공간으로 리뉴얼합니다. 채광·환기·열람 환경을 개선해 아이들과 주민들이 머물기 좋은 지역 문화 공간을 만듭니다.",
-            category: "체육",
+            category: "문화",
             rate: 100,
             goalAmount: 7000000,
             timeLeft: 4,
