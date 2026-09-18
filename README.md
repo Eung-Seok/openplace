@@ -1,5 +1,7 @@
 # OpenPlace
 
+[![CI](https://github.com/Eung-Seok/openplace/actions/workflows/ci.yml/badge.svg?branch=portfolio-v2)](https://github.com/Eung-Seok/openplace/actions/workflows/ci.yml?query=branch%3Aportfolio-v2)
+
 > 시민이 지역의 공공시설 개선안을 제안하고, 공감과 펀딩으로 변화를 만드는 참여형 플랫폼
 
 ![OpenPlace 메인 화면](public/images/mainpage/main1.png)
